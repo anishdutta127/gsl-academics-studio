@@ -127,3 +127,73 @@ export interface DiscoveredOutput {
   parsed: import("./parse-filename").ParsedOutputFilename | null;
   shareUrl: string | null;
 }
+
+// Standards System (decision 012) ----------------------------------------
+
+/**
+ * The seven playbook slugs the Standards System enumerates. Used by the
+ * /standards page to render cards for every playbook even if no content
+ * exists yet, and used by the standards loader to know what to look for.
+ */
+export const PLAYBOOK_SLUGS = [
+  "teaching-ppt",
+  "lesson-plan",
+  "assessment",
+  "carousel",
+  "delivery-script",
+  "cbse-summary",
+  "product-note"
+] as const;
+export type PlaybookSlug = (typeof PLAYBOOK_SLUGS)[number];
+
+/**
+ * Frontmatter on a standard's rationale.md. Used for current/, proposals/,
+ * and archive/ entries; same shape across all three.
+ */
+export const StandardRationaleSchema = z.object({
+  set_by: z.string().min(1),
+  set_on: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "set_on must be YYYY-MM-DD" }),
+  topic: z.string().min(1),
+  grade: z.string().min(1),
+  programme: z.string().optional(),
+  reference_filename: z.string().min(1)
+});
+export type StandardRationale = z.infer<typeof StandardRationaleSchema>;
+
+/**
+ * Loaded current standard, ready for UI consumption. UI extracts "Key
+ * qualities" bullets from the markdown body itself; the loader keeps the
+ * body as raw markdown.
+ */
+export interface LoadedCurrentStandard {
+  rationale: StandardRationale;
+  bodyMarkdown: string;
+  /** Path under the studio root, e.g. "standards/teaching-ppt/current/reference.pptx". */
+  referencePath: string;
+  /** OneDrive share URL from meta/output-links.json, null if not yet recorded. */
+  shareUrl: string | null;
+}
+
+/** A proposal sits in standards/<playbook>/proposals/<contributor-date>/. */
+export interface LoadedStandardProposal {
+  /** Folder name under proposals/, e.g. "priya-2026-04-25". */
+  folder: string;
+  rationale: StandardRationale;
+  bodyMarkdown: string;
+  referencePath: string;
+  shareUrl: string | null;
+}
+
+/** An archived standard sits in standards/<playbook>/archive/<date>/. */
+export interface LoadedArchivedStandard {
+  /** Folder name under archive/, e.g. "2026-04-15". */
+  folder: string;
+  /** ISO date parsed from folder name when possible, used for sorting. */
+  archivedAt: string | null;
+  rationale: StandardRationale;
+  bodyMarkdown: string;
+  referencePath: string;
+  shareUrl: string | null;
+}
