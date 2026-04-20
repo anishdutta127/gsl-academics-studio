@@ -34,6 +34,15 @@ import { parseOutputFilename } from "../lib/content/parse-filename";
 
 const COPY_SUBDIRS = ["playbooks", "skills", "meta"] as const;
 
+/**
+ * The standards/ tree is a special case: rationale.md and metadata.json
+ * are repo-friendly text, but reference.<ext> files (pptx, docx, pdf) follow
+ * the same binary-bloat constraint as outputs (decision 010 risk 1).
+ * Sync copies only the text-shaped files; reference files stay in OneDrive
+ * and are linked via meta/output-links.json.
+ */
+const STANDARDS_TEXT_EXTENSIONS = new Set([".md", ".json", ".gitkeep"]);
+
 async function readable(p: string): Promise<boolean> {
   try {
     await fs.access(p, fsConstants.R_OK);
@@ -49,6 +58,37 @@ async function countFiles(dir: string, predicate: (f: string) => boolean) {
     return files.filter(predicate).length;
   } catch {
     return 0;
+  }
+}
+
+/**
+ * Recursively copies a standards subtree from source to destination, copying
+ * only text-shaped files (.md, .json, .gitkeep) and creating empty subdirs
+ * to mirror the source structure. Calls onFile for telemetry.
+ */
+async function syncStandardsTree(
+  src: string,
+  dst: string,
+  onFile: (kind: "text" | "binary") => void
+): Promise<void> {
+  const entries = await fs.readdir(src, { withFileTypes: true });
+  for (const entry of entries) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dst, entry.name);
+    if (entry.isDirectory()) {
+      await fs.mkdir(d, { recursive: true });
+      await syncStandardsTree(s, d, onFile);
+      continue;
+    }
+    const ext = path.extname(entry.name).toLowerCase();
+    const isText =
+      STANDARDS_TEXT_EXTENSIONS.has(ext) || entry.name === ".gitkeep";
+    if (isText) {
+      await fs.copyFile(s, d);
+      onFile("text");
+    } else {
+      onFile("binary");
+    }
   }
 }
 
@@ -98,6 +138,40 @@ async function main() {
       counts[sub] = await countFiles(dst, (f) => f.endsWith(".json"));
     }
     console.log(`[sync] copied ${sub}/ (${counts[sub] ?? 0} files)`);
+  }
+
+  // 1b. Standards: copy text-shaped files only. Reference files stay in
+  //     OneDrive (decision 012 follows decision 010 risk 1).
+  const standardsSrc = path.join(source, "standards");
+  const standardsDst = path.join(target, "standards");
+  let standardsBuckets = 0;
+  let standardsTextFiles = 0;
+  let standardsBinariesSkipped = 0;
+  if (await readable(standardsSrc)) {
+    await fs.rm(standardsDst, { recursive: true, force: true });
+    await fs.mkdir(standardsDst, { recursive: true });
+    const playbookDirs = await fs.readdir(standardsSrc, {
+      withFileTypes: true
+    });
+    for (const playbookEntry of playbookDirs) {
+      if (!playbookEntry.isDirectory()) continue;
+      standardsBuckets += 1;
+      const playbookSrc = path.join(standardsSrc, playbookEntry.name);
+      const playbookDst = path.join(standardsDst, playbookEntry.name);
+      await fs.mkdir(playbookDst, { recursive: true });
+      // Walk current/, proposals/, archive/ and any nested subfolders.
+      await syncStandardsTree(playbookSrc, playbookDst, (kind) => {
+        if (kind === "text") standardsTextFiles += 1;
+        else standardsBinariesSkipped += 1;
+      });
+    }
+    console.log(
+      `[sync] standards/ copied (${standardsBuckets} playbook bucket(s), ${standardsTextFiles} text file(s), ${standardsBinariesSkipped} binary file(s) intentionally skipped)`
+    );
+  } else {
+    console.warn(
+      "[sync] no standards/ directory in source (ok for an empty studio)"
+    );
   }
 
   // 2. Scan outputs/ without copying files. Build manifest, warn on unparseable
