@@ -33,53 +33,57 @@ import { parseOutputFilename } from "./parse-filename";
 
 const DEFAULT_SOURCE: "onedrive" | "synced" = "onedrive";
 
-function primaryRoot(): string {
-  const source =
-    (process.env.GSL_CONTENT_SOURCE as "onedrive" | "synced" | undefined) ??
-    DEFAULT_SOURCE;
-
-  if (source === "onedrive") {
-    const p = process.env.GSL_ONEDRIVE_PATH;
-    if (!p) {
-      throw new Error(
-        "[content] GSL_CONTENT_SOURCE=onedrive but GSL_ONEDRIVE_PATH is not set. " +
-          "Set it in .env.local, or switch GSL_CONTENT_SOURCE=synced."
-      );
-    }
-    return p;
-  }
-  return path.join(process.cwd(), "content-synced");
-}
-
 function syncedRoot(): string {
   return path.join(process.cwd(), "content-synced");
 }
 
 const resolveContentRoot = cache(async (): Promise<string> => {
-  const primary = primaryRoot();
+  const source =
+    (process.env.GSL_CONTENT_SOURCE as "onedrive" | "synced" | undefined) ??
+    DEFAULT_SOURCE;
+  const onedrivePath = process.env.GSL_ONEDRIVE_PATH;
+  const synced = syncedRoot();
+
+  // Figure out the intended primary and whether a fallback exists.
+  let primary: string;
+  let fallback: string | null;
+  if (source === "onedrive") {
+    if (!onedrivePath) {
+      // Treat unset as "use synced directly" rather than throwing. This makes
+      // production builds work when only ./content-synced/ is on disk, and it
+      // makes fresh checkouts work before the developer has set up OneDrive.
+      primary = synced;
+      fallback = null;
+    } else {
+      primary = onedrivePath;
+      fallback = synced;
+    }
+  } else {
+    primary = synced;
+    fallback = null;
+  }
+
   try {
     await fs.access(primary);
     return primary;
   } catch {
-    // Fall back to committed content-synced if the primary is unreadable.
-    const fallback = syncedRoot();
-    if (fallback === primary) {
-      throw new Error(
-        `[content] content root ${primary} is not readable. No fallback available.`
-      );
+    if (fallback) {
+      try {
+        await fs.access(fallback);
+        console.warn(
+          `[content] ${primary} unreadable, falling back to ${fallback}`
+        );
+        return fallback;
+      } catch {
+        // fall through to the combined error below
+      }
     }
-    try {
-      await fs.access(fallback);
-      console.warn(
-        `[content] ${primary} unreadable, falling back to ${fallback}`
-      );
-      return fallback;
-    } catch {
-      throw new Error(
-        `[content] neither ${primary} nor ${fallback} is readable. ` +
-          `Set GSL_ONEDRIVE_PATH or run \`pnpm sync-content\`.`
-      );
-    }
+    throw new Error(
+      `[content] content root is not readable: ${primary}${
+        fallback ? ` (also tried fallback ${fallback})` : ""
+      }. ` +
+        "Set GSL_ONEDRIVE_PATH, or run `pnpm sync-content`, or create content-synced/."
+    );
   }
 });
 
