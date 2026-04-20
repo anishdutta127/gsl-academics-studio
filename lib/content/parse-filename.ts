@@ -3,10 +3,12 @@
  *
  *     <grade>_<topic-slug>_<playbook>_<YYYY-MM-DD>.<ext>
  *
- * Examples that parse:
- *     class-06_photosynthesis_teaching-ppt_2026-04-15.pptx
- *     class-11_the-industrial-revolution_lesson-plan_2026-03-20.docx
- *     class-09_maths_assessment_2026-04-01.pdf
+ * Examples that parse (GSL future-skills topics, vary by programme):
+ *     class-06_building-a-simple-chatbot_teaching-ppt_2026-04-15.pptx
+ *     class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx
+ *     class-09_pitching-your-startup-idea_assessment_2026-04-01.pdf
+ *     class-10_designing-a-sustainable-app_teaching-ppt_2026-04-18.pptx
+ *     class-11_managing-a-team-project_delivery-script_2026-04-05.docx
  *
  * Hyphens are allowed inside each of the first three segments. Segments are
  * separated by underscores. The date must be real (01-12 month, 01-31 day,

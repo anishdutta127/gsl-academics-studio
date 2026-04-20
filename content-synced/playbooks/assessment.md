@@ -206,6 +206,6 @@ common_pitfalls: |
   - **Distractors that are obviously wrong.** A distractor a student would never pick is a wasted option. Every distractor must come from a real misconception at the grade.
   - **All-Remember question banks.** Even a Class 3 bank should have some Understand and Apply. A Class 10 bank with 80% Remember fails NEP 2020.
   - **Rubric descriptors that are not observable.** "Good" vs "average" vs "poor" is useless. Descriptors must name specific evidence a marker can see.
-  - **Double-barrelled questions.** "What is photosynthesis and why is it important?" is two questions. Split it.
+  - **Double-barrelled questions.** "What is a chatbot and why might a small business build one?" is two questions. Split it: "What is a chatbot?" and "Give one reason a small business might build one."
   - **American defaults.** Claude writes "Sarah at a mall in Ohio" unless redirected. Redirect in Step 1.
 ---

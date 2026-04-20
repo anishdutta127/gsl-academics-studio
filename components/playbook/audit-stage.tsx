@@ -24,9 +24,25 @@ export function AuditStage({
   const [decision, setDecision] = useState<Decision>("pending");
   const [filenameCopied, setFilenameCopied] = useState(false);
 
-  const filenameExample = `class-06_photosynthesis_${playbookSlug}_${new Date()
-    .toISOString()
-    .slice(0, 10)}.pptx`;
+  // Per-playbook example so the suggested filename feels native to the
+  // output the writer just made. GSL future-skills topics, varied so no
+  // single example dominates the UX.
+  const EXAMPLE_BY_PLAYBOOK: Record<string, { grade: string; topic: string; ext: string }> = {
+    "teaching-ppt": { grade: "class-06", topic: "building-a-simple-chatbot", ext: "pptx" },
+    "lesson-plan": { grade: "class-08", topic: "solving-your-citys-water-crisis", ext: "docx" },
+    "assessment": { grade: "class-09", topic: "pitching-your-startup-idea", ext: "pdf" },
+    "delivery-script": { grade: "class-11", topic: "managing-a-team-project", ext: "docx" },
+    "cbse-summary": { grade: "class-10", topic: "designing-a-sustainable-app", ext: "pdf" },
+    "product-note": { grade: "class-09", topic: "young-pioneers-programme-launch", ext: "pdf" },
+    "carousel": { grade: "class-09", topic: "telling-stories-with-video", ext: "pdf" }
+  };
+  const ex = EXAMPLE_BY_PLAYBOOK[playbookSlug] ?? {
+    grade: "class-08",
+    topic: "your-topic",
+    ext: "pptx"
+  };
+  const today = new Date().toISOString().slice(0, 10);
+  const filenameExample = `${ex.grade}_${ex.topic}_${playbookSlug}_${today}.${ex.ext}`;
 
   function markPass() {
     setDecision("pass");

@@ -123,7 +123,7 @@ export type OutputLinks = z.infer<typeof OutputLinksSchema>;
 // A discovered output file, surfaced to UI with optional parsed filename chips.
 export interface DiscoveredOutput {
   filename: string;
-  relativePath: string; // e.g. "outputs/lesson-plan/class-06_photosynthesis_lesson-plan_2026-04-15.pptx"
+  relativePath: string; // e.g. "outputs/lesson-plan/class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx"
   parsed: import("./parse-filename").ParsedOutputFilename | null;
   shareUrl: string | null;
 }

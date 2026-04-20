@@ -17,10 +17,10 @@ use_when: |
 
   This is not for whole-course planning (that is the Course Builder in Phase 2) and not for assessments (see the Assessment Builder).
 before_you_start:
-  - Topic you are teaching (e.g. "Photosynthesis", "Fractions and Decimals")
-  - Grade (e.g. Class 6)
+  - Topic you are teaching (e.g. "Building a simple chatbot", "Stop-motion animation basics", "Solving your city's water crisis", "Pitching your startup idea")
+  - Grade (e.g. Class 6, Class 8, Class 11)
   - Duration (40 minutes, 45 minutes, 90 minutes)
-  - Programme context (STEAM, Cambridge Young Pioneers, Harvard HBPE, IITG AI, or general CBSE)
+  - Programme context (STEM/IIT-G, Young Pioneers (Cambridge), VideoGenX, Solevit, Harvard Manage Mentor, Talk & Learn, or general)
   - Prior knowledge the students are expected to have
   - The Pedagogy Foundations skill, either attached to your Claude Project or pasted as context
 steps:
@@ -36,7 +36,7 @@ steps:
       Topic: [TOPIC]
       Grade: [GRADE]
       Duration: [DURATION] minutes
-      Programme: [STEAM / Cambridge YP / Harvard HBPE / IITG AI / general CBSE]
+      Programme: [STEM / IIT-G / Young Pioneers / VideoGenX / Solevit / Harvard Manage Mentor / Talk & Learn / general]
       Prior knowledge: [WHAT STUDENTS ARE EXPECTED TO ALREADY KNOW]
 
       Before you do anything, confirm in one short paragraph that you understand these constraints:
@@ -155,7 +155,7 @@ steps:
       - Three likely student questions are listed with answers
       - Emergency backup activity is included
     expected_output: |
-      A complete lesson plan document, ready to copy into Word, named something like "Photosynthesis, Class 6, 40-minute lesson.docx" once you save it.
+      A complete lesson plan document, ready to copy into Word, named something like "Solving your city's water crisis, Class 8, 45-minute lesson.docx" once you save it.
     next_action: |
       Paste into Word. Apply the GSL document template (headings, GSL colours). Save under the naming convention in the Audit Stage below. Proceed to audit.
 audit_prompt_template: |

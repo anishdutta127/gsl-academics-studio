@@ -157,7 +157,7 @@ Without a database, filtering outputs by grade/topic/programme requires parsing 
 <grade>_<topic-slug>_<author-initials>_<yyyy-mm-dd>.pptx
 ```
 
-Example: `class-06_photosynthesis_pm_2026-04-15.pptx`.
+Example: `class-06_building-a-simple-chatbot_pm_2026-04-15.pptx`.
 
 The Studio parses the filename client-side and offers filter chips per field. If Ritu prefers freeform filenames, we skip filter chips in Phase 1 and rely on the user's browser Ctrl-F.
 

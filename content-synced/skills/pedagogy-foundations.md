@@ -29,7 +29,7 @@ The National Education Policy 2020 governs Indian education through 2040. The pr
 
 **Experiential learning.** Content connects to what students can do, not just what they memorise. Hands-on activities, real-world problems, projects.
 
-**Holistic development.** Cognitive, social, emotional, creative, physical. A lesson on fractions is also a lesson on problem-solving patience. Content should not be narrowly cognitive.
+**Holistic development.** Cognitive, social, emotional, creative, physical. A lesson on building a simple chatbot is also a lesson on problem-decomposition patience. A lesson on pitching a startup idea is also a lesson on listening to feedback. Content should not be narrowly cognitive.
 
 **Multilingualism.** Don't assume English is the student's first language. Hindi or regional language equivalents of technical terms in parentheses where helpful.
 
@@ -61,7 +61,7 @@ The National Curriculum Framework 2023 operationalises NEP 2020 for schools. Sta
 - Middle stage can be text-heavy but must have clear visual breaks, examples, practice opportunities.
 - Secondary can resemble adult educational material but with clear structure, varied assessment formats, and real-world connections.
 
-**Competency focus.** NCF 2023 emphasises competencies over content coverage. A lesson on "the water cycle" is not about memorising evaporation-condensation-precipitation. It's about the competency "can explain how water moves through the environment and predict what happens if one part of the cycle is disrupted."
+**Competency focus.** NCF 2023 emphasises competencies over content coverage. A lesson on "how a chatbot works" is not about memorising the API call sequence. It's about the competency "can explain how a chatbot turns a typed question into an answer and predict where it will go wrong on an edge case." Same shape for GSL programmes generally: STEM/IIT-G is about competencies in computational thinking, Young Pioneers in entrepreneurial reasoning, VideoGenX in visual storytelling craft, Solevit in problem-decomposition, Harvard Manage Mentor in team-decision-making.
 
 Every GSL lesson plan names the competencies it develops, not just the topics it covers.
 

@@ -22,8 +22,8 @@ Example `meta/output-links.json`:
 
 ```json
 {
-  "outputs/lesson-plan/class-06_photosynthesis_lesson-plan_2026-04-15.docx": "https://maftechnologies-my.sharepoint.com/.../Shared.aspx?...",
-  "outputs/assessment/class-09_maths_assessment_2026-04-01.pdf": "https://maftechnologies-my.sharepoint.com/.../Shared.aspx?..."
+  "outputs/lesson-plan/class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx": "https://maftechnologies-my.sharepoint.com/.../Shared.aspx?...",
+  "outputs/assessment/class-09_pitching-your-startup-idea_assessment_2026-04-01.pdf": "https://maftechnologies-my.sharepoint.com/.../Shared.aspx?..."
 }
 ```
 
@@ -50,16 +50,18 @@ The `pnpm sync-content` script does NOT copy output file bodies into the repo. I
 <grade>_<topic-slug>_<playbook>_<YYYY-MM-DD>.<ext>
 ```
 
-Examples:
+Examples (GSL future-skills topics, vary by programme):
 
-- `class-06_photosynthesis_teaching-ppt_2026-04-15.pptx`
-- `class-11_the-industrial-revolution_lesson-plan_2026-03-20.docx`
-- `class-09_maths_assessment_2026-04-01.pdf`
+- `class-06_building-a-simple-chatbot_teaching-ppt_2026-04-15.pptx`
+- `class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx`
+- `class-09_pitching-your-startup-idea_assessment_2026-04-01.pdf`
+- `class-10_designing-a-sustainable-app_teaching-ppt_2026-04-18.pptx`
+- `class-11_managing-a-team-project_delivery-script_2026-04-05.docx`
 
 Segments:
 
 - `<grade>`: lowercase, hyphen-joined (e.g. `class-06`, `class-11`, `nursery`).
-- `<topic-slug>`: lowercase, hyphens inside the topic allowed (e.g. `the-industrial-revolution`).
+- `<topic-slug>`: lowercase, hyphens inside the topic allowed (e.g. `solving-your-citys-water-crisis`).
 - `<playbook>`: the playbook slug (e.g. `lesson-plan`, `assessment`, `teaching-ppt`).
 - `<YYYY-MM-DD>`: ISO date the output was finalised.
 - `<ext>`: file extension, lowercased on load.
