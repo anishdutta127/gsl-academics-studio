@@ -1,0 +1,191 @@
+[
+  {
+    "id": "gsl-brand-voice-and-guidelines",
+    "name": "GSL Brand Voice & Guidelines",
+    "type": "Universal",
+    "usedBy": "All",
+    "description": "Brand colours (#00D8B9, #073393), typography (Montserrat/Open Sans), tone of voice, logo usage, dos and don'ts",
+    "downloadUrl": "/skill-files/gsl-brand-voice-and-guidelines.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "nep-2020-alignment-guide",
+    "name": "NEP 2020 Alignment Guide",
+    "type": "Universal",
+    "usedBy": "Academics, Sales, Product",
+    "description": "Key competencies, skill frameworks, pedagogical approaches, specific clause references, mapping methodology",
+    "downloadUrl": "/skill-files/nep-2020-alignment-guide.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "un-sdg-mapping-standards",
+    "name": "UN SDG Mapping Standards",
+    "type": "Universal",
+    "usedBy": "Academics, Marketing",
+    "description": "All 17 SDGs with K-12-relevant targets, mapping methodology, examples per programme",
+    "downloadUrl": "/skill-files/un-sdg-mapping-standards.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "bloom's-taxonomy-reference",
+    "name": "Bloom's Taxonomy Reference",
+    "type": "Universal",
+    "usedBy": "Academics",
+    "description": "6 levels with verb lists, question stems per level, assessment alignment, progression guidance, common mistakes",
+    "downloadUrl": "/skill-files/bloom's-taxonomy-reference.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "gagné's-9-events-of-instruction",
+    "name": "Gagné's 9 Events of Instruction",
+    "type": "Universal",
+    "usedBy": "Academics, HR & Ops",
+    "description": "All 9 events with timing, examples for different content types, lesson plan template, speaker notes template",
+    "downloadUrl": "/skill-files/gagné's-9-events-of-instruction.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "age-appropriateness-guidelines",
+    "name": "Age-Appropriateness Guidelines",
+    "type": "Universal",
+    "usedBy": "Academics, Marketing",
+    "description": "Grade bands (3-5, 6-8, 9-10, 11-12): language complexity, attention span, cognitive level, content guardrails",
+    "downloadUrl": "/skill-files/age-appropriateness-guidelines.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "ppt-standardisation-guide",
+    "name": "PPT Standardisation Guide",
+    "type": "Universal",
+    "usedBy": "All",
+    "description": "Slide layouts, safe zones, font sizes, colour usage, animation rules, brand placement, progress tabs, Quick Check format",
+    "downloadUrl": "/skill-files/ppt-standardisation-guide.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "indian-context-examples-bank",
+    "name": "Indian Context Examples Bank",
+    "type": "Universal",
+    "usedBy": "Academics, Marketing, Sales",
+    "description": "Indian startups, social enterprises, innovations curated for educational use. Organised by sector and age group",
+    "downloadUrl": "/skill-files/indian-context-examples-bank.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "young-pioneers-cambridge",
+    "name": "Young Pioneers (Cambridge)",
+    "type": "Programme",
+    "usedBy": "Academics, Marketing, Sales",
+    "description": "Programme structure, Cambridge partnership, entrepreneurship pedagogy, Launchpad competition, school list, results data",
+    "downloadUrl": "/skill-files/young-pioneers-cambridge.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "videogenx",
+    "name": "VideoGenX",
+    "type": "Programme",
+    "usedBy": "Academics, Marketing, Sales",
+    "description": "AI filmmaking curriculum, Prismix Studios/Ajay Devgn context, tool stack, module structure, pilot results, jury credentials",
+    "downloadUrl": "/skill-files/videogenx.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "solevit",
+    "name": "Solevit",
+    "type": "Programme",
+    "usedBy": "Academics",
+    "description": "Problem-solving format, rubric standards, difficulty calibration, SDG alignment, past challenges, judging criteria",
+    "downloadUrl": "/skill-files/solevit.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "talk-and-learn",
+    "name": "Talk & Learn",
+    "type": "Programme",
+    "usedBy": "Academics",
+    "description": "Language development approach, discussion formats, vocabulary targets per grade, assessment rubrics",
+    "downloadUrl": "/skill-files/talk-and-learn.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "stem-robotics-ai-iit-g",
+    "name": "STEM/Robotics/AI (IIT-G)",
+    "type": "Programme",
+    "usedBy": "Academics",
+    "description": "IIT Guwahati partnership, teacher training curriculum, VEX Robotics, AI tools for schools, session formats",
+    "downloadUrl": "/skill-files/stem-robotics-ai-iit-g.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "harvard-manage-mentor",
+    "name": "Harvard Manage Mentor",
+    "type": "Programme",
+    "usedBy": "Academics",
+    "description": "Adapted Harvard frameworks for Indian teens, leadership/management concepts, case study methodology",
+    "downloadUrl": "/skill-files/harvard-manage-mentor.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "ad-copy-standards",
+    "name": "Ad Copy Standards",
+    "type": "Vertical",
+    "usedBy": "Marketing",
+    "description": "British English rules, platform character limits, A/B methodology, CTA best practices, banned phrases",
+    "downloadUrl": "/skill-files/ad-copy-standards.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "carousel-design-framework",
+    "name": "Carousel Design Framework",
+    "type": "Vertical",
+    "usedBy": "Marketing",
+    "description": "Card flow logic (hook→problem→solution→proof→CTA), visual hierarchy, copy limits, storytelling arc",
+    "downloadUrl": "/skill-files/carousel-design-framework.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "marketing-frameworks",
+    "name": "Marketing Frameworks",
+    "type": "Vertical",
+    "usedBy": "Marketing, Product",
+    "description": "5C, STP, marketing mix, Porter's 5, GTM planning, competitive positioning, consumer behaviour canon",
+    "downloadUrl": "/skill-files/marketing-frameworks.md",
+    "status": "ready"
+  },
+  {
+    "id": "consumer-behaviour",
+    "name": "Consumer Behaviour",
+    "type": "Vertical",
+    "usedBy": "Marketing, Product, Sales",
+    "description": "Motivation, perception, learning, attitudes, decision-making, diffusion of innovation, behavioural economics",
+    "downloadUrl": "/skill-files/consumer-behaviour.md",
+    "status": "ready"
+  },
+  {
+    "id": "sales-playbook",
+    "name": "Sales Playbook",
+    "type": "Vertical",
+    "usedBy": "Sales",
+    "description": "School sales cycle, decision-maker mapping, pricing conversations, pilot framework, follow-up cadence",
+    "downloadUrl": "/skill-files/sales-playbook.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "gsl-culture-and-values",
+    "name": "GSL Culture & Values",
+    "type": "Vertical",
+    "usedBy": "HR & Ops",
+    "description": "Company values, behavioural norms, what 'GSL fit' means, team culture, growth philosophy",
+    "downloadUrl": "/skill-files/gsl-culture-and-values.md",
+    "status": "coming-soon"
+  },
+  {
+    "id": "government-templates",
+    "name": "Government Templates",
+    "type": "Vertical",
+    "usedBy": "Sales, Product",
+    "description": "Official proposal formats (SSRGSP, state skill development), compliance language, scheme alignment templates",
+    "downloadUrl": "/skill-files/government-templates.md",
+    "status": "partial"
+  }
+]

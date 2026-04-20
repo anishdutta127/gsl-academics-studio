@@ -1,0 +1,172 @@
+[
+  {
+    "id": "prd-product-requirements-document",
+    "category": "Documentation",
+    "name": "PRD (Product Requirements Document)",
+    "description": "A structured product requirements document with problem statement, user stories, requirements, and success metrics.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Feature/product name",
+      "Problem statement",
+      "Target users",
+      "Success metrics",
+      "Dependencies"
+    ],
+    "role": "Senior Product Manager at an EdTech company with experience shipping B2B2C products",
+    "prompt": "You are a senior PM. Write a PRD.\n\nUPLOAD: GSL Brand Guide\n\nVARIABLES:\n- Feature/Product: [NAME]\n- Problem: [WHAT PROBLEM THIS SOLVES]\n- Users: [WHO — teachers / students / school admins / parents / internal team]\n- Timeline: [TARGET LAUNCH]\n\nSECTIONS:\n1. Overview (one paragraph — what, why, for whom)\n2. Problem statement (user pain points with evidence)\n3. Goals and success metrics (measurable KPIs with targets)\n4. User stories (As a [user], I want [action], so that [benefit] — 5-8 stories)\n5. Requirements:\n   - Must-have (P0)\n   - Should-have (P1)\n   - Nice-to-have (P2)\n6. User flow (step-by-step, numbered)\n7. Edge cases (what could go wrong, how we handle it)\n8. Dependencies and assumptions\n9. Out of scope (what this is NOT)\n10. Timeline and milestones\n\nRULES: Every requirement is testable. Every metric has a target number. User stories use actual GSL user types.",
+    "skillFiles": [
+      "GSL Brand Guide"
+    ],
+    "userProvides": [
+      "Feature/product description",
+      "user research if available",
+      "any constraints"
+    ],
+    "qualityChecklist": [
+      "Problem backed by evidence",
+      "KPIs have target numbers",
+      "User stories use real GSL user types",
+      "Requirements are testable (not vague)",
+      "Edge cases covered",
+      "Out of scope clearly stated"
+    ],
+    "outputFormat": "Word doc or Notion page",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs problem + user research",
+    "reviewer": "Product Lead / CEO (for investor content)",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "release-notes--changelog",
+    "category": "Documentation",
+    "name": "Release Notes / Changelog",
+    "description": "User-facing release notes written for non-technical audiences (teachers, coordinators, school admins).",
+    "audiences": [
+      "Teachers / Coordinators",
+      "School Principals",
+      "Internal Team"
+    ],
+    "variables": [
+      "Version",
+      "Features released",
+      "Bugs fixed",
+      "Improvements",
+      "Known issues"
+    ],
+    "role": "Technical Writer for user-facing communications in education technology",
+    "prompt": "You are a technical writer. Create release notes for version [X.Y.Z].\n\nVARIABLES:\n- Version: [X.Y.Z]\n- Date: [DATE]\n- New features: [LIST]\n- Improvements: [LIST]\n- Bug fixes: [LIST]\n\nFORMAT:\n# Version [X.Y.Z] — [DATE]\n[One-sentence summary — the headline feature]\n\n## What's new\n[Each feature: name, one-sentence what it does, who benefits]\n\n## Improvements\n[What changed and why it's better]\n\n## Bug fixes\n[What was broken and how it's fixed — user-friendly language]\n\n## Known issues\n[Anything still not working, with workaround if available]\n\nRULES: Written for teachers and school coordinators. No developer jargon. \"You can now...\" not \"Implemented feature X.\" If a bug fix is embarrassing, describe it matter-of-factly.",
+    "skillFiles": [
+      "GSL Brand Guide"
+    ],
+    "userProvides": [
+      "Version number",
+      "feature list",
+      "bug list",
+      "improvement list"
+    ],
+    "qualityChecklist": [
+      "No developer jargon",
+      "User-facing language ('you can now...')",
+      "Each feature says who benefits",
+      "Bug fixes are matter-of-fact",
+      "Known issues include workarounds"
+    ],
+    "outputFormat": "Text / Markdown / email draft",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill version + feature list",
+    "reviewer": "Product Lead / CEO (for investor content)",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "competitive-analysis",
+    "category": "Research & Strategy",
+    "name": "Competitive Analysis",
+    "description": "A structured comparison of GSL programmes against key competitors, with positioning recommendations.",
+    "audiences": [
+      "Internal Team",
+      "Investors / Board"
+    ],
+    "variables": [
+      "Competitors",
+      "Comparison criteria",
+      "Market segment",
+      "Programme"
+    ],
+    "role": "Market Research Analyst for Indian EdTech with access to public data sources",
+    "prompt": "You are a market research analyst. Create a competitive analysis.\n\nUPLOAD: Marketing Frameworks Skill File, [Programme] Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Competitors: [LIST 3-5]\n- Market segment: [K-12 STEM / Entrepreneurship / AI / Language / etc.]\n\nDELIVER:\n1. Market overview (segment size, growth, key trends)\n2. Per-competitor profile:\n   - What they offer, pricing, target audience\n   - Strengths and weaknesses\n   - Market positioning\n   - Customer sentiment (from public reviews, social media)\n3. Feature comparison matrix:\n   | Feature | GSL | Competitor 1 | Competitor 2 | ... |\n4. Positioning map (2x2 matrix — suggest axes based on market dynamics)\n5. GSL's differentiation (what we have that they don't)\n6. Gaps and opportunities (where we should invest)\n7. Strategic recommendations (3-5 actionable next steps)\n\nDATA SOURCES: Use publicly available information. Flag where data is estimated vs confirmed.",
+    "skillFiles": [
+      "Marketing Frameworks",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Competitor list",
+      "comparison criteria",
+      "programme",
+      "any internal data to include"
+    ],
+    "qualityChecklist": [
+      "All competitors covered with consistent depth",
+      "Feature matrix is fair (not just flattering to GSL)",
+      "Positioning map has justified axes",
+      "Recommendations are actionable",
+      "Data sources flagged as estimated vs confirmed"
+    ],
+    "outputFormat": "Word doc + spreadsheet matrix",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs competitor research",
+    "reviewer": "Product Lead / CEO (for investor content)",
+    "aiShare": "60%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "investor-deck-narrative-outline",
+    "category": "Investor & Board",
+    "name": "Investor Deck Narrative Outline",
+    "description": "A slide-by-slide narrative outline for investor presentations, with story beats, data requirements, and visual direction.",
+    "audiences": [
+      "Investors / Board"
+    ],
+    "variables": [
+      "Funding stage",
+      "Ask amount",
+      "Key metrics",
+      "Narrative angle",
+      "Audience type"
+    ],
+    "role": "Startup Pitch Coach who has helped edtech companies raise Series A+ funding in India",
+    "prompt": "You are a startup pitch coach. Create a narrative outline for GSL's investor deck.\n\nUPLOAD: GSL Brand Guide, PPT Standards\n\nVARIABLES:\n- Stage: [SEED / BRIDGE / SERIES A]\n- Ask: [AMOUNT]\n- Audience: [VC / FAMILY OFFICE / STRATEGIC INVESTOR]\n- Key metrics to highlight: [LIST]\n\nSLIDE-BY-SLIDE:\n| # | Narrative Beat | Headline | Content | Data Needed | Visual Direction |\n1. Title — company identity\n2. The problem — education system failing on future skills (Indian data)\n3. The solution — GSL ecosystem (not products, ecosystem)\n4. Market — TAM/SAM/SOM with Indian education data\n5. Product portfolio — programmes, partnerships, credibility\n6. Traction — schools, students, revenue, growth rate\n7. Business model — unit economics, revenue streams, margins\n8. Competitive moat — what can't be copied\n9. Team — founder story, key hires\n10. The ask — amount, use of funds, milestones\n11. Vision — where this goes in 5 years\n\nNOTE: This is the STRUCTURAL FOUNDATION. PM rebuilds with real data and design. AI cuts the narrative writing time, not the strategic thinking.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "PPT Standards"
+    ],
+    "userProvides": [
+      "Funding stage",
+      "ask",
+      "key metrics",
+      "narrative angle",
+      "any previous decks"
+    ],
+    "qualityChecklist": [
+      "Clear narrative arc (story, not just slides)",
+      "Data requirements specified per slide",
+      "TAM/SAM/SOM uses Indian education data",
+      "Moat section is honest (not generic)",
+      "Ask tied to specific milestones",
+      "Note: heavy human refinement needed (35% AI)"
+    ],
+    "outputFormat": "PPT outline + Word doc (narrative)",
+    "difficulty": "hard",
+    "difficultyNote": "Hard — needs real metrics + strategy",
+    "reviewer": "Product Lead / CEO (for investor content)",
+    "aiShare": "35%",
+    "reliability": "LOW",
+    "version": "Base v1"
+  }
+]

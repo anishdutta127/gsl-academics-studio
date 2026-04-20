@@ -1,0 +1,227 @@
+[
+  {
+    "id": "cold-email-sequence-5-emails",
+    "category": "Outreach",
+    "name": "Cold Email Sequence (5 emails)",
+    "description": "A 5-email drip sequence for school outreach with progressive engagement, social proof, and clear CTAs.",
+    "audiences": [
+      "School Principals",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Target persona",
+      "Programme",
+      "Geography",
+      "School type",
+      "Value proposition"
+    ],
+    "role": "B2B Sales Writer for Indian education sector, expert in school decision-maker psychology",
+    "prompt": "You are a B2B sales writer for Indian education. Create a 5-email sequence.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File, Sales Playbook\n\nVARIABLES:\n- Target: [PRINCIPAL / COORDINATOR / TRUSTEE] at [SCHOOL TYPE]\n- Programme: [NAME]\n- Geography: [CITY / STATE]\n- Goal: [DEMO / MEETING / PILOT]\n\nSEQUENCE:\nEmail 1 (Day 1) — CURIOSITY: Pain point + one compelling data point. No attachment. <100 words.\nEmail 2 (Day 3) — VALUE: One specific benefit with proof. Link to case study or brochure.\nEmail 3 (Day 7) — SOCIAL PROOF: \"Schools like yours\" — name 3-4 similar schools using the programme.\nEmail 4 (Day 14) — CASE STUDY: Brief before/after story from a pilot school.\nEmail 5 (Day 21) — FINAL: Gentle close. \"Is this the right time?\" Easy CTA (reply with \"Yes\" for a 15-min call).\n\nFOR EACH EMAIL:\n- Subject line (2 options: A/B test)\n- Body (<150 words)\n- CTA (one clear action)\n- Send time recommendation\n\nRULES: Professional but warm. NOT pushy. British English. No \"I hope this email finds you well.\" Personalisation tokens marked as [SCHOOL NAME], [PRINCIPAL NAME].",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "[Programme] Skill File",
+      "Sales Playbook"
+    ],
+    "userProvides": [
+      "Target persona",
+      "programme",
+      "school type",
+      "geography",
+      "any known pain points"
+    ],
+    "qualityChecklist": [
+      "Each email <150 words",
+      "Progressive engagement (not repetitive)",
+      "Social proof uses real school names",
+      "CTA is low-friction",
+      "Personalisation tokens marked",
+      "No generic openers",
+      "British English"
+    ],
+    "outputFormat": "Word doc or CRM template",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill target, programme, goal",
+    "reviewer": "Sales Lead / BD Head",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "objection-handling-scripts",
+    "category": "Outreach",
+    "name": "Objection Handling Scripts",
+    "description": "Response frameworks for the 8 most common objections in school sales, with underlying psychology and scripted responses.",
+    "audiences": [
+      "School Principals",
+      "Teachers / Coordinators",
+      "Internal Team"
+    ],
+    "variables": [
+      "Programme",
+      "Common objections",
+      "Competitive context"
+    ],
+    "role": "Sales Enablement Specialist with deep understanding of Indian school buying psychology",
+    "prompt": "You are a sales enablement specialist. Create objection handling scripts.\n\nUPLOAD: [Programme] Skill File, Sales Playbook, Competitive Analysis (if available)\n\nVARIABLES:\n- Programme: [NAME]\n- School type: [CBSE / ICSE / STATE / INTERNATIONAL]\n\nFOR EACH OBJECTION:\n1. The objection (exact words a principal would say)\n2. What they REALLY mean (the underlying concern)\n3. Response framework: ACKNOWLEDGE → REFRAME → EVIDENCE → BRIDGE\n4. Scripted response (conversational, not robotic)\n5. Follow-up question (to move the conversation forward)\n\nCOVER THESE 8 OBJECTIONS:\n1. \"We don't have budget for this\"\n2. \"Our timetable is already full\"\n3. \"We already have something similar\"\n4. \"The teachers won't adopt it\"\n5. \"Show me results first\"\n6. \"We need to discuss with the management/board\"\n7. \"We'll think about it for next year\"\n8. \"What if students don't engage?\"\n\nTONE: Respectful, never dismissive. The principal is always right to have concerns. Our job is to address them honestly.",
+    "skillFiles": [
+      "[Programme] Skill File",
+      "Sales Playbook"
+    ],
+    "userProvides": [
+      "Programme",
+      "school type",
+      "any specific competitive context"
+    ],
+    "qualityChecklist": [
+      "All 8 objections covered",
+      "'What they really mean' shows empathy",
+      "ACKNOWLEDGE step comes first (never dismissive)",
+      "Evidence is specific (school names, data)",
+      "Follow-up question keeps conversation going",
+      "Tone is respectful throughout"
+    ],
+    "outputFormat": "Word doc or one-pager PDF",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme, school type",
+    "reviewer": "Sales Lead / BD Head",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "whatsapp-message-templates",
+    "category": "Outreach",
+    "name": "WhatsApp Message Templates",
+    "description": "Short, professional WhatsApp templates for different touchpoints in the school sales cycle.",
+    "audiences": [
+      "School Principals",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Purpose",
+      "Target persona",
+      "Programme",
+      "Formality level"
+    ],
+    "role": "WhatsApp Business Communication Specialist for B2B education outreach",
+    "prompt": "You are a WhatsApp business communication specialist. Create message templates.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File\n\nVARIABLES:\n- Programme: [NAME]\n\nCREATE TEMPLATES FOR EACH PURPOSE:\n1. First introduction (cold outreach)\n2. Post-call follow-up\n3. Meeting scheduling\n4. Resource sharing (brochure, case study)\n5. Event/webinar invitation\n6. Pilot offer\n7. Thank you / post-meeting\n8. Gentle reminder (no response follow-up)\n\nFOR EACH:\n- 3 versions: Formal (principal/trustee), Semi-formal (coordinator), Casual (teacher who showed interest)\n- Each message: <80 words\n- Emoji: 1-2 max, professional only (✅, 📋, 🎓 — not 🔥💯)\n- No links in first message (WhatsApp spam filters)\n- Clear CTA\n\nRULES: Sound human, not automated. Indian English. Personalisation tokens: [NAME], [SCHOOL], [PROGRAMME].",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme",
+      "touchpoint purpose"
+    ],
+    "qualityChecklist": [
+      "All 8 purposes covered",
+      "3 formality levels each",
+      "<80 words per message",
+      "≤2 professional emoji",
+      "No links in first contact",
+      "Sounds human, not automated"
+    ],
+    "outputFormat": "Word doc (copy-paste ready)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme only",
+    "reviewer": "Sales Lead / BD Head",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "school-pitch-deck-outline",
+    "category": "Pitch Materials",
+    "name": "School Pitch Deck Outline",
+    "description": "A slide-by-slide pitch deck outline for presenting a programme to school decision-makers, with speaker notes and visual direction.",
+    "audiences": [
+      "School Principals",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Programme",
+      "School type",
+      "Decision-maker",
+      "Key selling points",
+      "Competitor comparison"
+    ],
+    "role": "B2B Pitch Deck Strategist for Indian education market",
+    "prompt": "You are a B2B pitch deck strategist. Create a slide-by-slide outline.\n\nUPLOAD: GSL Brand Guide, PPT Standards, [Programme] Skill File, Sales Playbook\n\nVARIABLES:\n- Programme: [NAME]\n- School type: [CBSE / ICSE / STATE / INTERNATIONAL]\n- Primary audience in the room: [PRINCIPAL / COORDINATOR / TRUSTEE / MIXED]\n- Meeting duration: [15 / 30 / 45] minutes\n\nSLIDES:\n| # | Slide Type | Headline | Content (3-4 bullets) | Speaker Notes | Visual |\n1. Title (programme + one-line hook)\n2. The challenge (what schools struggle with — NEP mandate, skill gap, parent pressure)\n3. Our solution (programme in 3 bullets — NOT features, but outcomes)\n4. How it works (implementation: timetable fit, teacher training, materials)\n5. What students learn (outcomes with examples of student work)\n6. Results (pilot data, school testimonials, competition winners)\n7. Who we are (GSL + partner credentials, logos)\n8. Pricing & packages (tier options, pilot offer)\n9. Next steps (clear CTA: pilot, demo, or follow-up meeting)\n\nMUST ANSWER: \"Why should we add this to our already-full school day?\"\nEach slide: headline, content bullets, speaker notes (what to SAY, not what's on screen), visual direction.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "PPT Standards",
+      "[Programme] Skill File",
+      "Sales Playbook"
+    ],
+    "userProvides": [
+      "Programme",
+      "school type",
+      "audience",
+      "meeting duration",
+      "any known school-specific concerns"
+    ],
+    "qualityChecklist": [
+      "Answers 'why add this to our full day'",
+      "Outcomes not features",
+      "Implementation is clear (timetable, training, materials)",
+      "Results use specific data",
+      "Speaker notes are conversational",
+      "CTA is specific (not 'let's talk')",
+      "≤9 slides for 15-min, ≤12 for 30-min"
+    ],
+    "outputFormat": "PPT",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs school-specific context",
+    "reviewer": "Sales Lead / BD Head",
+    "aiShare": "45%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "government-pitch-document",
+    "category": "Pitch Materials",
+    "name": "Government Pitch Document",
+    "description": "A formal government proposal aligned to specific schemes and official formatting requirements.",
+    "audiences": [
+      "Government Officials"
+    ],
+    "variables": [
+      "Government body",
+      "Scheme/initiative",
+      "Programme alignment",
+      "Geography",
+      "Official template requirements"
+    ],
+    "role": "Government Proposal Writer with experience in Indian public sector education schemes",
+    "prompt": "You are a government proposal writer familiar with Indian public sector. Create a pitch document.\n\nUPLOAD: GSL Brand Guide, NEP 2020, [Programme] Skill File, Government Templates Skill File\n\nVARIABLES:\n- Government body: [NAME — e.g., SSRGSP, MP Skill Development]\n- Scheme: [SCHEME NAME]\n- Programme: [NAME]\n- Geography: [STATE / DISTRICT]\n\nSECTIONS:\n1. Cover page (official formatting — partner logos, reference numbers)\n2. Organisation profile (GSL + partner credentials, financials)\n3. Programme description (aligned to government priorities and scheme objectives)\n4. NEP 2020 alignment (cite specific clauses and competencies)\n5. Implementation plan (phases, locations, batch sizes, timelines)\n6. Faculty and infrastructure (trainers, labs, equipment, certifications)\n7. Impact metrics (projected outcomes: students trained, placements, certifications)\n8. Budget and resource requirements (detailed line items)\n9. References, case studies, and credentials\n10. Annexures (registrations, audited financials, certificates)\n\nTONE: Formal, data-heavy, bureaucratic precision. Every claim must have evidence or a data source.\nFORMAT: Follow official template structure if available. Use proper numbering (1.1, 1.2, etc.).",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "NEP 2020",
+      "[Programme] Skill File",
+      "Government Templates"
+    ],
+    "userProvides": [
+      "Government body",
+      "scheme details",
+      "programme",
+      "geography",
+      "official template if available"
+    ],
+    "qualityChecklist": [
+      "Official formatting followed",
+      "NEP clauses cited specifically",
+      "Scheme objectives addressed directly",
+      "Implementation plan is detailed (not vague)",
+      "Budget has line items",
+      "Every claim has evidence",
+      "Formal bureaucratic tone maintained"
+    ],
+    "outputFormat": "Word doc (formal template)",
+    "difficulty": "hard",
+    "difficultyNote": "Hard — needs scheme details + template",
+    "reviewer": "Sales Lead / BD Head",
+    "aiShare": "35%",
+    "reliability": "LOW",
+    "version": "Base v1"
+  }
+]

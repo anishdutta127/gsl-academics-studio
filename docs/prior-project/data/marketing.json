@@ -1,0 +1,286 @@
+[
+  {
+    "id": "gtm-plan",
+    "category": "Campaign Strategy",
+    "name": "GTM Plan",
+    "description": "A complete go-to-market plan with positioning, personas, channel strategy, content calendar, and KPIs for a programme launch.",
+    "audiences": [
+      "School Principals",
+      "Parents",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Programme",
+      "Target segment",
+      "Budget range",
+      "Launch timeline",
+      "Geography",
+      "Competitive landscape"
+    ],
+    "role": "EdTech Growth Strategist with deep India market expertise and performance marketing background",
+    "prompt": "You are an edtech growth strategist for the Indian K-12 market. Create a GTM plan.\n\nUPLOAD: GSL Brand Guide, Marketing Frameworks Skill File, [Programme] Skill File, Consumer Behaviour Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Primary audience: [SCHOOL PRINCIPALS / PARENTS / BOTH]\n- Geography: [PAN-INDIA / SPECIFIC STATES]\n- Budget: [RANGE]\n- Timeline: [X weeks to launch]\n- Key competitors: [LIST]\n\nDELIVER:\n1. Positioning statement (one sentence: For [audience] who [need], [programme] is [category] that [benefit] unlike [alternatives])\n2. Audience personas (2-3 detailed personas)\n3. Channel strategy:\n   - Paid: Meta, Google, WhatsApp Business\n   - Organic: SEO, social, email, WhatsApp groups\n   - Offline: school visits, events, referrals\n4. Content calendar (first 4 weeks, per channel)\n5. KPIs per funnel stage (awareness → consideration → conversion)\n6. Budget allocation recommendation\n7. Competitive differentiation matrix\n\nRULES: British English. No em dashes. No corporate jargon. Data-backed where possible.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Marketing Frameworks",
+      "Consumer Behaviour",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme details",
+      "budget",
+      "timeline",
+      "geography",
+      "known competitors"
+    ],
+    "qualityChecklist": [
+      "Clear positioning statement",
+      "Personas feel like real people",
+      "Channel strategy covers paid + organic + offline",
+      "4-week content calendar with specific post ideas",
+      "KPIs are measurable",
+      "Budget allocation justified",
+      "British English throughout"
+    ],
+    "outputFormat": "Word doc or Notion page",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs programme + market data",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "meta-ad-copy-10-variations",
+    "category": "Ad & Content",
+    "name": "Meta Ad Copy (10 Variations)",
+    "description": "10 ad copy variations for Meta (Facebook/Instagram) with A/B testing logic, platform-specific formatting, and CTA options.",
+    "audiences": [
+      "School Principals",
+      "Parents",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Programme",
+      "Campaign objective",
+      "Target persona",
+      "Format (static/carousel/video/reel)",
+      "Platform"
+    ],
+    "role": "Performance Marketing Copywriter for Indian EdTech, expert in Meta ad formats and A/B testing",
+    "prompt": "You are a performance marketing copywriter. Generate 10 Meta ad variations.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File, Ad Copy Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Objective: [AWARENESS / TRAFFIC / LEADS / CONVERSIONS]\n- Audience: [PERSONA — e.g., \"Urban school principal, Tier 1 city, progressive school\"]\n- Format: [STATIC / CAROUSEL / VIDEO / REEL]\n- Platform: [FACEBOOK FEED / INSTAGRAM FEED / STORIES / REELS]\n\nFOR EACH VARIATION:\n| # | Primary Text | Headline | Description | CTA Button | A/B Tag | Visual Direction |\nCharacter limits: Primary 125 chars (feed), Headline 40 chars, Description 30 chars\n\nVARIATION MIX:\n- 2× Social proof (school names, student count, results)\n- 2× Benefit-led (what students/schools gain)\n- 2× Problem-agitate (what they're missing out on)\n- 2× Urgency (limited spots, deadline, early bird)\n- 1× Testimonial format (quote from principal/parent)\n- 1× Question hook (start with a compelling question)\n\nRULES: British English. No em dashes. No exclamation marks in headlines. Each variation tests ONE variable.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Ad Copy Skill File",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme",
+      "campaign objective",
+      "target persona",
+      "format",
+      "any existing ad performance data"
+    ],
+    "qualityChecklist": [
+      "10 distinct variations (not just word swaps)",
+      "Character limits respected",
+      "Each tests one variable (clear A/B logic)",
+      "Mix of angles: social proof, benefit, urgency, question",
+      "British English",
+      "No em dashes or exclamation marks in headlines",
+      "Visual direction for each"
+    ],
+    "outputFormat": "Spreadsheet (one row per variation)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme, audience, format",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "carousel-ad-creative-set",
+    "category": "Ad & Content",
+    "name": "Carousel Ad Creative Set",
+    "description": "A 5-7 card carousel with story arc, per-card copy, and visual direction. Multiple audience versions.",
+    "audiences": [
+      "School Principals",
+      "Parents"
+    ],
+    "variables": [
+      "Programme",
+      "Platform",
+      "Goal",
+      "Number of cards",
+      "Audience version (principal vs parent)"
+    ],
+    "role": "Carousel Content Strategist specialising in educational brand storytelling",
+    "prompt": "You are a carousel content strategist. Design a carousel ad set.\n\nUPLOAD: GSL Brand Guide, Ad Copy Skill File, Carousel Skill File, [Programme] Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Platform: [INSTAGRAM / FACEBOOK / LINKEDIN]\n- Goal: [AWARENESS / CONSIDERATION / CONVERSION]\n- Cards: [5 / 6 / 7]\n\nFOR EACH CARD:\n| Card # | Role in Story | Headline (≤8 words) | Body (≤20 words) | Visual Direction | Design Notes |\n\nSTORY ARC:\nCard 1: HOOK — stop the scroll (question, bold stat, or provocative statement)\nCard 2: PROBLEM — what's broken in education today\nCard 3: SOLUTION — what this programme does differently\nCard 4: PROOF — results, school names, student outcomes\nCard 5: HOW — how it works (3 simple steps)\nCard 6-7: CTA — what to do next + urgency\n\nCREATE 2 VERSIONS:\nVersion A: For school principals (focus: curriculum, NEP, timetable fit, outcomes)\nVersion B: For parents (focus: child's future, skills, confidence, real-world learning)\n\nRULES: British English. Final card has ONE clear CTA. No card should make sense without the previous one (force swipe).",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Ad Copy Skill File",
+      "Carousel Skill File",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme",
+      "platform",
+      "goal",
+      "target audience"
+    ],
+    "qualityChecklist": [
+      "Story arc is clear (hook → problem → solution → proof → CTA)",
+      "Each card forces a swipe to the next",
+      "Final card has exactly one CTA",
+      "Two audience versions are distinct (not just word swaps)",
+      "≤8 words per headline, ≤20 per body",
+      "British English throughout"
+    ],
+    "outputFormat": "Word doc with card-by-card layout",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme, platform, goal",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "blog-post--article",
+    "category": "Ad & Content",
+    "name": "Blog Post / Article",
+    "description": "An SEO-optimised article with structured sections, Indian context, and a natural CTA. For the GSL blog or external publications.",
+    "audiences": [
+      "Parents",
+      "School Principals",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Topic",
+      "Audience",
+      "SEO keywords",
+      "Word count",
+      "CTA",
+      "Publication context"
+    ],
+    "role": "EdTech Content Writer with SEO expertise and deep understanding of Indian education landscape",
+    "prompt": "You are an edtech content writer. Write a blog post.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File (if programme-specific)\n\nVARIABLES:\n- Title: [TITLE]\n- Audience: [PARENTS / EDUCATORS / SCHOOL LEADERS]\n- Primary keyword: [KEYWORD]\n- Secondary keywords: [2-3 KEYWORDS]\n- Word count: [800 / 1200 / 1500]\n- CTA: [WHAT ACTION — demo booking, download, contact, enrol]\n\nSTRUCTURE:\n1. Hook paragraph (connect to a pain point the audience feels today)\n2. The problem (why the status quo isn't working — with Indian data if available)\n3. Why it matters now (NEP 2020, industry trends, parent expectations)\n4. The solution (naturally introduce the GSL programme — NOT a sales pitch)\n5. Evidence (data, case studies, student outcomes, school testimonials)\n6. Actionable takeaway (something the reader can do today, even without GSL)\n7. CTA (natural, one sentence, with link placeholder)\n\nSEO: Primary keyword in title, first 100 words, one H2, and conclusion. Secondary keywords in H2s and body. Meta description (155 chars).\n\nTONE: Informative, warm, expert but not academic. British English. Short paragraphs (3-4 sentences max). Subheadings every 200-250 words.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "[Programme] Skill File",
+      "SEO Guidelines"
+    ],
+    "userProvides": [
+      "Title",
+      "audience",
+      "keywords",
+      "word count",
+      "CTA",
+      "any data/stats to include"
+    ],
+    "qualityChecklist": [
+      "Hook connects to real pain point",
+      "NOT a sales pitch (value-first)",
+      "Indian data/examples included",
+      "SEO: keyword in title, first 100 words, H2, conclusion",
+      "Meta description included",
+      "CTA is natural (not forced)",
+      "British English, short paragraphs"
+    ],
+    "outputFormat": "Word doc or CMS draft (HTML)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill title, audience, keywords",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "programme-brochure-copy",
+    "category": "Collateral",
+    "name": "Programme Brochure Copy",
+    "description": "Complete copy for a 4-8 page programme brochure with sections for overview, features, how it works, results, and CTA.",
+    "audiences": [
+      "School Principals",
+      "Parents",
+      "Partners (Cambridge / IIT-G / Prismix)"
+    ],
+    "variables": [
+      "Programme",
+      "Page count",
+      "Audience",
+      "Design template reference"
+    ],
+    "role": "Brochure Copywriter for premium education brands in India",
+    "prompt": "You are a brochure copywriter for premium education brands. Write brochure copy.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Pages: [4 / 6 / 8]\n- Primary audience: [PRINCIPALS / PARENTS / BOTH]\n- Partner: [CAMBRIDGE / IIT-G / PRISMIX / NONE]\n\nSECTIONS (adapt to page count):\n- Cover: Headline + tagline + partner logo placement note\n- Programme overview: What it is, who it's for, why now\n- Key features: 4-6 features with headlines and 2-line descriptions\n- How it works: Timeline or step-by-step (implementation for principals, student journey for parents)\n- Results: Numbers, testimonials, school logos, competition winners\n- Partner credentials: Why this partnership matters\n- FAQ: 5 questions principals/parents actually ask\n- Back cover: CTA + contact details + QR code placeholder\n\nDELIVER: For each section: headline, body copy, callout text, visual direction notes.\n\nTONE: Premium but accessible. Confident but not boastful. British English.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme",
+      "page count",
+      "audience",
+      "partner details",
+      "any stats/testimonials to include"
+    ],
+    "qualityChecklist": [
+      "Every section has headline + body + visual direction",
+      "Consistent tone throughout",
+      "FAQ answers real questions (not softballs)",
+      "CTA is clear and specific",
+      "Partner credentials positioned correctly",
+      "British English, no em dashes"
+    ],
+    "outputFormat": "Word doc (section-by-section)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme, pages, audience",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "landing-page-copy",
+    "category": "Collateral",
+    "name": "Landing Page Copy",
+    "description": "Conversion-optimised landing page copy with hero, problem, solution, social proof, FAQ, and CTA sections.",
+    "audiences": [
+      "School Principals",
+      "Parents"
+    ],
+    "variables": [
+      "Programme",
+      "Goal (leads/demos/enrolment)",
+      "Audience",
+      "SEO keywords"
+    ],
+    "role": "Conversion Copywriter specialising in edtech landing pages",
+    "prompt": "You are a conversion copywriter. Write landing page copy.\n\nUPLOAD: GSL Brand Guide, [Programme] Skill File, Marketing Frameworks Skill File\n\nVARIABLES:\n- Programme: [NAME]\n- Goal: [LEAD GEN / DEMO BOOKING / ENROLMENT]\n- Audience: [PRINCIPALS / PARENTS]\n- SEO: [PRIMARY KEYWORD]\n\nSECTIONS:\n1. Hero: Headline (≤10 words) + sub-headline + primary CTA\n2. Problem: Why the old way isn't working (2-3 pain points)\n3. Solution: Programme benefits (NOT features — what changes for the student/school)\n4. How it works: 3-step process (simple, visual-ready)\n5. Social proof: Testimonials, school logos, numbers (200+ schools, X students, etc.)\n6. For principals: NEP alignment, timetable fit, no teacher burden\n7. FAQ: 5 real questions with honest answers\n8. Final CTA: Urgency element + button text + form fields needed\n\nMOBILE-FIRST: Short paragraphs. No paragraph longer than 3 lines on mobile. Every section must work standalone (people scroll, they don't read top-to-bottom).",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "[Programme] Skill File",
+      "Marketing Frameworks"
+    ],
+    "userProvides": [
+      "Programme",
+      "goal",
+      "audience",
+      "any testimonials/data to include"
+    ],
+    "qualityChecklist": [
+      "Hero headline ≤10 words",
+      "Benefits, not features",
+      "3-step 'how it works'",
+      "Social proof with specifics (not vague)",
+      "FAQ answers honestly",
+      "Mobile-first paragraph length",
+      "Clear CTA with urgency"
+    ],
+    "outputFormat": "Word doc (section-by-section)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill programme, goal, audience",
+    "reviewer": "Marketing Lead / Brand Manager",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  }
+]

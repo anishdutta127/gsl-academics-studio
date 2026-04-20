@@ -1,0 +1,47 @@
+[
+  {
+    "id": "academics",
+    "name": "Academics",
+    "icon": "GraduationCap",
+    "color": "#073393",
+    "lightColor": "#E8ECF7",
+    "description": "Curriculum, lesson plans, assessments, programme content, and teacher training",
+    "taskCount": 11
+  },
+  {
+    "id": "marketing",
+    "name": "Marketing",
+    "icon": "Megaphone",
+    "color": "#00D8B9",
+    "lightColor": "#E0F7F1",
+    "description": "Campaign strategy, ad copy, content creation, and collateral",
+    "taskCount": 7
+  },
+  {
+    "id": "sales",
+    "name": "Sales",
+    "icon": "Handshake",
+    "color": "#F5A623",
+    "lightColor": "#FFF8EB",
+    "description": "School outreach, pitch materials, and partnership proposals",
+    "taskCount": 5
+  },
+  {
+    "id": "product",
+    "name": "Product",
+    "icon": "Lightbulb",
+    "color": "#7B61FF",
+    "lightColor": "#F0ECFF",
+    "description": "PRDs, research, competitive analysis, and investor materials",
+    "taskCount": 4
+  },
+  {
+    "id": "hr-ops",
+    "name": "HR & Ops",
+    "icon": "Users",
+    "color": "#FF6B6B",
+    "lightColor": "#FFE8E8",
+    "description": "Recruitment, onboarding, SOPs, and company policies",
+    "taskCount": 5
+  }
+]

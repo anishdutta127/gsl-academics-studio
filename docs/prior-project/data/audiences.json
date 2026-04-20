@@ -1,0 +1,90 @@
+[
+  {
+    "id": "students-grade-3-5",
+    "name": "Students (Grade 3-5)",
+    "age": "Ages 8-10",
+    "languageLevel": "Very simple English, short sentences, lots of visuals",
+    "careAbout": "Fun, stories, games, colours, animals, friendship, simple fairness",
+    "guardrails": "No complex data, no abstract concepts, no scary/violent themes, max 15-min attention blocks"
+  },
+  {
+    "id": "students-grade-6-8",
+    "name": "Students (Grade 6-8)",
+    "age": "Ages 11-13",
+    "languageLevel": "Simple English, can handle some new vocabulary with definitions",
+    "careAbout": "Identity, belonging, competition, technology, sports, social media, basic fairness/justice",
+    "guardrails": "No graphic content, introduce data gently, pair abstract concepts with concrete examples"
+  },
+  {
+    "id": "students-grade-9-10",
+    "name": "Students (Grade 9-10)",
+    "age": "Ages 14-15",
+    "languageLevel": "Moderate complexity, can handle structured arguments",
+    "careAbout": "Career, identity, social issues, technology, entrepreneurship, college prep, peer pressure",
+    "guardrails": "Can handle real-world problems but frame constructively, avoid political polarisation"
+  },
+  {
+    "id": "students-grade-11-12",
+    "name": "Students (Grade 11-12)",
+    "age": "Ages 16-17",
+    "languageLevel": "Near-adult complexity, can handle nuance",
+    "careAbout": "College, careers, independence, global issues, startups, internships, competitive exams",
+    "guardrails": "Treat as young adults, can handle ambiguity and debate, avoid condescension"
+  },
+  {
+    "id": "parents",
+    "name": "Parents",
+    "age": "Adults, varied education levels",
+    "languageLevel": "Clear, jargon-free, relatable",
+    "careAbout": "Child's future, skills for jobs, safety, ROI of education, peer comparison, school reputation",
+    "guardrails": "Don't talk down, respect their concerns, use aspirational but honest language"
+  },
+  {
+    "id": "school-principals",
+    "name": "School Principals",
+    "age": "Educators, 15-30 years experience",
+    "languageLevel": "Professional, education terminology OK",
+    "careAbout": "NEP compliance, parent satisfaction, school ranking, timetable impact, teacher burden, measurable outcomes",
+    "guardrails": "Respect their expertise, don't oversell, address implementation honestly"
+  },
+  {
+    "id": "teachers--coordinators",
+    "name": "Teachers / Coordinators",
+    "age": "Educators, 5-20 years experience",
+    "languageLevel": "Professional, practical, activity-focused",
+    "careAbout": "Workload, student engagement, classroom management, professional development, recognition",
+    "guardrails": "Be practical (not theoretical), respect their time, offer ready-to-use materials"
+  },
+  {
+    "id": "government-officials",
+    "name": "Government Officials",
+    "age": "Bureaucrats, policy-makers",
+    "languageLevel": "Formal, data-heavy, scheme-aligned",
+    "careAbout": "Scheme targets, budget utilisation, scalability, political optics, compliance, employment outcomes",
+    "guardrails": "Official formatting, cite policies by number, data-backed claims only"
+  },
+  {
+    "id": "investors--board",
+    "name": "Investors / Board",
+    "age": "Finance/business professionals",
+    "languageLevel": "Business language, metrics-focused",
+    "careAbout": "Market size, growth rate, unit economics, moat, team quality, exit potential",
+    "guardrails": "Be precise with numbers, honest about challenges, show trajectory not just current state"
+  },
+  {
+    "id": "partners-cambridge-iit-g-prismix",
+    "name": "Partners (Cambridge/IIT-G/Prismix)",
+    "age": "Academic/industry professionals",
+    "languageLevel": "Domain-specific, peer-level",
+    "careAbout": "Quality standards, brand alignment, mutual value, IP clarity, reporting",
+    "guardrails": "Treat as equals, reference their standards, demonstrate credibility"
+  },
+  {
+    "id": "internal-team",
+    "name": "Internal Team",
+    "age": "GSL employees, varied levels",
+    "languageLevel": "Informal-professional, GSL terminology OK",
+    "careAbout": "Clarity, actionability, role-relevance, growth, efficiency",
+    "guardrails": "Be direct, no corporate fluff, actionable over aspirational"
+  }
+]

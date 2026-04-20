@@ -1,0 +1,540 @@
+[
+  {
+    "id": "course-outline",
+    "category": "Curriculum Design",
+    "name": "Course Outline",
+    "description": "A full course outline with module breakdown, learning outcomes, Bloom's progression, assessment plan, and SDG/NEP alignment. Used as the master plan for any new programme or course.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Grade level",
+      "Programme (Young Pioneers / VideoGenX / Solevit / STEM-IIT-G / Harvard MM / Talk & Learn)",
+      "Duration (term / year / bootcamp)",
+      "School type (urban / semi-urban / rural)",
+      "Partner standards"
+    ],
+    "role": "Senior Curriculum Designer with 15+ years in Indian K-12 education, expert in NEP 2020, backward design, and constructive alignment",
+    "prompt": "You are a senior curriculum designer specialising in Indian K-12 education. Create a complete course outline.\n\nCONTEXT (upload these files first):\n- GSL Brand Guide\n- NEP 2020 Skill File\n- [Programme] Skill File (e.g., Young Pioneers, VideoGenX)\n- Bloom's Taxonomy Reference\n- Age-Appropriateness Guidelines\n\nFILL THESE VARIABLES:\n- Programme: [NAME]\n- Grade: [X]\n- Duration: [TERM / YEAR / 40-HOUR BOOTCAMP]\n- Sessions: [NUMBER] sessions × [DURATION] each\n- School type: [URBAN / SEMI-URBAN / RURAL]\n- Partner: [CAMBRIDGE / IIT-G / HARVARD / PRISMIX / NONE]\n\nPRODUCE:\n1. Course overview (2-3 sentences positioning the course)\n2. 3-5 programme-level learning outcomes mapped to NEP 2020 competencies\n3. Module breakdown table:\n   | Module | Sessions | Key Topics | Learning Outcomes (Bloom's verb) | Assessment | SDG |\n4. Bloom's progression map showing how the course moves from Remember/Understand in early modules to Analyse/Create in later ones\n5. Assessment calendar (formative touchpoints + summative milestones)\n6. Prerequisites and assumed prior knowledge\n7. Resources and materials list\n\nRULES:\n- Language must be age-appropriate for Grade [X] per the Age Guidelines\n- Every module must have at least one Indian-context example\n- Constructive alignment: every assessment must directly test a stated learning outcome\n- Progressive disclosure: early modules scaffold, later modules challenge",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "NEP 2020",
+      "Bloom's Taxonomy",
+      "Gagné's 9 Events",
+      "Age Guidelines",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Programme name",
+      "grade level",
+      "duration",
+      "session count",
+      "school type",
+      "any existing course materials to reference"
+    ],
+    "qualityChecklist": [
+      "Learning outcomes are measurable (Bloom's verbs, not vague)",
+      "NEP 2020 competencies tagged per module",
+      "SDG alignment is genuine (not forced)",
+      "Age-appropriate language verified",
+      "Constructive alignment: assessment ↔ outcomes ↔ activities",
+      "Indian context in every module",
+      "Progressive difficulty (not flat)"
+    ],
+    "outputFormat": "Word doc / Google Doc",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — fill 6 variables, upload 5 files",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "scope-and-sequence",
+    "category": "Curriculum Design",
+    "name": "Scope & Sequence",
+    "description": "A session-by-session breakdown of an entire course — the detailed teaching roadmap. Maps every session to topics, Bloom's levels, teaching methods, resources, and assessments.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Grade",
+      "Programme",
+      "Term structure",
+      "Total sessions",
+      "Session duration",
+      "Assessment calendar"
+    ],
+    "role": "Curriculum Architect specialising in scope & sequence planning for Indian K-12",
+    "prompt": "You are a curriculum architect. Create a detailed scope & sequence document.\n\nUPLOAD: GSL Brand Guide, NEP 2020, Bloom's Taxonomy, [Programme] Skill File, Age Guidelines\nALSO UPLOAD: The approved course outline for this programme (if available)\n\nVARIABLES:\n- Programme: [NAME]\n- Grade: [X]\n- Term: [TERM 1 / TERM 2 / FULL YEAR]\n- Sessions: [NUMBER] × [DURATION]\n\nFOR EACH SESSION, CREATE A ROW:\n| Session # | Title | Key Concepts | Sub-topics | Learning Objectives (Bloom's verb + content) | Teaching Method | Resources Needed | Assessment (if any) | NEP Tag | SDG | Homework/Extension |\n\nRULES:\n- First 2 sessions: foundational — recap, set expectations, build vocabulary\n- Middle sessions: application and guided practice\n- Final 2-3 sessions: creation, evaluation, showcase/presentation\n- Every 4-5 sessions: one formative assessment checkpoint\n- Include 1 buffer session per term for catch-up\n- Flag sessions that need special materials or guest speakers\n- Progressive difficulty must be visible session-to-session",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "NEP 2020",
+      "Bloom's Taxonomy",
+      "Age Guidelines",
+      "[Programme] Skill File",
+      "Course Outline (if exists)"
+    ],
+    "userProvides": [
+      "Approved course outline",
+      "grade",
+      "term structure",
+      "any fixed dates (exams",
+      "holidays)"
+    ],
+    "qualityChecklist": [
+      "Every session has a measurable learning objective",
+      "Bloom's progression is visible across sessions",
+      "Assessment touchpoints every 4-5 sessions",
+      "Buffer sessions included",
+      "Resources are specific (not just 'handout')",
+      "No two consecutive sessions use the same teaching method"
+    ],
+    "outputFormat": "Spreadsheet (Excel) or Word table",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs course outline first",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "70%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "lesson-plan-single-session",
+    "category": "Content Creation",
+    "name": "Lesson Plan (Single Session)",
+    "description": "A detailed minute-by-minute lesson plan structured around Gagné's 9 Events of Instruction. Ready for any facilitator to pick up and deliver.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Grade",
+      "Programme",
+      "Session topic",
+      "Duration (45 min / 90 min)",
+      "Prior knowledge assumed",
+      "Facilitator experience level"
+    ],
+    "role": "Master Teacher and Instructional Designer with deep knowledge of Gagné's 9 Events of Instruction and Indian K-12 pedagogy",
+    "prompt": "You are a master teacher and instructional designer. Create a lesson plan.\n\nUPLOAD: GSL Brand Guide, Gagné's 9 Events, NEP 2020, Age Guidelines, [Programme] Skill File\n\nVARIABLES:\n- Topic: [TOPIC]\n- Programme: [NAME]\n- Grade: [X]\n- Duration: [45 / 90] minutes\n- Prior knowledge: [WHAT STUDENTS ALREADY KNOW]\n- Facilitator: [NEW / EXPERIENCED]\n\nSTRUCTURE USING GAGNÉ'S 9 EVENTS:\n\n| Time | Event | What Happens | Teacher Does | Students Do | Materials |\n|------|-------|-------------|-------------|------------|-----------|\n| 0-3 min | 1. Gain Attention | Engaging hook | [Story / question / demo / video] | React, discuss | |\n| 3-5 min | 2. Inform Objectives | State outcomes | Share \"by end of today you will...\" | Listen | |\n| 5-8 min | 3. Stimulate Recall | Connect to prior knowledge | Ask linking questions | Share what they remember | |\n| 8-25 min | 4. Present Content | Core teaching | Explain, demonstrate | Listen, take notes, ask | [Slides/handout] |\n| 8-25 min | 5. Provide Guidance | Worked examples | Model the process | Follow along | |\n| 25-35 min | 6. Elicit Performance | Student practice | Circulate, support | Do the activity | [Worksheet] |\n| 35-40 min | 7. Provide Feedback | Check understanding | Correct, affirm | Self-assess | |\n| 40-43 min | 8. Assess Performance | Quick check | Observe / quiz | Demonstrate learning | |\n| 43-45 min | 9. Enhance Transfer | Real-world connection | Link to life, preview next | Reflect | |\n\nALSO INCLUDE:\n- Materials checklist (everything the teacher needs to prepare)\n- Differentiation notes: what to do for advanced learners / struggling learners\n- 3 likely student questions and how to answer them\n- Facilitator tips (especially if facilitator is new to this topic)\n- Emergency backup activity (if tech fails / activity finishes early)\n\nLANGUAGE: Age-appropriate for Grade [X]. Indian examples. Simple English.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Gagné's 9 Events",
+      "NEP 2020",
+      "Age Guidelines",
+      "[Programme] Skill File",
+      "Bloom's Taxonomy"
+    ],
+    "userProvides": [
+      "Session topic",
+      "grade",
+      "duration",
+      "what students already know",
+      "any specific materials available"
+    ],
+    "qualityChecklist": [
+      "All 9 Gagné events present and timed",
+      "Timings add up to the session duration",
+      "Student DO something (not just listen) for 40%+ of time",
+      "Materials checklist is complete and specific",
+      "Differentiation included",
+      "Indian context examples used",
+      "Language matches grade level"
+    ],
+    "outputFormat": "Word doc (print-ready)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill topic, grade, duration",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "60%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "activity-sheet--worksheet",
+    "category": "Content Creation",
+    "name": "Activity Sheet / Worksheet",
+    "description": "A student-facing activity sheet with progressive difficulty, clear instructions, and a mix of question types. Print-ready or digital.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Grade",
+      "Topic",
+      "Activity type (individual / group / pair)",
+      "Duration",
+      "Difficulty",
+      "Programme"
+    ],
+    "role": "Activity Designer for Indian K-12 students, expert in progressive scaffolding",
+    "prompt": "You are an activity designer for K-12 students. Create an engaging activity sheet.\n\nUPLOAD: GSL Brand Guide, Age Guidelines, [Programme] Skill File\n\nVARIABLES:\n- Topic: [TOPIC]\n- Programme: [NAME]\n- Grade: [X]\n- Duration: [15 / 20 / 30] minutes\n- Type: [INDIVIDUAL / PAIR / GROUP OF 4]\n- Difficulty: [INTRODUCTORY / INTERMEDIATE / ADVANCED]\n\nSTRUCTURE:\n1. Title and one-line instruction (what students will do)\n2. Warm-up (1-2 easy questions to build confidence)\n3. Core activities (4-6 questions/tasks, progressive difficulty):\n   - Start with recall/recognition (MCQ, match, fill-blank)\n   - Move to application (solve, calculate, apply)\n   - End with creation/opinion (design, argue, invent)\n4. Extension challenge (for fast finishers — clearly marked as bonus)\n5. Self-reflection box: \"One thing I learned today\" / \"One question I still have\"\n\nRULES:\n- Written FOR THE STUDENT — not for the teacher\n- Clear numbered steps — a student should never wonder \"what do I do next?\"\n- Leave adequate space for written answers (specify line count)\n- All examples use Indian names, Indian contexts\n- Language matches Grade [X] reading level\n- Include visual elements where possible (tables, diagrams, boxes to fill)\n- No trick questions",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Age Guidelines",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Topic",
+      "grade",
+      "duration",
+      "individual or group",
+      "difficulty level"
+    ],
+    "qualityChecklist": [
+      "Instructions are student-facing (not teacher language)",
+      "Progressive difficulty visible",
+      "Mix of question types (not all MCQ)",
+      "Age-appropriate language and references",
+      "Adequate answer space",
+      "Extension challenge included",
+      "Self-reflection present"
+    ],
+    "outputFormat": "Word doc or PDF (print-ready)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill topic, grade, type",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "teacher-manual--facilitator-guide",
+    "category": "Content Creation",
+    "name": "Teacher Manual / Facilitator Guide",
+    "description": "A comprehensive guide for facilitators delivering a full programme. Includes session-by-session facilitation scripts, preparation checklists, FAQs, and differentiation strategies.",
+    "audiences": [
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Programme",
+      "Number of sessions",
+      "Facilitator experience level",
+      "School type"
+    ],
+    "role": "Teacher Training Expert with 10+ years facilitating K-12 programmes in Indian schools",
+    "prompt": "You are a teacher training expert. Create a facilitator guide for a full programme.\n\nUPLOAD: GSL Brand Guide, Gagné's 9 Events, [Programme] Skill File, Age Guidelines, Course Outline\n\nVARIABLES:\n- Programme: [NAME]\n- Grade: [X]\n- Sessions: [NUMBER]\n- Facilitator level: [FIRST-TIME / EXPERIENCED]\n\nFOR EACH SESSION:\n1. Session overview (objectives, duration, materials)\n2. Preparation checklist (what to do the day before)\n3. Facilitation script with:\n   - Opening routine (how to start every session consistently)\n   - Transition phrases (scripted bridges between activities)\n   - Key questions to ask (with expected student responses)\n   - Common student questions and how to answer them\n4. Differentiation guide:\n   - If students finish early: [extension]\n   - If students struggle: [scaffolding approach]\n   - If tech fails: [backup activity]\n5. Assessment notes (what to observe, how to record)\n\nALSO INCLUDE:\n- Programme overview section (for the facilitator to understand the big picture)\n- \"Your first week\" quick-start guide\n- Troubleshooting FAQ (15 common situations and how to handle them)\n- Student engagement techniques library (10 techniques with when to use each)\n\nTONE: Supportive, practical, assumes the facilitator may be delivering this for the first time.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "Gagné's 9 Events",
+      "Age Guidelines",
+      "[Programme] Skill File",
+      "Course Outline",
+      "Scope & Sequence"
+    ],
+    "userProvides": [
+      "Programme name",
+      "session count",
+      "target grade",
+      "any existing materials"
+    ],
+    "qualityChecklist": [
+      "Every session has a preparation checklist",
+      "Scripted transitions between activities",
+      "Differentiation for 3 levels (advanced/on-track/struggling)",
+      "FAQ section with 15+ real situations",
+      "New facilitator could deliver this without additional training",
+      "Consistent opening/closing routine across sessions"
+    ],
+    "outputFormat": "Word doc (multi-page)",
+    "difficulty": "hard",
+    "difficultyNote": "Hard — needs full course materials",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "55%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "young-pioneers-case-study",
+    "category": "Programme Content",
+    "name": "Young Pioneers Case Study",
+    "description": "An entrepreneurship case study with a narrative, data pack, discussion questions, and hands-on activity. Teaches a specific business concept through a real or realistic startup story.",
+    "audiences": [
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Industry/theme",
+      "Entrepreneurship concept",
+      "Grade",
+      "Difficulty",
+      "Cambridge assessment criteria"
+    ],
+    "role": "Business Case Writer for teen audiences, expert in Indian startup ecosystem and Cambridge entrepreneurship pedagogy",
+    "prompt": "You are a business case writer for teens. Create a Young Pioneers case study.\n\nUPLOAD: Young Pioneers Skill File, GSL Brand Guide, Age Guidelines, Cambridge Standards, Bloom's Taxonomy\n\nVARIABLES:\n- Theme/Industry: [e.g., sustainable fashion, food delivery, edtech]\n- Concept to teach: [e.g., market validation, MVP testing, unit economics, customer discovery]\n- Grade: [X]\n- Difficulty: [INTRODUCTORY / INTERMEDIATE / ADVANCED]\n\nSTRUCTURE:\n1. THE STORY (300-400 words)\n   - Protagonist: Indian teen or young founder (relatable)\n   - Setting: Recognisable Indian context\n   - The idea, the first attempt, the obstacle\n   - Written as a narrative, not a textbook passage\n\n2. DATA PACK (visual-ready)\n   - 2-3 data points: market size, customer survey results, basic P&L\n   - Presented as simple tables or infographic-ready numbers\n   - Age-appropriate complexity\n\n3. DISCUSSION QUESTIONS (6 questions, Bloom's progression)\n   - Q1-2: Remember/Understand (what happened, who was involved)\n   - Q3-4: Apply/Analyse (what would you do differently, why did X fail)\n   - Q5-6: Evaluate/Create (design your own solution, pitch an alternative)\n\n4. HANDS-ON ACTIVITY (20-30 min)\n   - Build a pitch / design a solution / calculate unit economics / interview classmates\n   - Clear deliverable the student produces\n\n5. TEACHER NOTES\n   - Key learning point (one sentence)\n   - Common student misconceptions\n   - Extension: connect to a real Indian startup\n\nTONE: Exciting, conversational, story-first. Must NOT feel like a textbook.",
+    "skillFiles": [
+      "Young Pioneers Skill File",
+      "GSL Brand Guide",
+      "Age Guidelines",
+      "Cambridge Standards",
+      "Bloom's Taxonomy"
+    ],
+    "userProvides": [
+      "Theme",
+      "entrepreneurship concept",
+      "grade",
+      "difficulty"
+    ],
+    "qualityChecklist": [
+      "Story is narrative (not textbook)",
+      "Indian protagonist and context",
+      "Data pack is age-appropriate",
+      "Bloom's progression in questions",
+      "Hands-on activity has a clear deliverable",
+      "Teacher notes include misconceptions",
+      "Concept is taught through the story, not bolted on"
+    ],
+    "outputFormat": "Word doc with data tables",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill theme, grade, concept",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "videogenx-module-deck-and-script",
+    "category": "Programme Content",
+    "name": "VideoGenX Module Deck & Script",
+    "description": "A slide deck outline with instructor script for one VideoGenX module. Covers AI filmmaking concepts, tool demos, and hands-on exercises.",
+    "audiences": [
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Module number",
+      "Topic",
+      "Tools covered (Runway / Kling / Sora / Pika)",
+      "Session duration",
+      "Prior module recap"
+    ],
+    "role": "AI Filmmaking Educator and Instructional Designer with production industry experience",
+    "prompt": "You are an AI filmmaking educator. Create a module deck outline and instructor script.\n\nUPLOAD: VideoGenX Skill File, GSL Brand Guide, PPT Standards\n\nVARIABLES:\n- Module: [NUMBER] — [NAME]\n- Session: [X of Y]\n- Duration: [90 min / 120 min]\n- Tools: [RUNWAY / KLING / SORA / PIKA — specify which]\n- Students have completed: [LIST PRIOR MODULES]\n\nSTRUCTURE:\n| Slide # | Type | Content | Speaker Notes | Visual Direction |\n|---------|------|---------|---------------|------------------|\n| 1 | Title | Module name, session # | Welcome script | Dark navy, film grain |\n| 2 | Recap | Previous module key takeaways | 2-min recap script | Before/after examples |\n| 3 | Objectives | Today's learning outcomes | Frame the session | Icons + text |\n| 4-8 | Concept | Core theory/technique | Detailed explanation | Diagrams, examples |\n| 9-12 | Demo | Step-by-step tool walkthrough | Click-by-click script | Screenshots/screen recording notes |\n| 13-15 | Exercise | Hands-on student activity | Facilitation guide | Timer, deliverable spec |\n| 16 | Showcase | Peer review / share work | Feedback framework | Gallery layout |\n| 17 | Wrap-up | Key takeaways + next session | Closing script | Summary slide |\n\nPPT CONSTRAINTS:\n- Dark navy palette (#0A1628 base)\n- Film perforation motifs on section dividers\n- Progress tabs showing module position\n- Safe zone: Y ≤ 4.90\" on slides with tabs, Y ≤ 5.20\" without\n- Include 1 Quick Check quiz slide per concept section",
+    "skillFiles": [
+      "VideoGenX Skill File",
+      "GSL Brand Guide",
+      "PPT Standards"
+    ],
+    "userProvides": [
+      "Module topic",
+      "session number",
+      "tools to cover",
+      "what students already know"
+    ],
+    "qualityChecklist": [
+      "Recap of prior module included",
+      "Clear learning outcomes stated",
+      "Demo is click-by-click specific",
+      "Students create something (not just watch)",
+      "Peer review / showcase moment",
+      "PPT constraints followed",
+      "Speaker notes for every slide"
+    ],
+    "outputFormat": "PPT + Word doc (script)",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs module context",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "60%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "solevit-challenge-and-rubric",
+    "category": "Programme Content",
+    "name": "Solevit Challenge & Rubric",
+    "description": "An open-ended problem-solving challenge with constraints, evaluation rubric, progressive hints, and extension task. SDG-aligned.",
+    "audiences": [
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Theme",
+      "Difficulty",
+      "Age group",
+      "SDG alignment",
+      "Team size"
+    ],
+    "role": "Challenge Designer for student problem-solving competitions with design thinking expertise",
+    "prompt": "You are a challenge designer for problem-solving competitions. Create a Solevit challenge.\n\nUPLOAD: Solevit Skill File, GSL Brand Guide, UN SDGs, Age Guidelines\n\nVARIABLES:\n- Theme: [THEME]\n- Difficulty: [INTRODUCTORY / INTERMEDIATE / ADVANCED]\n- Age group: [X-Y years]\n- SDG: [SDG NUMBER AND NAME]\n- Team size: [INDIVIDUAL / PAIRS / TEAMS OF 3-4]\n\nDELIVER:\n1. PROBLEM STATEMENT (150-200 words)\n   - Real-world problem, Indian context, compelling narrative\n   - Clear enough that students know what to solve\n   - Open enough that multiple solutions are valid\n\n2. CONSTRAINTS & RESOURCES\n   - What students CAN use (materials, tools, time, budget)\n   - What students CANNOT use\n   - Time limit for the challenge\n\n3. EVALUATION RUBRIC\n   | Criterion | Exemplary (4) | Proficient (3) | Developing (2) | Beginning (1) | Weight |\n   - 5 criteria: Problem understanding, Creativity, Feasibility, Presentation, SDG Impact\n   - Descriptors must be specific and observable\n\n4. MENTOR HINTS (progressive)\n   - Hint 1: General direction (given at start)\n   - Hint 2: Methodological (given if stuck after 30%)\n   - Hint 3: Specific (given if stuck after 60%)\n\n5. EXTENSION CHALLENGE (for teams that finish early)\n\nThe problem MUST have multiple valid solutions. If there's only one right answer, it's not a Solevit challenge.",
+    "skillFiles": [
+      "Solevit Skill File",
+      "GSL Brand Guide",
+      "UN SDGs",
+      "Age Guidelines"
+    ],
+    "userProvides": [
+      "Theme",
+      "difficulty",
+      "age group",
+      "SDG focus"
+    ],
+    "qualityChecklist": [
+      "Problem is open-ended (multiple valid solutions)",
+      "Indian context",
+      "Rubric has specific observable descriptors",
+      "Hints are progressive (not giving away the answer)",
+      "SDG alignment is genuine",
+      "Age-appropriate complexity",
+      "Extension challenge exists"
+    ],
+    "outputFormat": "Word doc or PDF",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill theme, difficulty, SDG",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  },
+  {
+    "id": "question-bank-50-questions",
+    "category": "Assessment & QA",
+    "name": "Question Bank (50 questions)",
+    "description": "A tagged question bank with 50 questions across all Bloom's levels, complete with answers, marking schemes, and misconception alerts.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)"
+    ],
+    "variables": [
+      "Subject",
+      "Unit/topic",
+      "Grade",
+      "Question type distribution",
+      "Difficulty level"
+    ],
+    "role": "Assessment Specialist with expertise in Bloom's taxonomy, Indian K-12 board standards, and item writing",
+    "prompt": "You are an assessment specialist. Generate a 50-question bank.\n\nUPLOAD: Bloom's Taxonomy, NEP 2020, Age Guidelines, [Programme] Skill File\n\nVARIABLES:\n- Subject: [SUBJECT]\n- Unit/Topic: [TOPIC]\n- Grade: [X]\n- Board alignment: [CBSE / ICSE / STATE / PROGRAMME-INTERNAL]\n\nDISTRIBUTION:\n- Remember (10 Qs): MCQ, true/false, fill-blank\n- Understand (10 Qs): Short answer, matching, explain-in-own-words\n- Apply (10 Qs): Problem-solving, scenario-based MCQ, calculate\n- Analyse (8 Qs): Compare/contrast, data interpretation, case-based\n- Evaluate (7 Qs): Justify, critique, assess, debate\n- Create (5 Qs): Design, propose, construct, invent\n\nFOR EACH QUESTION:\n| # | Question | Type | Bloom's Level | Marks | Answer | Marking Scheme | Common Misconception |\n\nRULES:\n- No ambiguous questions (only one correct answer for objective Qs)\n- Distractors in MCQs must be plausible (common errors, not random)\n- Short answer Qs specify expected length (\"in 2-3 sentences\")\n- Higher-order Qs have detailed marking schemes (not just \"correct/incorrect\")\n- All questions testable within a standard exam timeframe\n- Indian examples and contexts throughout",
+    "skillFiles": [
+      "Bloom's Taxonomy",
+      "NEP 2020",
+      "Age Guidelines",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Subject",
+      "unit/topic",
+      "grade",
+      "any specific areas to emphasise"
+    ],
+    "qualityChecklist": [
+      "All 6 Bloom's levels represented",
+      "Distribution matches specification",
+      "Answers and marking schemes for every question",
+      "Misconceptions flagged",
+      "MCQ distractors are plausible",
+      "Language is grade-appropriate",
+      "No ambiguous or double-barrelled questions"
+    ],
+    "outputFormat": "Spreadsheet (Excel) with tags",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill subject, unit, grade",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "rubric--marking-scheme",
+    "category": "Assessment & QA",
+    "name": "Rubric / Marking Scheme",
+    "description": "A detailed evaluation rubric with 4-point scale, specific descriptors per criterion, and weightage. Usable by any teacher without training.",
+    "audiences": [
+      "Students (Grade 3-5)",
+      "Students (Grade 6-8)",
+      "Students (Grade 9-10)",
+      "Students (Grade 11-12)",
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Assessment type",
+      "Subject",
+      "Grade",
+      "Criteria to assess"
+    ],
+    "role": "Assessment Design Expert specialising in criterion-referenced rubrics",
+    "prompt": "You are an assessment design expert. Create a rubric.\n\nUPLOAD: Bloom's Taxonomy, GSL Brand Guide, [Programme] Skill File\n\nVARIABLES:\n- Assessment type: [PROJECT / PRESENTATION / ESSAY / PORTFOLIO / COMPETITION]\n- Subject: [SUBJECT]\n- Grade: [X]\n- Total marks: [TOTAL]\n\nCREATE A RUBRIC TABLE:\n| Criterion | Weight | Exemplary (4) | Proficient (3) | Developing (2) | Beginning (1) |\n\nRULES:\n- 4-6 criteria aligned to the learning outcomes\n- Each cell has a specific, observable descriptor (not \"good\" / \"average\" / \"poor\")\n- Descriptors must distinguish clearly between adjacent levels\n- Include inter-rater reliability notes (what to do when two assessors disagree)\n- Add a holistic grade conversion table (total points → letter grade / percentage)\n- Usable by any teacher without additional explanation",
+    "skillFiles": [
+      "Bloom's Taxonomy",
+      "GSL Brand Guide",
+      "[Programme] Skill File"
+    ],
+    "userProvides": [
+      "Assessment type",
+      "subject",
+      "grade",
+      "learning outcomes being assessed"
+    ],
+    "qualityChecklist": [
+      "Descriptors are specific and observable",
+      "Adjacent levels are clearly distinguishable",
+      "Weightage adds up correctly",
+      "Grade conversion included",
+      "Any teacher can use it without training"
+    ],
+    "outputFormat": "Word doc or spreadsheet",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill assessment type, grade",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "stem-ai-trainer-deck-iit-g",
+    "category": "Teacher Training",
+    "name": "STEM/AI Trainer Deck (IIT-G)",
+    "description": "A full trainer presentation for faculty development workshops, structured for teachers with limited tech background.",
+    "audiences": [
+      "Teachers / Coordinators"
+    ],
+    "variables": [
+      "Training topic",
+      "Duration",
+      "Teacher tech comfort level",
+      "IIT-G curriculum reference"
+    ],
+    "role": "Faculty Development Specialist in STEM and AI education, partnered with IIT Guwahati",
+    "prompt": "You are a faculty development specialist. Create a trainer deck outline.\n\nUPLOAD: STEM/IIT-G Skill File, GSL Brand Guide, Gagné's 9 Events, NEP 2020, PPT Standards\n\nVARIABLES:\n- Topic: [STEM / ROBOTICS / AI TOPIC]\n- Duration: [2 / 4 / 8] hours\n- Teacher audience: [PRIMARY / SECONDARY / BOTH]\n- Tech comfort: [BEGINNER / INTERMEDIATE]\n\nSTRUCTURE:\n1. Context & icebreaker (why this matters for their students)\n2. Concept explanation (teacher-friendly, no PhD-level theory)\n3. Live demonstration with classroom-ready tools\n4. Hands-on: teachers do what their students will do\n5. Classroom integration: how to fit into existing timetable\n6. Assessment ideas for student projects\n7. Resources, next steps, community of practice\n\nINCLUDE:\n- Speaker notes using Gagné's 9 Events framework\n- \"I'm scared of tech\" reassurance points\n- 3 quick-win activities teachers can use tomorrow\n- Certificate criteria (if micro-credential)\n- Follow-up WhatsApp group / resource sharing plan",
+    "skillFiles": [
+      "STEM/IIT-G Skill File",
+      "GSL Brand Guide",
+      "Gagné's 9 Events",
+      "NEP 2020",
+      "PPT Standards"
+    ],
+    "userProvides": [
+      "Training topic",
+      "duration",
+      "teacher audience",
+      "tech comfort level"
+    ],
+    "qualityChecklist": [
+      "Assumes limited tech background",
+      "Hands-on practice included",
+      "3+ quick-win activities for immediate classroom use",
+      "Gagné's 9 Events in speaker notes",
+      "Follow-up plan included",
+      "Certification criteria clear"
+    ],
+    "outputFormat": "PPT + Word doc (speaker notes)",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs IIT-G curriculum ref",
+    "reviewer": "Academics Team Lead / Programme Head",
+    "aiShare": "65%",
+    "reliability": "MED",
+    "version": "Base v1"
+  }
+]

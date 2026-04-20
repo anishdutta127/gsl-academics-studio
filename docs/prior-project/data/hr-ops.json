@@ -1,0 +1,217 @@
+[
+  {
+    "id": "job-description",
+    "category": "Recruitment",
+    "name": "Job Description",
+    "description": "A complete, engaging job description with GSL culture language, specific requirements, and honest role description.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Role title",
+      "Team",
+      "Reporting structure",
+      "Location",
+      "Seniority"
+    ],
+    "role": "Talent Acquisition Specialist for Indian EdTech with employer branding expertise",
+    "prompt": "You are a talent acquisition specialist. Write a job description.\n\nUPLOAD: GSL Brand Guide, GSL Culture & Values Skill File\n\nVARIABLES:\n- Role: [TITLE]\n- Team: [DEPARTMENT]\n- Reports to: [MANAGER TITLE]\n- Location: [CITY / REMOTE / HYBRID]\n- Level: [JUNIOR / MID / SENIOR]\n\nSECTIONS:\n- About GSL (2-3 sentences — exciting, specific, not generic boilerplate)\n- The Role (what they'll actually do — 4-6 bullets of real daily/weekly tasks)\n- Must-haves (5-6 non-negotiable requirements — be specific: \"3+ years managing school partnerships\" not \"relevant experience\")\n- Nice-to-haves (3-4 bonus qualifications)\n- What you get (GSL-specific perks, culture, growth opportunities)\n- How to apply (clear instructions)\n\nRULES: Be honest about the role (including challenges). Avoid: \"fast-paced environment,\" \"rockstar,\" \"wear many hats,\" \"self-starter.\" Use specific, measurable requirements. Every bullet should help a candidate decide \"this is or is not for me.",
+    "skillFiles": [
+      "GSL Brand Guide",
+      "GSL Culture & Values"
+    ],
+    "userProvides": [
+      "Role details",
+      "team",
+      "reporting structure",
+      "key responsibilities",
+      "must-have skills"
+    ],
+    "qualityChecklist": [
+      "Role description is honest (includes challenges)",
+      "Requirements are specific and measurable",
+      "No banned phrases (rockstar, fast-paced, etc.)",
+      "GSL culture comes through naturally",
+      "Candidate can self-select (clear fit/no-fit signals)",
+      "Perks are specific to GSL"
+    ],
+    "outputFormat": "Word doc (post-ready)",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill role, team, requirements",
+    "reviewer": "HR Lead / Operations Head",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "interview-question-bank",
+    "category": "Recruitment",
+    "name": "Interview Question Bank",
+    "description": "A structured interview kit with behavioural, situational, and technical questions, plus scoring rubric.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Role",
+      "Seniority",
+      "Competencies to assess",
+      "Interview format"
+    ],
+    "role": "Hiring Manager creating structured interview guides to reduce bias",
+    "prompt": "You are a hiring manager. Create a structured interview question bank.\n\nUPLOAD: GSL Culture & Values\n\nVARIABLES:\n- Role: [TITLE]\n- Level: [JUNIOR / MID / SENIOR]\n- Competencies: [LIST 5-6 KEY COMPETENCIES]\n\nFOR EACH COMPETENCY:\n- 3 behavioural questions (STAR: \"Tell me about a time when...\")\n- 1 situational question (\"Imagine you're in this scenario...\")\n- Green flags (what great answers sound like)\n- Red flags (what to watch for)\n- Scoring: 1-5 with descriptors\n\nALSO INCLUDE:\n- Opening (2-3 rapport-building questions)\n- Role-specific technical questions (5-8)\n- Culture fit questions aligned to GSL values (3-4)\n- Closing (how to explain next steps, candidate questions time)\n- Interviewer notes template\n\nRULES: No illegal questions. No brain teasers. No 'what is your greatest weakness?' Every question must reveal something useful about the candidate's ability to do THIS specific job.",
+    "skillFiles": [
+      "GSL Culture & Values"
+    ],
+    "userProvides": [
+      "Role",
+      "level",
+      "competencies",
+      "interview format",
+      "any role-specific technical areas"
+    ],
+    "qualityChecklist": [
+      "STAR format for behavioural Qs",
+      "Green and red flags specified",
+      "Scoring rubric with descriptors",
+      "No illegal or generic questions",
+      "Culture fit aligned to actual GSL values",
+      "Interviewer notes template included"
+    ],
+    "outputFormat": "Spreadsheet or Word doc",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill role, competencies",
+    "reviewer": "HR Lead / Operations Head",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "30-60-90-day-onboarding-plan",
+    "category": "Onboarding & Policy",
+    "name": "30-60-90 Day Onboarding Plan",
+    "description": "A structured onboarding roadmap with specific milestones, meetings, and deliverables for each phase.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Role",
+      "Team",
+      "Key systems",
+      "First deliverables",
+      "Buddy assignment"
+    ],
+    "role": "People Operations Manager designing role-specific onboarding programmes",
+    "prompt": "You are a people operations manager. Create a 30-60-90 day plan.\n\nUPLOAD: GSL Culture & Values\n\nVARIABLES:\n- Role: [TITLE]\n- Team: [DEPARTMENT]\n- Start date: [DATE]\n\nDAY 1-30 (LEARN):\n- Week 1: Setup, meet the team, system access, read key docs\n- Week 2-3: Shadow sessions, attend key meetings, buddy catch-ups\n- Week 4: First small deliverable, 30-day check-in with manager\n\nDAY 31-60 (CONTRIBUTE):\n- Own 2-3 specific tasks independently\n- Contribute to 1 team project\n- Attend cross-functional meeting as observer → participant\n- 60-day feedback session\n\nDAY 61-90 (OWN):\n- Full ownership of defined responsibilities\n- Lead 1 initiative or project\n- First major deliverable\n- 90-day performance conversation with manager\n\nFOR EACH WEEK: Specific actions, people to meet (by role, not name), documents to read, tools to learn, deliverables due.\n\nRULES: Role-specific (not generic HR). Include \"by end of week X, you should be able to...\" milestones. Flag what the manager needs to prepare for the new hire's arrival.",
+    "skillFiles": [
+      "GSL Culture & Values",
+      "Team-specific onboarding docs"
+    ],
+    "userProvides": [
+      "Role",
+      "team",
+      "key systems",
+      "first projects",
+      "manager name"
+    ],
+    "qualityChecklist": [
+      "Week-by-week specificity (not vague phases)",
+      "Milestones are measurable",
+      "Manager preparation checklist included",
+      "Buddy/mentor assigned",
+      "Feedback touchpoints at 30/60/90",
+      "Role-specific (not generic)"
+    ],
+    "outputFormat": "Word doc with weekly checklist",
+    "difficulty": "easy",
+    "difficultyNote": "Easy — fill role, team",
+    "reviewer": "HR Lead / Operations Head",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "sop--process-document",
+    "category": "Onboarding & Policy",
+    "name": "SOP / Process Document",
+    "description": "A step-by-step standard operating procedure with clear ownership, exception handling, and quality checks.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Process name",
+      "Current workflow",
+      "People involved",
+      "Tools",
+      "Exceptions"
+    ],
+    "role": "Operations Analyst documenting business processes for repeatability",
+    "prompt": "You are an operations analyst. Document an SOP.\n\nUPLOAD: GSL Brand Guide\n\nVARIABLES:\n- Process: [NAME]\n- Owner: [ROLE]\n- Frequency: [DAILY / WEEKLY / PER-PROJECT / AD HOC]\n\nSECTIONS:\n1. Purpose (one sentence — why this process exists)\n2. Scope (what it covers, what it doesn't)\n3. Prerequisites (what must be true before starting)\n4. Step-by-step procedure:\n   | Step | Action | Owner | Tool/System | Output | Time |\n5. Exception handling (3-5 \"what if\" scenarios with resolution)\n6. Quality checks (how to verify the output is correct)\n7. Escalation path (who to contact if something goes wrong)\n8. Revision history (version, date, changed by, what changed)\n\nRULES: Written for someone doing this for the first time. Every step is an action verb. Include screenshot/diagram placeholders where a tool is involved. No step should require \"judgment\" without specifying criteria for that judgment.",
+    "skillFiles": [
+      "GSL Brand Guide"
+    ],
+    "userProvides": [
+      "Process description",
+      "current workflow",
+      "tools used",
+      "people involved",
+      "known exceptions"
+    ],
+    "qualityChecklist": [
+      "Someone new can follow this without asking questions",
+      "Every step has an action verb and owner",
+      "Exception handling covers real scenarios",
+      "Quality checks are specific",
+      "Escalation path is clear",
+      "Screenshot placeholders marked"
+    ],
+    "outputFormat": "Word doc with step table",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs current workflow details",
+    "reviewer": "HR Lead / Operations Head",
+    "aiShare": "80%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  },
+  {
+    "id": "policy-document",
+    "category": "Onboarding & Policy",
+    "name": "Policy Document",
+    "description": "A formal company policy with clear rules, examples, FAQs, and compliance language. Indian labour law aware.",
+    "audiences": [
+      "Internal Team"
+    ],
+    "variables": [
+      "Policy topic",
+      "Current informal rules",
+      "Legal requirements",
+      "Exceptions"
+    ],
+    "role": "HR Policy Writer familiar with Indian labour law and modern workplace practices",
+    "prompt": "You are an HR policy writer. Write a policy document.\n\nUPLOAD: GSL Culture & Values\n\nVARIABLES:\n- Topic: [LEAVE / WFH / CODE OF CONDUCT / TRAVEL / EXPENSES / SOCIAL MEDIA / DATA PRIVACY — specify]\n\nSECTIONS:\n1. Policy statement (purpose + who it applies to)\n2. Definitions (any terms that could be misunderstood)\n3. Policy details (clear rules with examples — \"For instance, if you need to...\")\n4. Exceptions and approval process (who approves, what documentation)\n5. Non-compliance (consequences, escalation)\n6. FAQs (5-7 real questions employees would ask)\n7. Effective date and review schedule\n\nRULES: Clear enough that employees understand without HR explaining. Fair and consistently applied. Include Indian-specific considerations (festival holidays, PF, maternity/paternity per Indian law). Don't be legalistic — be human but precise.",
+    "skillFiles": [
+      "GSL Culture & Values",
+      "Indian Labour Law basics"
+    ],
+    "userProvides": [
+      "Policy topic",
+      "current informal practices",
+      "any legal requirements",
+      "exceptions"
+    ],
+    "qualityChecklist": [
+      "Employees understand without HR help",
+      "Examples make rules concrete",
+      "Indian labour law compliance",
+      "FAQ answers real questions",
+      "Review schedule specified",
+      "Fair and consistently applicable"
+    ],
+    "outputFormat": "Word doc (formal)",
+    "difficulty": "medium",
+    "difficultyNote": "Medium — needs legal requirements",
+    "reviewer": "HR Lead / Operations Head",
+    "aiShare": "75%",
+    "reliability": "HIGH",
+    "version": "Base v1"
+  }
+]
