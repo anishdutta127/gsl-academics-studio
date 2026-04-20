@@ -147,6 +147,23 @@ export const PLAYBOOK_SLUGS = [
 export type PlaybookSlug = (typeof PLAYBOOK_SLUGS)[number];
 
 /**
+ * Display titles per slug, used by surfaces that enumerate playbooks even
+ * when the playbook content file does not yet exist on disk (e.g. the
+ * /standards page renders all seven cards regardless of which playbook
+ * markdown files have been authored). When the playbook file exists, its
+ * frontmatter title takes precedence; this map is the fallback.
+ */
+export const PLAYBOOK_TITLES: Record<PlaybookSlug, string> = {
+  "teaching-ppt": "Teaching Material PPT Builder",
+  "lesson-plan": "Lesson Plan Builder",
+  "assessment": "Assessment Builder",
+  "carousel": "Claude Carousel Generator",
+  "delivery-script": "Delivery Script Writer",
+  "cbse-summary": "CBSE Doc Summariser",
+  "product-note": "Product Note Builder"
+};
+
+/**
  * Frontmatter on a standard's rationale.md. Used for current/, proposals/,
  * and archive/ entries; same shape across all three.
  */

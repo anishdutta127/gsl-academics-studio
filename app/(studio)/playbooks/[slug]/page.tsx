@@ -6,9 +6,13 @@ import { AuditStage } from "@/components/playbook/audit-stage";
 import { RecentlyViewedUpdater } from "@/components/playbook/recently-viewed-updater";
 import { StepsAccordion } from "@/components/playbook/step-accordion";
 import { SuggestImprovement } from "@/components/playbook/suggest-improvement";
+import { ProposeNewStandard } from "@/components/standards/propose-new-standard";
+import { TheBar } from "@/components/standards/the-bar";
+import { TheBarEmpty } from "@/components/standards/the-bar-empty";
 import { Badge } from "@/components/ui/badge";
 import { getAllPlaybooks, getPlaybook } from "@/lib/content/loader";
-import type { Difficulty } from "@/lib/content/types";
+import { getCurrentStandard } from "@/lib/content/standards";
+import { PLAYBOOK_SLUGS, type Difficulty, type PlaybookSlug } from "@/lib/content/types";
 import { cn } from "@/lib/utils";
 
 export async function generateStaticParams() {
@@ -36,6 +40,17 @@ export default async function PlaybookReaderPage({
   const playbook = await getPlaybook(params.slug);
   if (!playbook) notFound();
   const fm = playbook.frontmatter;
+
+  // Standards System (decision 012). Render TheBar after the hero and
+  // ProposeNewStandard at the end of the page. Only mount the bar surface
+  // for the seven enumerated playbook slugs; other playbooks (none today)
+  // skip the standards UI.
+  const isStandardsPlaybook = (PLAYBOOK_SLUGS as readonly string[]).includes(
+    fm.slug
+  );
+  const currentStandard = isStandardsPlaybook
+    ? await getCurrentStandard(fm.slug as PlaybookSlug)
+    : null;
 
   return (
     <article className="space-y-12 pb-16">
@@ -86,6 +101,19 @@ export default async function PlaybookReaderPage({
           ) : null}
         </div>
       </header>
+
+      {/* The Bar (decision 012) */}
+      {isStandardsPlaybook ? (
+        currentStandard ? (
+          <TheBar
+            playbookSlug={fm.slug}
+            playbookTitle={fm.title}
+            standard={currentStandard}
+          />
+        ) : (
+          <TheBarEmpty playbookSlug={fm.slug} playbookTitle={fm.title} />
+        )
+      ) : null}
 
       {/* Use this when */}
       <section aria-labelledby="use-when-heading" className="space-y-4">
@@ -159,6 +187,13 @@ export default async function PlaybookReaderPage({
             <Markdown>{fm.common_pitfalls}</Markdown>
           </div>
         </section>
+      ) : null}
+
+      {isStandardsPlaybook ? (
+        <ProposeNewStandard
+          playbookSlug={fm.slug}
+          playbookTitle={fm.title}
+        />
       ) : null}
 
       <SuggestImprovement
