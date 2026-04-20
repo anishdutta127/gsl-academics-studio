@@ -1,0 +1,43 @@
+# Claude Code local settings
+.claude/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Build output
+.next/
+out/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# OneDrive-synced content is committed (./content-synced/) but the live sync source is not.
+# Do NOT commit the live OneDrive path; it is local to each developer's machine.
