@@ -215,29 +215,58 @@ export const getOutputLinks = cache(
 
 // Outputs -----------------------------------------------------------------
 
+/**
+ * Lists outputs for a playbook.
+ *
+ * In onedrive mode we read the directory live. In synced mode the actual
+ * output files were not copied into ./content-synced/ (decision 010 risk 1),
+ * so we read meta/outputs-manifest.json which the sync script wrote.
+ *
+ * Both paths return the same DiscoveredOutput shape so the UI does not
+ * branch on mode.
+ */
+async function listOutputFilenames(
+  root: string,
+  playbookSlug: string
+): Promise<string[]> {
+  // Try reading the outputs subdirectory directly first (onedrive mode, or a
+  // dev who also synced outputs by hand).
+  const dir = path.join(root, "outputs", playbookSlug);
+  try {
+    const files = await fs.readdir(dir);
+    return files.filter((f) => !f.startsWith(".") && f !== ".gitkeep");
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
+  }
+
+  // Fallback: read the manifest the sync script wrote (synced mode).
+  const manifestPath = path.join(root, "meta", "outputs-manifest.json");
+  try {
+    const raw = await fs.readFile(manifestPath, "utf8");
+    const manifest = JSON.parse(raw) as {
+      playbooks?: Record<string, string[]>;
+    };
+    return manifest.playbooks?.[playbookSlug] ?? [];
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return [];
+    throw e;
+  }
+}
+
 export const getOutputsForPlaybook = cache(
   async (playbookSlug: string): Promise<DiscoveredOutput[]> => {
     const root = await resolveContentRoot();
-    const dir = path.join(root, "outputs", playbookSlug);
-    let files: string[];
-    try {
-      files = await fs.readdir(dir);
-    } catch (e) {
-      if ((e as NodeJS.ErrnoException).code === "ENOENT") return [];
-      throw e;
-    }
-
+    const filenames = await listOutputFilenames(root, playbookSlug);
     const links = await getOutputLinks();
-    const results: DiscoveredOutput[] = files
-      .filter((f) => !f.startsWith(".") && f !== ".gitkeep")
-      .map((filename) => {
-        const parsed = parseOutputFilename(filename);
-        const relativePath = `outputs/${playbookSlug}/${filename}`;
-        const shareUrl = links[relativePath] ?? null;
-        return { filename, relativePath, parsed, shareUrl };
-      });
 
-    // Sort: parseable outputs by date desc first, then unparseable by filename.
+    const results: DiscoveredOutput[] = filenames.map((filename) => {
+      const parsed = parseOutputFilename(filename);
+      const relativePath = `outputs/${playbookSlug}/${filename}`;
+      const shareUrl = links[relativePath] ?? null;
+      return { filename, relativePath, parsed, shareUrl };
+    });
+
+    // Parseable outputs sort by date desc; unparseable fall to the end.
     results.sort((a, b) => {
       if (a.parsed?.date && b.parsed?.date) {
         return b.parsed.date.localeCompare(a.parsed.date);
