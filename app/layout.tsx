@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { WhoAreYouPrompt } from "@/components/shell/who-are-you";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhoAreYouPrompt />
+      </body>
     </html>
   );
 }
