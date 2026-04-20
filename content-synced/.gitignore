@@ -1,0 +1,6 @@
+# content-synced/ is written by `pnpm sync-content` and committed from the scripted sync.
+# Keep the directory, ignore its contents here so an untouched scaffold has nothing to commit.
+# When the sync script runs, it writes real files and the parent .gitignore does NOT ignore them;
+# the sync workflow `git add -f content-synced/` then commits the snapshot explicitly.
+*
+!.gitignore

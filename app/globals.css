@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * GSL design tokens wired to shadcn's HSL CSS variable convention.
+ * Hex references kept as comments so the mapping is readable without a browser.
+ * See DESIGN.md for the full colour-role spec.
+ */
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 0 0% 100%;           /* white */
+    --foreground: 224 91% 14%;         /* deep ink, darker than azure, for body text */
+
+    --card: 0 0% 100%;                 /* white */
+    --card-foreground: 224 91% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 91% 14%;
+
+    /* Primary = Turquoise Sea #00D8B9 (signature colour, used generously) */
+    --primary: 170 100% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary = Azure Blue #073393 (headings, secondary buttons) */
+    --secondary: 224 91% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted = soft greys for meta text */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 36%;
+
+    /* Accent = Orange Peel #FFAD40 (celebratory, second primary) */
+    --accent: 32 100% 63%;
+    --accent-foreground: 224 91% 14%;
+
+    /* Destructive reserved for Phase 2+, kept muted coral to avoid stealing Fuchsia's moments */
+    --destructive: 12 69% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%;                /* #E8E8E8 */
+    --input: 0 0% 91%;
+    --ring: 170 100% 42%;              /* focus ring = Turquoise */
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.6;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    line-height: 1.2;
+  }
+  h1 { @apply text-4xl md:text-5xl font-medium; }
+  h2 { @apply text-2xl md:text-3xl font-medium; }
+  h3 { @apply text-xl font-medium; }
+  h4 { @apply text-lg font-medium; }
+
+  /* Focus ring, Turquoise, respects prefers-reduced-motion */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-turquoise-sea;
+  }
+
+  /* Prompt block baseline (component will layer on top) */
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+/* Prose-like helpers used inside playbook and skill bodies */
+@layer utilities {
+  .prose-gsl {
+    @apply text-[#1A1A1A] max-w-prose;
+  }
+  .prose-gsl h2 {
+    @apply mt-10 mb-4;
+  }
+  .prose-gsl h3 {
+    @apply mt-8 mb-3;
+  }
+  .prose-gsl p {
+    @apply my-4;
+  }
+  .prose-gsl ul {
+    @apply my-4 list-disc pl-6 space-y-2;
+  }
+  .prose-gsl ol {
+    @apply my-4 list-decimal pl-6 space-y-2;
+  }
+  .prose-gsl a {
+    @apply text-azure-blue underline underline-offset-4 decoration-azure-blue/30 hover:decoration-azure-blue;
+  }
+}
