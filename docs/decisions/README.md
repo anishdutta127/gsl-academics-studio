@@ -19,3 +19,4 @@ Numbers are stable. If a decision is superseded, mark it OBSOLETE and point to t
 | 007 | Audit scope for week 3 prototype | ADOPTED |
 | 008 | Per-playbook instrumentation | OBSOLETE, superseded by 010 |
 | 010 | OneDrive-sourced content pivot | ADOPTED (supersedes 002, 003, 005, 008) |
+| 011 | Content library, output filenames, conflict convention | ADOPTED |
