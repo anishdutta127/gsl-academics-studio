@@ -39,6 +39,12 @@ export const PlaybookFrontmatterSchema = z.object({
   skills_referenced: z.array(SlugSchema).default([]),
   related_playbooks: z.array(SlugSchema).default([]),
   status: StatusSchema,
+  /** Prose copy (markdown) rendered in the "Use this when" warm callout. */
+  use_when: z.string().min(1),
+  /** Array of short check-items rendered as a pre-flight list. No state. */
+  before_you_start: z.array(z.string()).default([]),
+  /** Prose copy (markdown) rendered after the Audit Stage. Optional. */
+  common_pitfalls: z.string().optional(),
   steps: z.array(StepSchema).min(1),
   audit_prompt_template: z.string().optional()
 });
