@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, Sparkles, X } from "lucide-react";
 import { PromptBlock } from "@/components/playbook/prompt-block";
+import { recordActivity } from "@/components/shell/efficiency-pill";
 import { Button } from "@/components/ui/button";
 import { extractKeyQualities } from "@/lib/content/standards-helpers";
 import type {
@@ -85,6 +86,7 @@ export function AuditStage({
 
   function markPass() {
     setDecision("pass");
+    recordActivity("audit_passed", { playbook: playbookSlug });
     // localStorage audit-pass entry, used by the Phase 2 library view to show
     // "this output came from an audited run".
     try {

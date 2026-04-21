@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
+import { EfficiencyPill } from "@/components/shell/efficiency-pill";
 
 function initialsFrom(name: string): string {
   const parts = name.trim().split(/\s+/).filter(Boolean);
@@ -48,12 +49,15 @@ export function TopNav() {
         </div>
       </div>
 
-      <div
-        aria-hidden={initials ? undefined : true}
-        className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-light-sky text-azure-blue font-display text-sm"
-        title={initials ? "You" : undefined}
-      >
-        {initials ?? ""}
+      <div className="ml-4 flex items-center gap-3">
+        <EfficiencyPill />
+        <div
+          aria-hidden={initials ? undefined : true}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-light-sky text-azure-blue font-display text-sm"
+          title={initials ? "You" : undefined}
+        >
+          {initials ?? ""}
+        </div>
       </div>
     </header>
   );

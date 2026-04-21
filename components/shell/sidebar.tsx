@@ -9,6 +9,7 @@ import {
   Library,
   School,
   Sparkles,
+  TrendingUp,
   Users
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -27,7 +28,8 @@ const NAV: NavItem[] = [
   { href: "/standards", label: "Standards", Icon: Sparkles },
   { href: "/library", label: "Library", Icon: Library },
   { href: "/schools", label: "Schools", Icon: School },
-  { href: "/assignments", label: "Assignments", Icon: Users }
+  { href: "/assignments", label: "Assignments", Icon: Users },
+  { href: "/impact", label: "Impact", Icon: TrendingUp }
 ];
 
 function isActive(pathname: string, href: string) {

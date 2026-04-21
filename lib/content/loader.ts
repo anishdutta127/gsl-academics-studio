@@ -268,18 +268,29 @@ async function listOutputFilenames(
   }
 }
 
+export interface AggregatedOutput extends DiscoveredOutput {
+  playbookSlug: string;
+}
+
 /**
- * Cross-playbook aggregation: returns every DiscoveredOutput across every
- * published playbook, already sorted by parsed-date-desc (unparseable at
- * the end). Used by the school detail page and the /impact dashboard.
+ * Cross-playbook aggregation: returns every output across every published
+ * playbook, enriched with its source playbookSlug, sorted by parsed-date-
+ * desc (unparseable at the end). Used by the school detail page and the
+ * /impact dashboard.
  */
-export const getAllOutputs = cache(async (): Promise<DiscoveredOutput[]> => {
+export const getAllOutputs = cache(async (): Promise<AggregatedOutput[]> => {
   const playbooks = await getAllPlaybooks();
   const published = playbooks.filter(
     (p) => p.frontmatter.status === "published"
   );
   const perPlaybook = await Promise.all(
-    published.map((p) => getOutputsForPlaybook(p.frontmatter.slug))
+    published.map(async (p) => {
+      const outs = await getOutputsForPlaybook(p.frontmatter.slug);
+      return outs.map<AggregatedOutput>((o) => ({
+        ...o,
+        playbookSlug: p.frontmatter.slug
+      }));
+    })
   );
   const all = perPlaybook.flat();
   all.sort((a, b) => {

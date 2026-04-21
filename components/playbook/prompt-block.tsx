@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { recordActivity } from "@/components/shell/efficiency-pill";
 import { cn } from "@/lib/utils";
 
 interface PromptBlockProps {
@@ -54,6 +55,7 @@ export function PromptBlock({
     try {
       await navigator.clipboard.writeText(children);
       setState("copied");
+      recordActivity("prompt_copied");
       onCopied?.();
       setTimeout(() => setState("idle"), 1800);
     } catch {
