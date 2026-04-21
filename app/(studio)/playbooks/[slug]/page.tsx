@@ -12,6 +12,7 @@ import { TheBarEmpty } from "@/components/standards/the-bar-empty";
 import { Badge } from "@/components/ui/badge";
 import { getAllPlaybooks, getOutputsForPlaybook, getPlaybook, getSchools } from "@/lib/content/loader";
 import { getCurrentStandard } from "@/lib/content/standards";
+import { teamReach } from "@/lib/content/impact";
 import { PLAYBOOK_SLUGS, type Difficulty, type PlaybookSlug } from "@/lib/content/types";
 import { cn } from "@/lib/utils";
 
@@ -53,29 +54,28 @@ export default async function PlaybookReaderPage({
     : null;
 
   // Standards impact: count outputs produced against this playbook's current
-  // bar (proxy: all outputs tagged to any school for this playbook slug,
-  // since Phase 1 does not track "produced-against-which-bar" explicitly).
-  // Renders on TheBar only when at least one output exists.
-  let barImpact: { outputs: number; schools: number; students: number } | undefined;
+  // bar (proxy: all outputs tagged to a programme or school for this
+  // playbook slug, since Phase 1 does not track "produced-against-which-bar"
+  // explicitly). Programme join is primary; direct school tags are an
+  // optional override. Renders on TheBar only when at least one output
+  // exists.
+  let barImpact:
+    | { outputs: number; programmes: number; schools: number; students: number }
+    | undefined;
   if (currentStandard) {
     const [outputs, schools] = await Promise.all([
       getOutputsForPlaybook(fm.slug),
       getSchools()
     ]);
-    const studentsBySlug = new Map(schools.map((s) => [s.slug, s.students]));
-    const outputsWithSchools = outputs.filter((o) => o.schools.length > 0);
-    const uniqueSchools = new Set<string>();
-    for (const o of outputsWithSchools) {
-      for (const s of o.schools) uniqueSchools.add(s);
-    }
-    let students = 0;
-    for (const slug of uniqueSchools) {
-      students += studentsBySlug.get(slug) ?? 0;
-    }
+    const tagged = outputs.filter(
+      (o) => o.programmes.length > 0 || o.schools.length > 0
+    );
+    const reach = teamReach(tagged, schools);
     barImpact = {
-      outputs: outputsWithSchools.length,
-      schools: uniqueSchools.size,
-      students
+      outputs: tagged.length,
+      programmes: reach.uniqueProgrammes,
+      schools: reach.uniqueSchools,
+      students: reach.studentsImpacted
     };
   }
 

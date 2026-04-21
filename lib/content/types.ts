@@ -184,6 +184,21 @@ export const AssignmentsSchema = z.union([
 ]);
 export type Assignments = z.infer<typeof AssignmentsSchema>;
 
+// Programmes: GSL's enrolment taxonomy. Schools enrol in one or more programmes;
+// outputs are tagged to a programme and reach every school in it by default.
+export const ProgrammeSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9][a-z0-9-]*[a-z0-9]$/),
+  name: z.string().min(1),
+  partner: z.string().optional(),
+  description: z.string().min(1),
+  /** Lucide icon name (e.g. "Rocket"). Rendered via a dynamic lookup. */
+  icon: z.string().min(1),
+  /** Tailwind token name from the GSL palette. */
+  colour: z.string().min(1)
+});
+export type Programme = z.infer<typeof ProgrammeSchema>;
+export const ProgrammesSchema = z.array(ProgrammeSchema);
+
 // Team: used for attribution on assignment cards and the team page.
 export const TeamMemberSchema = z.object({
   name: z.string().min(1),
@@ -197,17 +212,23 @@ export const TeamSchema = z.array(TeamMemberSchema);
  * Output links: map of "outputs/<playbook>/<filename>" (or the same under
  * "standards/<playbook>/current/...") to one of:
  *
- *   "https://...onedrive..."                                   (legacy, URL only)
- *   { shareUrl?: string, schools?: string[] }                   (v2, enriched)
+ *   "https://...onedrive..."                                              (legacy, URL only)
+ *   { shareUrl?, schools?: string[] }                                     (v2, school tags)
+ *   { shareUrl?, programmes?: string[], schools?: string[] }              (v3, programme tags)
  *
- * The loader normalises both to the object form before surfacing upstream.
- * Decision 011 A: if an output path is not in the map, the UI shows a
- * disabled "Ask Anish for the share link" state on that card.
+ * Session 4 decision: programmes[] is the primary attribution for an output
+ * (one output serves all schools enrolled in that programme). schools[] is
+ * retained as an optional override for outputs targeted at specific schools
+ * outside their programme's reach. UI surfaces prefer programmes over
+ * schools when both are present.
+ *
+ * The loader normalises to the object form before surfacing upstream.
  */
 export const OutputLinkEntrySchema = z.union([
   z.string(),
   z.object({
     shareUrl: z.string().optional(),
+    programmes: z.array(z.string()).default([]),
     schools: z.array(z.string()).default([])
   })
 ]);
@@ -219,16 +240,18 @@ export type OutputLinks = z.infer<typeof OutputLinksSchema>;
 /** Normalised entry the loader returns to the UI. */
 export interface NormalisedOutputLink {
   shareUrl: string | null;
+  programmes: string[];
   schools: string[];
 }
 
 export function normaliseOutputLink(
   entry: OutputLinkEntry | undefined
 ): NormalisedOutputLink {
-  if (!entry) return { shareUrl: null, schools: [] };
-  if (typeof entry === "string") return { shareUrl: entry, schools: [] };
+  if (!entry) return { shareUrl: null, programmes: [], schools: [] };
+  if (typeof entry === "string") return { shareUrl: entry, programmes: [], schools: [] };
   return {
     shareUrl: entry.shareUrl ?? null,
+    programmes: entry.programmes ?? [],
     schools: entry.schools ?? []
   };
 }
@@ -239,7 +262,9 @@ export interface DiscoveredOutput {
   relativePath: string; // e.g. "outputs/lesson-plan/class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx"
   parsed: import("./parse-filename").ParsedOutputFilename | null;
   shareUrl: string | null;
-  /** School slugs this output is tagged against, from meta/output-links.json. */
+  /** Programme slugs this output is tagged against. Primary attribution. */
+  programmes: string[];
+  /** School slugs, optional override for outputs targeted outside the programme's default reach. */
   schools: string[];
 }
 

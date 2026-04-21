@@ -52,6 +52,33 @@ const mous = JSON.parse(
   readFileSync(path.join(MOU_REPO, "src/data/mous.json"), "utf8")
 );
 
+// Map MOU-system programme labels to Studio programme slugs (as listed in
+// Acads/studio/meta/programmes.json). When a new MOU programme appears that
+// we do not yet have a slug for, we fall back to kebab-casing the label so
+// the data still loads; Ritu can then promote the slug by updating this
+// map.
+const PROGRAMME_SLUG_MAP = {
+  "STEAM": "stem-robotics-ai",
+  "STEM": "stem-robotics-ai",
+  "STEM/Robotics/AI": "stem-robotics-ai",
+  "Young Pioneers": "young-pioneers",
+  "YP": "young-pioneers",
+  "VideoGenX": "videogenx",
+  "Solevit": "solevit",
+  "Harvard Manage Mentor": "harvard-manage-mentor",
+  "HMM": "harvard-manage-mentor",
+  "Talk and Learn": "talk-and-learn",
+  "Talk & Learn": "talk-and-learn"
+};
+
+function mapProgramme(label) {
+  if (PROGRAMME_SLUG_MAP[label]) return PROGRAMME_SLUG_MAP[label];
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const mousBySchool = new Map();
 for (const m of mous) {
   const list = mousBySchool.get(m.schoolId) ?? [];
@@ -63,7 +90,9 @@ const out = [];
 for (const s of schools) {
   const schoolMous = mousBySchool.get(s.id) ?? [];
   const activeMous = schoolMous.filter((m) => m.status === "Active");
-  const programmes = [...new Set(schoolMous.map((m) => m.programme))].sort();
+  const programmes = [
+    ...new Set(schoolMous.map((m) => mapProgramme(m.programme)))
+  ].sort();
   const students = activeMous.reduce(
     (sum, m) => sum + (Number.isFinite(m.studentsActual) ? m.studentsActual : 0),
     0

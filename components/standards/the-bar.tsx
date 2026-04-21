@@ -25,6 +25,7 @@ interface TheBarProps {
    *  server. Optional; when all zero the impact line does not render. */
   impact?: {
     outputs: number;
+    programmes: number;
     schools: number;
     students: number;
   };
@@ -94,6 +95,9 @@ export function TheBar({ playbookSlug, playbookTitle, standard, impact }: TheBar
           <span className="font-medium text-azure-blue">
             This standard helped {impact!.outputs} output
             {impact!.outputs === 1 ? "" : "s"}
+            {impact!.programmes > 0
+              ? ` across ${impact!.programmes} programme${impact!.programmes === 1 ? "" : "s"}`
+              : ""}
           </span>
           {impact!.schools > 0
             ? `, reaching ${impact!.schools} school${impact!.schools === 1 ? "" : "s"} and ${impact!.students.toLocaleString("en-IN")} students.`

@@ -7,6 +7,7 @@ import {
   Home,
   Layers,
   Library,
+  Route,
   School,
   Sparkles,
   TrendingUp,
@@ -27,6 +28,7 @@ const NAV: NavItem[] = [
   { href: "/skills", label: "Skills", Icon: Layers },
   { href: "/standards", label: "Standards", Icon: Sparkles },
   { href: "/library", label: "Library", Icon: Library },
+  { href: "/programmes", label: "Programmes", Icon: Route },
   { href: "/schools", label: "Schools", Icon: School },
   { href: "/assignments", label: "Assignments", Icon: Users },
   { href: "/impact", label: "Impact", Icon: TrendingUp }

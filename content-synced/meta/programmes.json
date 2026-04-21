@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "young-pioneers",
+    "name": "Young Pioneers",
+    "partner": "Cambridge",
+    "description": "A 24-week entrepreneurship programme for Classes 8 to 12, built on the Cambridge Global Perspectives framework.",
+    "icon": "Rocket",
+    "colour": "turquoise-sea"
+  },
+  {
+    "slug": "videogenx",
+    "name": "VideoGenX",
+    "partner": "Prismix Studios",
+    "description": "AI filmmaking curriculum for Grades 9 to 12 covering storyboarding, prompt-crafting, and post-production with current-gen video tools.",
+    "icon": "Film",
+    "colour": "fashion-fuchsia"
+  },
+  {
+    "slug": "solevit",
+    "name": "Solevit",
+    "description": "Open-ended SDG-aligned problem-solving challenges across Classes 6 to 12, run as structured design-thinking exercises.",
+    "icon": "Lightbulb",
+    "colour": "orange-peel"
+  },
+  {
+    "slug": "stem-robotics-ai",
+    "name": "STEM, Robotics, AI",
+    "partner": "IIT Guwahati",
+    "description": "Hands-on STEM, robotics, and AI curriculum delivered in partnership with IIT Guwahati, covering both teacher training and classroom sessions.",
+    "icon": "Cpu",
+    "colour": "azure-blue"
+  },
+  {
+    "slug": "harvard-manage-mentor",
+    "name": "Harvard Manage Mentor",
+    "partner": "Harvard",
+    "description": "Harvard leadership and management frameworks adapted for Indian teens, focused on decision-making, team dynamics, and self-management.",
+    "icon": "Briefcase",
+    "colour": "azure-blue"
+  },
+  {
+    "slug": "talk-and-learn",
+    "name": "Talk and Learn",
+    "description": "English-language development programme for K-12 students, centred on discussion formats, vocabulary targets, and confident speaking.",
+    "icon": "MessageCircle",
+    "colour": "light-sky"
+  }
+]

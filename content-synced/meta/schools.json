@@ -5,7 +5,7 @@
     "city": "Jodhpur",
     "state": "Rajasthan",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 14,
     "active_mous_count": 1,
@@ -18,7 +18,7 @@
     "city": "Ahmedabad",
     "state": "Gujarat",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 42,
     "active_mous_count": 1,
@@ -31,7 +31,7 @@
     "city": "Srinagar",
     "state": "Jammu & Kashmir",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 5,
     "active_mous_count": 1,
@@ -44,7 +44,7 @@
     "city": "Meerut",
     "state": "Uttar Pradesh",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 120,
     "active_mous_count": 2,
@@ -57,7 +57,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -70,7 +70,7 @@
     "city": "Davangere",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 44,
     "active_mous_count": 1,
@@ -83,7 +83,7 @@
     "city": "Davangere",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 95,
     "active_mous_count": 1,
@@ -96,7 +96,7 @@
     "city": "Berhampore",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 183,
     "active_mous_count": 2,
@@ -109,7 +109,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 670,
     "active_mous_count": 1,
@@ -122,7 +122,7 @@
     "city": "Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 24,
     "active_mous_count": 1,
@@ -135,7 +135,7 @@
     "city": "Pune",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 33,
     "active_mous_count": 1,
@@ -148,7 +148,7 @@
     "city": "Faridabad",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -161,7 +161,7 @@
     "city": "Secunderabad",
     "state": "Telangana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 90,
     "active_mous_count": 1,
@@ -174,7 +174,7 @@
     "city": "Navi Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 232,
     "active_mous_count": 1,
@@ -187,7 +187,7 @@
     "city": "Durgapur, West bengal",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 2048,
     "active_mous_count": 2,
@@ -200,7 +200,7 @@
     "city": "Durgapur, West bengal",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 1860,
     "active_mous_count": 2,
@@ -213,7 +213,7 @@
     "city": "Hyderabad",
     "state": "Telangana",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 51,
     "active_mous_count": 1,
@@ -226,7 +226,7 @@
     "city": "Patna",
     "state": "Bihar",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -239,7 +239,7 @@
     "city": "Secuderabad",
     "state": "Telangana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 68,
     "active_mous_count": 2,
@@ -252,7 +252,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 450,
     "active_mous_count": 1,
@@ -265,7 +265,7 @@
     "city": "Nashik",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 207,
     "active_mous_count": 2,
@@ -278,7 +278,7 @@
     "city": "Pune",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 48,
     "active_mous_count": 1,
@@ -291,7 +291,7 @@
     "city": "Parganas",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -304,7 +304,7 @@
     "city": "Hyderabad",
     "state": "Telangana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 244,
     "active_mous_count": 1,
@@ -317,7 +317,7 @@
     "city": "Krishnanagar",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -330,7 +330,7 @@
     "city": "Bandel, West Bengal",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 531,
     "active_mous_count": 1,
@@ -343,7 +343,7 @@
     "city": "",
     "state": "",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 25,
     "active_mous_count": 1,
@@ -356,7 +356,7 @@
     "city": "Dehradun",
     "state": "Uttarakhand",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 342,
     "active_mous_count": 1,
@@ -369,7 +369,7 @@
     "city": "Banglore",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 80,
     "active_mous_count": 1,
@@ -382,7 +382,7 @@
     "city": "Banglore",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 74,
     "active_mous_count": 1,
@@ -395,7 +395,7 @@
     "city": "Chennai",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 33,
     "active_mous_count": 1,
@@ -408,7 +408,7 @@
     "city": "Chennai",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 30,
     "active_mous_count": 1,
@@ -421,7 +421,7 @@
     "city": "Tura",
     "state": "Meghalaya",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 125,
     "active_mous_count": 1,
@@ -434,7 +434,7 @@
     "city": "Budgam",
     "state": "Jammu & Kashmir",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 9,
     "active_mous_count": 1,
@@ -447,7 +447,7 @@
     "city": "Bengaluru",
     "state": "Karnataka",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 83,
     "active_mous_count": 1,
@@ -460,7 +460,7 @@
     "city": "Gurgaon",
     "state": "Haryana",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 7,
     "active_mous_count": 1,
@@ -473,7 +473,7 @@
     "city": "Banglore",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 156,
     "active_mous_count": 1,
@@ -486,7 +486,7 @@
     "city": "Banglore",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 169,
     "active_mous_count": 1,
@@ -499,7 +499,7 @@
     "city": "Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -512,7 +512,7 @@
     "city": "Mhendragadh",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 110,
     "active_mous_count": 1,
@@ -525,7 +525,7 @@
     "city": "Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -538,7 +538,7 @@
     "city": "Kalaberia",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -551,7 +551,7 @@
     "city": "Kalaberia",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 10,
     "active_mous_count": 1,
@@ -564,7 +564,7 @@
     "city": "",
     "state": "",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 0,
     "active_mous_count": 2,
@@ -577,7 +577,7 @@
     "city": "",
     "state": "",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -590,7 +590,7 @@
     "city": "Malda",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 523,
     "active_mous_count": 1,
@@ -603,7 +603,7 @@
     "city": "Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 4,
     "active_mous_count": 1,
@@ -616,7 +616,7 @@
     "city": "Nagaland",
     "state": "Nagaland",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 20,
     "active_mous_count": 1,
@@ -629,7 +629,7 @@
     "city": "Kargil",
     "state": "Kashmir",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 757,
     "active_mous_count": 1,
@@ -642,7 +642,7 @@
     "city": "Bengaluru",
     "state": "Karanataka",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 0,
@@ -655,7 +655,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 540,
     "active_mous_count": 2,
@@ -668,7 +668,7 @@
     "city": "Ganganagar",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 1178,
     "active_mous_count": 2,
@@ -681,7 +681,7 @@
     "city": "Howrah",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 478,
     "active_mous_count": 2,
@@ -694,7 +694,7 @@
     "city": "Kalyani",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 948,
     "active_mous_count": 2,
@@ -707,7 +707,7 @@
     "city": "Amtala",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -720,7 +720,7 @@
     "city": "Suri",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -733,7 +733,7 @@
     "city": "",
     "state": "",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 4,
     "active_mous_count": 1,
@@ -746,7 +746,7 @@
     "city": "Jamshedpur",
     "state": "Jharkhand",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -759,7 +759,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -772,7 +772,7 @@
     "city": "Chinchwad",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 166,
     "active_mous_count": 1,
@@ -785,7 +785,7 @@
     "city": "Talegaon",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 178,
     "active_mous_count": 1,
@@ -798,7 +798,7 @@
     "city": "Ashok Vihar",
     "state": "Delhi",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 7,
     "active_mous_count": 1,
@@ -811,7 +811,7 @@
     "city": "Valsad",
     "state": "Gujarat",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 9,
     "active_mous_count": 1,
@@ -824,7 +824,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 420,
     "active_mous_count": 1,
@@ -837,7 +837,7 @@
     "city": "Sonarpur",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 796,
     "active_mous_count": 2,
@@ -850,7 +850,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 1118,
     "active_mous_count": 2,
@@ -863,7 +863,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 608,
     "active_mous_count": 1,
@@ -876,7 +876,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 608,
     "active_mous_count": 1,
@@ -889,7 +889,7 @@
     "city": "Haryana",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 0,
@@ -902,7 +902,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 81,
     "active_mous_count": 2,
@@ -915,7 +915,7 @@
     "city": "Chidambaram",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 373,
     "active_mous_count": 1,
@@ -928,7 +928,7 @@
     "city": "Kargil",
     "state": "Union Territory of Ladakh",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -941,7 +941,7 @@
     "city": "Avadi",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 150,
     "active_mous_count": 1,
@@ -954,7 +954,7 @@
     "city": "9 Different Locations",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 819,
     "active_mous_count": 1,
@@ -967,7 +967,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 49,
     "active_mous_count": 1,
@@ -980,7 +980,7 @@
     "city": "Chennai",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 218,
     "active_mous_count": 1,
@@ -993,7 +993,7 @@
     "city": "Howrah",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 22,
     "active_mous_count": 1,
@@ -1006,7 +1006,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1019,7 +1019,7 @@
     "city": "Gurugram",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 732,
     "active_mous_count": 1,
@@ -1032,7 +1032,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 16,
     "active_mous_count": 3,
@@ -1045,7 +1045,7 @@
     "city": "Mumbai",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 46,
     "active_mous_count": 1,
@@ -1058,7 +1058,7 @@
     "city": "Tura",
     "state": "Meghalaya",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 263,
     "active_mous_count": 1,
@@ -1071,7 +1071,7 @@
     "city": "Chennai",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 427,
     "active_mous_count": 1,
@@ -1084,7 +1084,7 @@
     "city": "Kolhapur",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 153,
     "active_mous_count": 1,
@@ -1097,7 +1097,7 @@
     "city": "Mahendragarh",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1110,7 +1110,7 @@
     "city": "Hyderabad",
     "state": "Telangana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 50,
     "active_mous_count": 1,
@@ -1123,7 +1123,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 41,
     "active_mous_count": 1,
@@ -1136,7 +1136,7 @@
     "city": "Nagaland",
     "state": "Nagaland",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 39,
     "active_mous_count": 1,
@@ -1149,7 +1149,7 @@
     "city": "Raipur",
     "state": "Chhatisgarh",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 48,
     "active_mous_count": 1,
@@ -1162,7 +1162,7 @@
     "city": "Raipur",
     "state": "Chhatisgarh",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 90,
     "active_mous_count": 1,
@@ -1175,7 +1175,7 @@
     "city": "Pune",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 30,
     "active_mous_count": 1,
@@ -1188,7 +1188,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 0,
@@ -1201,7 +1201,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 67,
     "active_mous_count": 1,
@@ -1214,7 +1214,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 0,
@@ -1227,7 +1227,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 11,
     "active_mous_count": 1,
@@ -1240,7 +1240,7 @@
     "city": "Rajahmundry",
     "state": "Andhra Pradesh",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 40,
     "active_mous_count": 1,
@@ -1253,7 +1253,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 21,
     "active_mous_count": 1,
@@ -1266,7 +1266,7 @@
     "city": "Hyderabad",
     "state": "Telangana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 280,
     "active_mous_count": 1,
@@ -1279,7 +1279,7 @@
     "city": "Chennai",
     "state": "Tamil Nadu",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 255,
     "active_mous_count": 1,
@@ -1292,7 +1292,7 @@
     "city": "Devangere",
     "state": "Karnataka",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 46,
     "active_mous_count": 1,
@@ -1305,7 +1305,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 191,
     "active_mous_count": 1,
@@ -1318,7 +1318,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 0,
@@ -1331,7 +1331,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1344,7 +1344,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 938,
     "active_mous_count": 2,
@@ -1357,7 +1357,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 343,
     "active_mous_count": 1,
@@ -1370,7 +1370,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 860,
     "active_mous_count": 1,
@@ -1383,7 +1383,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 820,
     "active_mous_count": 2,
@@ -1396,7 +1396,7 @@
     "city": "",
     "state": "",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 38,
     "active_mous_count": 1,
@@ -1409,7 +1409,7 @@
     "city": "Alipurduar",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 60,
     "active_mous_count": 1,
@@ -1422,7 +1422,7 @@
     "city": "Singhbhum",
     "state": "Jharkhand",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 31,
     "active_mous_count": 2,
@@ -1435,7 +1435,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 363,
     "active_mous_count": 1,
@@ -1448,7 +1448,7 @@
     "city": "Meerut",
     "state": "Uttar Pradesh",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1461,7 +1461,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1474,7 +1474,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1487,7 +1487,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 0,
     "active_mous_count": 1,
@@ -1500,7 +1500,7 @@
     "city": "Kalyan",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 15,
     "active_mous_count": 1,
@@ -1513,7 +1513,7 @@
     "city": "Tura",
     "state": "Meghalaya",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 170,
     "active_mous_count": 1,
@@ -1526,7 +1526,7 @@
     "city": "Kolkata",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 174,
     "active_mous_count": 2,
@@ -1539,7 +1539,7 @@
     "city": "Faridabad",
     "state": "Haryana",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 270,
     "active_mous_count": 1,
@@ -1552,7 +1552,7 @@
     "city": "Howrah",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 1,
     "active_mous_count": 1,
@@ -1565,7 +1565,7 @@
     "city": "Nagpur",
     "state": "Maharashtra",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 285,
     "active_mous_count": 1,
@@ -1578,7 +1578,7 @@
     "city": "Chennai",
     "state": "Tamilnadu",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 150,
     "active_mous_count": 1,
@@ -1591,7 +1591,7 @@
     "city": "Nashik",
     "state": "Maharashtra",
     "programmes": [
-      "Young Pioneers"
+      "young-pioneers"
     ],
     "students": 34,
     "active_mous_count": 1,
@@ -1604,7 +1604,7 @@
     "city": "Medinpur",
     "state": "West Bengal",
     "programmes": [
-      "STEAM"
+      "stem-robotics-ai"
     ],
     "students": 175,
     "active_mous_count": 1,

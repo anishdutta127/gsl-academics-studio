@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, FileText, MapPin, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { getAllOutputs, getSchools } from "@/lib/content/loader";
+import { getAllOutputs, getProgrammes, getSchools } from "@/lib/content/loader";
+import { outputsReachingSchool } from "@/lib/content/impact";
 import type { School } from "@/lib/content/types";
 
 export async function generateStaticParams() {
@@ -48,17 +49,20 @@ export default async function SchoolDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const [schools, allOutputs] = await Promise.all([
+  const [schools, allOutputs, programmes] = await Promise.all([
     getSchools(),
-    getAllOutputs()
+    getAllOutputs(),
+    getProgrammes()
   ]);
   const school: School | undefined = schools.find((s) => s.slug === params.slug);
   if (!school) notFound();
 
   const withUs = relativeYears(school.earliest_start_date ?? null);
 
-  // Outputs tagged to this school via meta/output-links.json.
-  const taggedOutputs = allOutputs.filter((o) => o.schools.includes(school.slug));
+  // Outputs reaching this school: either tagged to a programme this school
+  // is enrolled in, or directly tagged to this school.
+  const taggedOutputs = outputsReachingSchool(school, allOutputs);
+  const programmesBySlug = new Map(programmes.map((p) => [p.slug, p]));
 
   return (
     <article className="space-y-10 pb-16">
@@ -104,7 +108,9 @@ export default async function SchoolDetailPage({
               {school.programmes.length}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              {school.programmes.join(", ") || "None active"}
+              {school.programmes
+                .map((slug) => programmesBySlug.get(slug)?.name ?? slug)
+                .join(", ") || "None active"}
             </p>
           </div>
 

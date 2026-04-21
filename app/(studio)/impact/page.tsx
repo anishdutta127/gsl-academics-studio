@@ -4,8 +4,10 @@ import {
   getAllOutputs,
   getAllPlaybooks,
   getAssignments,
+  getProgrammes,
   getSchools
 } from "@/lib/content/loader";
+import { programmeImpact, teamReach } from "@/lib/content/impact";
 
 /**
  * /impact, the team dashboard.
@@ -30,27 +32,23 @@ function formatIndianNumber(n: number): string {
 }
 
 export default async function ImpactPage() {
-  const [outputs, schools, playbooks, weeks] = await Promise.all([
+  const [outputs, schools, playbooks, weeks, programmes] = await Promise.all([
     getAllOutputs(),
     getSchools(),
     getAllPlaybooks(),
-    getAssignments()
+    getAssignments(),
+    getProgrammes()
   ]);
 
   const published = playbooks.filter(
     (p) => p.frontmatter.status === "published"
   );
 
-  // Unique schools tagged across all outputs.
-  const taggedSchoolSlugs = new Set<string>();
-  for (const o of outputs) for (const s of o.schools) taggedSchoolSlugs.add(s);
-
   const schoolsBySlug = new Map(schools.map((s) => [s.slug, s]));
 
-  const taggedStudentsTotal = [...taggedSchoolSlugs].reduce((sum, slug) => {
-    const s = schoolsBySlug.get(slug);
-    return sum + (s?.students ?? 0);
-  }, 0);
+  // Programme-aware reach: for each tagged output, sum unique schools and
+  // students via the programme join + direct-school override.
+  const reach = teamReach(outputs, schools);
 
   // Fall back to the MOU-system schools reach when no outputs are tagged yet.
   const mouStudentsTotal = schools.reduce((sum, s) => sum + s.students, 0);
@@ -58,10 +56,22 @@ export default async function ImpactPage() {
 
   const outputsProduced = outputs.length;
   const schoolsReached =
-    taggedSchoolSlugs.size > 0 ? taggedSchoolSlugs.size : mouSchoolsCount;
+    reach.uniqueSchools > 0 ? reach.uniqueSchools : mouSchoolsCount;
   const studentsImpacted =
-    taggedStudentsTotal > 0 ? taggedStudentsTotal : mouStudentsTotal;
-  const isSchoolsReachFallback = taggedSchoolSlugs.size === 0;
+    reach.studentsImpacted > 0 ? reach.studentsImpacted : mouStudentsTotal;
+  const isSchoolsReachFallback = reach.uniqueSchools === 0;
+
+  // Programme-level aggregation.
+  const programmesByImpact = programmeImpact(
+    programmes.map((p) => p.slug),
+    outputs,
+    schools
+  );
+  const programmeRows = programmes.map((p) => {
+    const impact = programmesByImpact.find((x) => x.slug === p.slug)!;
+    return { ...p, impact };
+  });
+  programmeRows.sort((a, b) => b.impact.studentCount - a.impact.studentCount);
 
   // Top playbooks by output count.
   const countsByPlaybook = new Map<string, number>();
@@ -81,11 +91,18 @@ export default async function ImpactPage() {
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
 
-  // Top schools by output count.
+  // Top schools by outputs served (outputs whose programmes match the
+  // school's programmes, plus direct-tag outputs).
   const countsBySchool = new Map<string, number>();
   for (const o of outputs) {
-    for (const s of o.schools) {
-      countsBySchool.set(s, (countsBySchool.get(s) ?? 0) + 1);
+    const programmeSet = new Set(o.programmes);
+    const direct = new Set(o.schools);
+    for (const s of schools) {
+      const matches =
+        direct.has(s.slug) || s.programmes.some((p) => programmeSet.has(p));
+      if (matches) {
+        countsBySchool.set(s.slug, (countsBySchool.get(s.slug) ?? 0) + 1);
+      }
     }
   }
   const topSchools = [...countsBySchool.entries()]
@@ -158,6 +175,57 @@ export default async function ImpactPage() {
           }
           tone="bg-light-sky/60 border-azure-blue/20"
         />
+      </section>
+
+      {/* By programme */}
+      <section
+        aria-labelledby="impact-programme-heading"
+        className="space-y-4"
+      >
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
+            By programme
+          </p>
+          <h2
+            id="impact-programme-heading"
+            className="font-display text-xl text-azure-blue"
+          >
+            Where reach comes from.
+          </h2>
+        </div>
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {programmeRows.map((p) => (
+            <li key={p.slug}>
+              <Link
+                href={`/programmes/${p.slug}`}
+                className="group block rounded-2xl border border-border bg-white p-5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-turquoise-sea hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise-sea"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-azure-blue/80">
+                    {p.name}
+                  </span>
+                  {p.partner ? (
+                    <span className="text-xs text-muted-foreground">
+                      · {p.partner}
+                    </span>
+                  ) : null}
+                </div>
+                <p className="mt-3 font-display text-3xl text-azure-blue">
+                  {p.impact.studentCount.toLocaleString("en-IN")}{" "}
+                  <span className="text-sm text-muted-foreground font-sans">
+                    students
+                  </span>
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {p.impact.schoolCount} school
+                  {p.impact.schoolCount === 1 ? "" : "s"} ·{" "}
+                  {p.impact.outputCount} output
+                  {p.impact.outputCount === 1 ? "" : "s"}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Top playbooks / schools */}

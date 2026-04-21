@@ -1,5 +1,16 @@
-import { LibraryView, type LibraryOutput, type SchoolLookup } from "@/components/library/library-view";
-import { getAllPlaybooks, getOutputsForPlaybook, getSchools } from "@/lib/content/loader";
+import {
+  LibraryView,
+  type LibraryOutput,
+  type OutputReachLookup,
+  type SchoolLookup
+} from "@/components/library/library-view";
+import {
+  getAllPlaybooks,
+  getOutputsForPlaybook,
+  getProgrammes,
+  getSchools
+} from "@/lib/content/loader";
+import { outputReach } from "@/lib/content/impact";
 
 /**
  * /library, the content library.
@@ -51,15 +62,32 @@ export default async function LibraryPage() {
     icon: p.frontmatter.icon ?? null
   }));
 
-  // Pre-resolve school slug -> (name, students) so library cards can render
-  // "Used by 3 schools, 340 students" without additional client-side work.
-  const schools = await getSchools();
+  // Pre-resolve schools + programmes + reach so library cards can render
+  // programme chips and "reaching N schools, M students" without additional
+  // client-side work.
+  const [schools, programmes] = await Promise.all([
+    getSchools(),
+    getProgrammes()
+  ]);
   const schoolsBySlug: Record<string, SchoolLookup> = {};
   for (const s of schools) {
     schoolsBySlug[s.slug] = {
       slug: s.slug,
       name: s.name,
       students: s.students
+    };
+  }
+  const programmeNameBySlug = new Map(programmes.map((p) => [p.slug, p.name]));
+  const reachByOutput: Record<string, OutputReachLookup> = {};
+  for (const o of outputs) {
+    const reach = outputReach(o, schools);
+    reachByOutput[o.relativePath] = {
+      schoolCount: reach.schools.length,
+      studentCount: reach.studentCount,
+      programmes: o.programmes.map((slug) => ({
+        slug,
+        name: programmeNameBySlug.get(slug) ?? slug
+      }))
     };
   }
 
@@ -81,6 +109,7 @@ export default async function LibraryPage() {
         outputs={outputs}
         playbookOptions={playbookOptions}
         schoolsBySlug={schoolsBySlug}
+        reachByOutput={reachByOutput}
       />
     </div>
   );

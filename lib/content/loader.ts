@@ -7,6 +7,7 @@ import {
   AssignmentsSchema,
   OutputLinksSchema,
   PlaybookSchema,
+  ProgrammesSchema,
   SchoolsSchema,
   SkillSchema,
   TeamSchema,
@@ -15,6 +16,7 @@ import {
   type DiscoveredOutput,
   type OutputLinks,
   type Playbook,
+  type Programme,
   type School,
   type Skill,
   type TeamMember
@@ -195,6 +197,11 @@ export const getSchools = cache(
     readJsonFile("meta/schools.json", (v) => SchoolsSchema.parse(v), [])
 );
 
+export const getProgrammes = cache(
+  async (): Promise<Programme[]> =>
+    readJsonFile("meta/programmes.json", (v) => ProgrammesSchema.parse(v), [])
+);
+
 /**
  * Assignments loader. Returns an array of weeks, sorted week_of desc (newest
  * first). Handles both the single-week legacy shape and the new multi-week
@@ -313,8 +320,10 @@ export const getOutputsForPlaybook = cache(
     const results: DiscoveredOutput[] = filenames.map((filename) => {
       const parsed = parseOutputFilename(filename);
       const relativePath = `outputs/${playbookSlug}/${filename}`;
-      const { shareUrl, schools } = normaliseOutputLink(links[relativePath]);
-      return { filename, relativePath, parsed, shareUrl, schools };
+      const { shareUrl, programmes, schools } = normaliseOutputLink(
+        links[relativePath]
+      );
+      return { filename, relativePath, parsed, shareUrl, programmes, schools };
     });
 
     // Parseable outputs sort by date desc; unparseable fall to the end.

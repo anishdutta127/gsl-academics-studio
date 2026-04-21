@@ -19,6 +19,12 @@ export interface SchoolLookup {
   students: number;
 }
 
+export interface OutputReachLookup {
+  schoolCount: number;
+  studentCount: number;
+  programmes: { slug: string; name: string }[];
+}
+
 interface LibraryViewProps {
   outputs: LibraryOutput[];
   /** Every published playbook, even if it has zero outputs today. Used for
@@ -28,11 +34,21 @@ interface LibraryViewProps {
    *  library cards. Keyed by school slug. Optional; when absent, cards
    *  render a neutral "N schools" without student totals. */
   schoolsBySlug?: Record<string, SchoolLookup>;
+  /** Pre-computed reach for each output (programme join + direct schools),
+   *  keyed by DiscoveredOutput.relativePath. Optional. When provided, the
+   *  library card shows programme chips + "reaching N schools, M students";
+   *  when absent, falls back to the direct-school tag render. */
+  reachByOutput?: Record<string, OutputReachLookup>;
 }
 
 const ALL = "__all__";
 
-export function LibraryView({ outputs, playbookOptions, schoolsBySlug }: LibraryViewProps) {
+export function LibraryView({
+  outputs,
+  playbookOptions,
+  schoolsBySlug,
+  reachByOutput
+}: LibraryViewProps) {
   const [playbookFilter, setPlaybookFilter] = useState<string>(ALL);
   const [gradeFilter, setGradeFilter] = useState<string>(ALL);
   const [query, setQuery] = useState<string>("");
@@ -170,6 +186,7 @@ export function LibraryView({ outputs, playbookOptions, schoolsBySlug }: Library
               key={`${o.playbookSlug}-${o.filename}`}
               output={o}
               schoolsBySlug={schoolsBySlug}
+              reach={reachByOutput?.[o.relativePath]}
             />
           ))}
         </ul>
@@ -206,21 +223,30 @@ function FilterChip({
 
 function OutputCard({
   output,
-  schoolsBySlug
+  schoolsBySlug,
+  reach
 }: {
   output: LibraryOutput;
   schoolsBySlug: Record<string, SchoolLookup> | undefined;
+  reach: OutputReachLookup | undefined;
 }) {
   const { filename, parsed, shareUrl, playbookSlug, playbookTitle, playbookIcon, schools } = output;
   const topic = parsed?.topic ? formatTopic(parsed.topic) : filename;
   const grade = parsed?.grade ? formatGrade(parsed.grade) : null;
-  const taggedSchools = schools
+
+  // Prefer server-computed reach (programme join) when available; fall back
+  // to direct-school-tag counts.
+  const directTaggedSchools = schools
     .map((slug) => schoolsBySlug?.[slug])
     .filter((s): s is SchoolLookup => s !== undefined);
-  const totalStudentsReached = taggedSchools.reduce(
+  const directStudentsReached = directTaggedSchools.reduce(
     (sum, s) => sum + s.students,
     0
   );
+  const hasReach = !!reach && reach.schoolCount > 0;
+  const reachSchools = hasReach ? reach!.schoolCount : directTaggedSchools.length;
+  const reachStudents = hasReach ? reach!.studentCount : directStudentsReached;
+  const programmeChips = hasReach ? reach!.programmes : [];
 
   const content = (
     <>
@@ -241,13 +267,25 @@ function OutputCard({
         {playbookIcon ? <span aria-hidden="true">{playbookIcon}</span> : null}
         From {playbookTitle}
       </p>
-      {schools.length > 0 ? (
+      {programmeChips.length > 0 ? (
+        <ul className="mt-2 flex flex-wrap gap-1">
+          {programmeChips.map((p) => (
+            <li
+              key={p.slug}
+              className="rounded-full bg-light-sky border border-azure-blue/10 px-2 py-0.5 text-[11px] text-azure-blue"
+            >
+              {p.name}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {reachSchools > 0 ? (
         <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-azure-blue">
           <Users className="h-3.5 w-3.5 text-orange-peel" aria-hidden="true" />
           <span>
-            Used by {schools.length} school{schools.length === 1 ? "" : "s"}
-            {totalStudentsReached > 0
-              ? `, ${totalStudentsReached.toLocaleString("en-IN")} students`
+            Reaching {reachSchools} school{reachSchools === 1 ? "" : "s"}
+            {reachStudents > 0
+              ? `, ${reachStudents.toLocaleString("en-IN")} students`
               : ""}
           </span>
         </p>
