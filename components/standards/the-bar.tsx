@@ -12,6 +12,7 @@ import {
   DialogTrigger
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { ProposeNewStandard } from "@/components/standards/propose-new-standard";
 import { extractKeyQualities } from "@/lib/content/standards-helpers";
 import { relativeTimeFromIsoDate } from "@/lib/utils/relative-time";
 import type { LoadedCurrentStandard } from "@/lib/content/types";
@@ -32,7 +33,7 @@ export function TheBar({ playbookSlug, playbookTitle, standard }: TheBarProps) {
       aria-labelledby={`bar-${playbookSlug}-heading`}
       className="rounded-2xl border border-orange-peel/50 bg-orange-peel/5 p-6 md:p-8 space-y-5"
     >
-      <header className="flex flex-wrap items-baseline justify-between gap-3">
+      <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
           <span>The bar, set by {standard.rationale.set_by}</span>
@@ -40,6 +41,12 @@ export function TheBar({ playbookSlug, playbookTitle, standard }: TheBarProps) {
             · {setOnLabel}
           </span>
         </div>
+        <ProposeNewStandard
+          playbookSlug={playbookSlug}
+          playbookTitle={playbookTitle}
+          triggerOnly
+          triggerVariant="subtle"
+        />
       </header>
 
       <div className="space-y-2">
