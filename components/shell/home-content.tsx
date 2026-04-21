@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { FileText } from "lucide-react";
 import { PlaybookCard } from "@/components/playbook/card";
+import { Bento, type BentoProps } from "@/components/shell/bento";
 import { HomeHero } from "@/components/shell/hero";
 import { readRecentlyViewed, type RecentEntry } from "@/components/shell/recently-viewed";
 import type {
@@ -19,6 +20,7 @@ export interface RecentOutputWithContext extends DiscoveredOutput {
 interface HomeContentProps {
   playbooks: PlaybookFrontmatter[];
   recentOutputs: RecentOutputWithContext[];
+  bento: BentoProps;
 }
 
 function relativeDaysAgo(ms: number): string {
@@ -30,7 +32,7 @@ function relativeDaysAgo(ms: number): string {
   return `${days} days ago`;
 }
 
-export function HomeContent({ playbooks, recentOutputs }: HomeContentProps) {
+export function HomeContent({ playbooks, recentOutputs, bento }: HomeContentProps) {
   const [mounted, setMounted] = useState(false);
   const [recent, setRecent] = useState<RecentEntry[]>([]);
 
@@ -67,6 +69,8 @@ export function HomeContent({ playbooks, recentOutputs }: HomeContentProps) {
   return (
     <div className="space-y-12 pb-16">
       <HomeHero />
+
+      <Bento {...bento} />
 
       {showPickUp ? (
         <section aria-labelledby="pick-up-heading" className="space-y-5">

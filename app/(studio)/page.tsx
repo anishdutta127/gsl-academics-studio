@@ -1,8 +1,18 @@
 import { HomeContent, type RecentOutputWithContext } from "@/components/shell/home-content";
-import { getAllPlaybooks, getOutputsForPlaybook } from "@/lib/content/loader";
+import type { BentoProps } from "@/components/shell/bento";
+import {
+  getAllPlaybooks,
+  getAssignments,
+  getOutputsForPlaybook,
+  getSchools
+} from "@/lib/content/loader";
 
 export default async function HomePage() {
-  const playbooks = await getAllPlaybooks();
+  const [playbooks, schools, assignmentWeeks] = await Promise.all([
+    getAllPlaybooks(),
+    getSchools(),
+    getAssignments()
+  ]);
   const published = playbooks.filter(
     (p) => p.frontmatter.status === "published"
   );
@@ -30,10 +40,29 @@ export default async function HomePage() {
     })
     .slice(0, 3);
 
+  // Bento stats, computed server-side and passed down so the Fraunces numbers
+  // land without a client-render flash.
+  const latestWeek = assignmentWeeks[0] ?? null;
+  const bento: BentoProps = {
+    reach: {
+      students: schools.reduce((sum, s) => sum + s.students, 0),
+      schools: schools.filter((s) => s.status === "Active").length
+    },
+    craft: {
+      publishedPlaybooks: published.length
+    },
+    thisWeek: {
+      inFlight:
+        latestWeek?.assignments.filter((a) => a.status !== "done").length ?? 0,
+      weekOf: latestWeek?.week_of ?? null
+    }
+  };
+
   return (
     <HomeContent
       playbooks={published.map((p) => p.frontmatter)}
       recentOutputs={recentOutputs}
+      bento={bento}
     />
   );
 }
