@@ -2,7 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, FileText, MapPin, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { getAllOutputs, getProgrammes, getSchools } from "@/lib/content/loader";
+import {
+  getAllOutputs,
+  getAssignments,
+  getProgrammes,
+  getSchools
+} from "@/lib/content/loader";
 import { outputsReachingSchool } from "@/lib/content/impact";
 import type { School } from "@/lib/content/types";
 
@@ -49,10 +54,11 @@ export default async function SchoolDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const [schools, allOutputs, programmes] = await Promise.all([
+  const [schools, allOutputs, programmes, assignmentWeeks] = await Promise.all([
     getSchools(),
     getAllOutputs(),
-    getProgrammes()
+    getProgrammes(),
+    getAssignments()
   ]);
   const school: School | undefined = schools.find((s) => s.slug === params.slug);
   if (!school) notFound();
@@ -63,6 +69,19 @@ export default async function SchoolDetailPage({
   // is enrolled in, or directly tagged to this school.
   const taggedOutputs = outputsReachingSchool(school, allOutputs);
   const programmesBySlug = new Map(programmes.map((p) => [p.slug, p]));
+
+  // People who have worked on assignments for this school, drawn from the
+  // assignments data. Uniqued by assignee name; most-recent-first by rough
+  // week order.
+  const contributorNames = new Set<string>();
+  for (const week of assignmentWeeks) {
+    for (const a of week.assignments) {
+      if (a.school_slug === school.slug) {
+        contributorNames.add(a.assignee_name);
+      }
+    }
+  }
+  const contributors = [...contributorNames];
 
   return (
     <article className="space-y-10 pb-16">
@@ -107,11 +126,25 @@ export default async function SchoolDetailPage({
             <p className="mt-1 font-display text-2xl text-azure-blue">
               {school.programmes.length}
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {school.programmes
-                .map((slug) => programmesBySlug.get(slug)?.name ?? slug)
-                .join(", ") || "None active"}
-            </p>
+            {school.programmes.length > 0 ? (
+              <ul className="mt-2 flex flex-wrap gap-1.5">
+                {school.programmes.map((slug) => {
+                  const prog = programmesBySlug.get(slug);
+                  return (
+                    <li key={slug}>
+                      <Link
+                        href={`/programmes/${slug}`}
+                        className="inline-flex items-center rounded-full bg-white border border-azure-blue/15 px-2.5 py-0.5 text-xs text-azure-blue hover:border-turquoise-sea hover:bg-light-sky transition-colors"
+                      >
+                        {prog?.name ?? slug}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="mt-1 text-xs text-muted-foreground">None active</p>
+            )}
           </div>
 
           {withUs ? (
@@ -213,7 +246,7 @@ export default async function SchoolDetailPage({
 
       <section
         aria-labelledby="school-team-heading"
-        className="rounded-2xl border border-border bg-white p-6 md:p-8 space-y-3"
+        className="rounded-2xl border border-border bg-white p-6 md:p-8 space-y-4"
       >
         <div className="space-y-2">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
@@ -223,14 +256,35 @@ export default async function SchoolDetailPage({
             id="school-team-heading"
             className="font-display text-xl text-azure-blue"
           >
-            Coming with the Assignments dashboard.
+            {contributors.length === 0
+              ? "Nobody tagged yet."
+              : `${contributors.length} team member${contributors.length === 1 ? "" : "s"} have worked on materials for this school.`}
           </h2>
-          <p className="text-sm text-muted-foreground max-w-prose">
-            Once writers, designers, and reviewers are tagged against
-            assignments in <code className="font-mono">meta/assignments.json</code>,
-            this block lists who has worked on materials for this school.
-          </p>
+          {contributors.length === 0 ? (
+            <p className="text-sm text-muted-foreground max-w-prose">
+              Add an assignment on the{" "}
+              <Link
+                href="/assignments"
+                className="text-azure-blue underline underline-offset-4"
+              >
+                Assignments page
+              </Link>{" "}
+              with this school selected, and whoever is assigned appears here.
+            </p>
+          ) : null}
         </div>
+        {contributors.length > 0 ? (
+          <ul className="flex flex-wrap gap-2">
+            {contributors.map((name) => (
+              <li
+                key={name}
+                className="inline-flex items-center rounded-full bg-light-sky/60 border border-azure-blue/15 px-3 py-1 text-sm text-azure-blue"
+              >
+                {name}
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </section>
     </article>
   );
