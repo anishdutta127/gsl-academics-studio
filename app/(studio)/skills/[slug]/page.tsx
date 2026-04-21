@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ContributeToSkill } from "@/components/skill/contribute-to-skill";
 import { getAllPlaybooks, getAllSkills, getSkill } from "@/lib/content/loader";
 
 export async function generateStaticParams() {
@@ -75,6 +76,12 @@ export default async function SkillDetailPage({
       <section className="prose-gsl max-w-3xl">
         <Markdown>{skill.body}</Markdown>
       </section>
+
+      <ContributeToSkill
+        skillSlug={fm.slug}
+        skillTitle={fm.title}
+        isStub={fm.status === "draft"}
+      />
 
       <section
         aria-labelledby="referenced-by-heading"

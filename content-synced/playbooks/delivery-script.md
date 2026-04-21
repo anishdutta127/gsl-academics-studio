@@ -3,7 +3,7 @@ slug: delivery-script
 title: Delivery Script Writer
 icon: "🎤"
 category: Trainer Tools
-what_youll_make: A session script a trainer can open the night before and deliver the next day without improvising. Six segments in a fixed shape (opener, hook, concept, guided practice, independent practice, close). Every segment tells the trainer what to SAY, what to ASK, and what to WATCH FOR in student responses. Plus notes for the three things that most often go wrong in a real classroom: early finishers, struggling students, and tech failing.
+what_youll_make: A session script a trainer can open the night before and deliver the next day without improvising. Six segments in a fixed shape (opener, hook, concept, guided practice, independent practice, close). Every segment tells the trainer what to SAY, what to ASK, and what to WATCH FOR in student responses. Plus notes for the three things that most often go wrong in a real classroom (early finishers, struggling students, and tech failing).
 time_needed: 45 to 75 minutes
 difficulty: standard
 skills_referenced:

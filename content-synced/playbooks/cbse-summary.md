@@ -3,7 +3,7 @@ slug: cbse-summary
 title: CBSE Doc Summariser
 icon: "📑"
 category: Board Alignment
-what_youll_make: A one-page summary of a CBSE circular, NCF update, or board notification. Four sections: what changed, where it hits GSL, what GSL does next, and who owns what by when. Every claim points to a specific section or page in the source, so the reader can verify. Every action has a named owner and a deadline.
+what_youll_make: A one-page summary of a CBSE circular, NCF update, or board notification. Four sections covering what changed, where it hits GSL, what GSL does next, and who owns what by when. Every claim points to a specific section or page in the source, so the reader can verify. Every action has a named owner and a deadline.
 time_needed: 20 to 40 minutes
 difficulty: gentle
 skills_referenced:

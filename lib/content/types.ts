@@ -85,9 +85,16 @@ export const SkillFrontmatterSchema = z.object({
   summary: z.string().min(1),
   status: StatusSchema,
   last_edited_by: z.string().optional(),
+  // YAML auto-parses bare ISO dates (e.g. `2026-04-21`) into JS Date objects
+  // under js-yaml. Accept both shapes and coerce to the YYYY-MM-DD string
+  // the rest of the app expects.
   last_edited_at: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "last_edited_at must be YYYY-MM-DD" })
+    .preprocess((v) => {
+      if (v instanceof Date) return v.toISOString().slice(0, 10);
+      return v;
+    }, z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "last_edited_at must be YYYY-MM-DD" }))
     .optional()
 });
 export type SkillFrontmatter = z.infer<typeof SkillFrontmatterSchema>;
@@ -190,9 +197,13 @@ export const PLAYBOOK_TITLES: Record<PlaybookSlug, string> = {
  */
 export const StandardRationaleSchema = z.object({
   set_by: z.string().min(1),
-  set_on: z
+  // YAML auto-parses ISO dates to JS Date. Coerce back to the expected string.
+  set_on: z.preprocess((v) => {
+    if (v instanceof Date) return v.toISOString().slice(0, 10);
+    return v;
+  }, z
     .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "set_on must be YYYY-MM-DD" }),
+    .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "set_on must be YYYY-MM-DD" })),
   topic: z.string().min(1),
   grade: z.string().min(1),
   programme: z.string().optional(),
