@@ -23,9 +23,9 @@ interface NavItem {
 const NAV: NavItem[] = [
   { href: "/", label: "Home", Icon: Home },
   { href: "/playbooks", label: "Playbooks", Icon: BookOpen },
-  { href: "/skills", label: "Skills", Icon: Layers, comingSoon: "week 3" },
+  { href: "/skills", label: "Skills", Icon: Layers },
   { href: "/standards", label: "Standards", Icon: Sparkles },
-  { href: "/library", label: "Library", Icon: Library, comingSoon: "week 2" },
+  { href: "/library", label: "Library", Icon: Library },
   { href: "/schools", label: "Schools", Icon: School, comingSoon: "week 3" },
   {
     href: "/assignments",
