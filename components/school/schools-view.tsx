@@ -224,7 +224,7 @@ function SchoolCard({ school }: { school: School }) {
               aria-hidden="true"
             />
             <span className="font-display text-2xl text-azure-blue">
-              {school.students > 0 ? formatImpactNumber(school.students) : "—"}
+              {school.students > 0 ? formatImpactNumber(school.students) : "0"}
             </span>
             <span className="text-xs text-muted-foreground mb-1">students</span>
           </p>

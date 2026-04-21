@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Users, FileText, School as SchoolIcon, ArrowRight } from "lucide-react";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 import {
   getAllOutputs,
   getAllPlaybooks,
@@ -124,7 +125,8 @@ export default async function ImpactPage() {
 
   return (
     <div className="space-y-12 pb-16">
-      <header className="space-y-3">
+      <header className="relative rounded-3xl bg-light-sky/40 p-6 md:p-10 md:pr-56 lg:pr-60 overflow-hidden space-y-3">
+        <HeroIllustration variant="impact" />
         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
           Impact
         </p>

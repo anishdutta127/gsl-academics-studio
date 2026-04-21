@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 
 function timeOfDayGreeting(name: string): string {
   // Pass 1 of design review: specific warm copy per window. Reads client
@@ -32,8 +33,9 @@ export function HomeHero() {
   }, []);
 
   return (
-    <section className="rounded-3xl bg-light-sky/50 px-6 py-12 md:px-12 md:py-16">
-      <div className="mx-auto max-w-3xl text-center space-y-6">
+    <section className="relative rounded-3xl bg-light-sky/50 px-6 py-12 md:px-12 md:py-16 overflow-hidden">
+      <HeroIllustration variant="home" />
+      <div className="mx-auto max-w-3xl text-center space-y-6 relative">
         <h1 className="font-display text-azure-blue">{greeting}</h1>
         <div className="relative mx-auto max-w-xl">
           <Search

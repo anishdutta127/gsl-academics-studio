@@ -1,4 +1,5 @@
 import { SkillCard } from "@/components/skill/card";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 import { getAllPlaybooks, getAllSkills } from "@/lib/content/loader";
 
 /**
@@ -28,7 +29,8 @@ export default async function SkillsPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <header className="space-y-3">
+      <header className="relative rounded-3xl bg-light-sky/40 p-6 md:p-10 md:pr-56 lg:pr-60 overflow-hidden space-y-3">
+        <HeroIllustration variant="skills" />
         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
           The frameworks behind the playbooks
         </p>

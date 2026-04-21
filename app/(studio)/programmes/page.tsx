@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 import {
   getAllOutputs,
   getProgrammes,
@@ -44,7 +45,8 @@ export default async function ProgrammesIndexPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <header className="space-y-3">
+      <header className="relative rounded-3xl bg-light-sky/40 p-6 md:p-10 md:pr-56 lg:pr-60 overflow-hidden space-y-3">
+        <HeroIllustration variant="programmes" />
         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
           The six programmes
         </p>

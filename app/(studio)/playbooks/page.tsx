@@ -1,4 +1,5 @@
 import { PlaybookCard } from "@/components/playbook/card";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 import { getAllPlaybooks } from "@/lib/content/loader";
 
 export default async function PlaybooksListPage() {
@@ -9,11 +10,15 @@ export default async function PlaybooksListPage() {
 
   return (
     <div className="space-y-8">
-      <header className="space-y-3">
+      <header className="relative rounded-3xl bg-light-sky/40 p-6 md:p-10 md:pr-56 lg:pr-60 overflow-hidden space-y-3">
+        <HeroIllustration variant="playbooks" />
+        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
+          Guided procedures
+        </p>
         <h1 className="font-display text-azure-blue">Playbooks</h1>
         <p className="max-w-2xl text-muted-foreground">
-          Guided procedures for every content task. Pick one, follow the
-          steps, come out the other side.
+          Pick one, follow the steps, come out the other side with something
+          ready for the classroom.
         </p>
       </header>
 

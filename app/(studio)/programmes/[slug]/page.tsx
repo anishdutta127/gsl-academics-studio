@@ -159,7 +159,7 @@ export default async function ProgrammeDetailPage({
                       aria-hidden="true"
                     />
                     <span className="font-display text-2xl text-azure-blue">
-                      {s.students > 0 ? s.students.toLocaleString("en-IN") : "—"}
+                      {s.students > 0 ? s.students.toLocaleString("en-IN") : "0"}
                     </span>
                     <span className="text-xs text-muted-foreground mb-1">
                       students

@@ -112,7 +112,7 @@ export default async function SchoolDetailPage({
             </p>
             <p className="mt-1 font-display text-4xl text-azure-blue inline-flex items-baseline gap-2">
               <Users className="h-6 w-6 text-orange-peel" aria-hidden="true" />
-              {school.students > 0 ? formatImpactNumber(school.students) : "—"}
+              {school.students > 0 ? formatImpactNumber(school.students) : "0"}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
               Across active MOUs
@@ -166,7 +166,7 @@ export default async function SchoolDetailPage({
               Status
             </p>
             <p className="mt-1 font-display text-2xl text-azure-blue">
-              {school.status ?? "—"}
+              {school.status ?? "Not set"}
             </p>
           </div>
         </div>

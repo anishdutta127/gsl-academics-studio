@@ -6,6 +6,7 @@ import { AuditStage } from "@/components/playbook/audit-stage";
 import { RecentlyViewedUpdater } from "@/components/playbook/recently-viewed-updater";
 import { StepsAccordion } from "@/components/playbook/step-accordion";
 import { SuggestImprovement } from "@/components/playbook/suggest-improvement";
+import { EditInOneDrive } from "@/components/shell/edit-in-onedrive";
 import { ProposeNewStandard } from "@/components/standards/propose-new-standard";
 import { TheBar } from "@/components/standards/the-bar";
 import { TheBarEmpty } from "@/components/standards/the-bar-empty";
@@ -83,7 +84,7 @@ export default async function PlaybookReaderPage({
     <article className="space-y-12 pb-16">
       <RecentlyViewedUpdater slug={fm.slug} />
 
-      <div>
+      <div className="flex items-center justify-between gap-3">
         <Link
           href="/playbooks"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-azure-blue underline-offset-4 hover:underline"
@@ -91,6 +92,10 @@ export default async function PlaybookReaderPage({
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Back to playbooks
         </Link>
+        <EditInOneDrive
+          relativePath={`playbooks/${fm.slug}.md`}
+          displayName={fm.title}
+        />
       </div>
 
       {/* Hero */}

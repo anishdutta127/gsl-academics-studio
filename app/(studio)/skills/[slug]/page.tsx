@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ContributeToSkill } from "@/components/skill/contribute-to-skill";
+import { EditInOneDrive } from "@/components/shell/edit-in-onedrive";
 import { getAllPlaybooks, getAllSkills, getSkill } from "@/lib/content/loader";
 
 export async function generateStaticParams() {
@@ -36,7 +37,7 @@ export default async function SkillDetailPage({
 
   return (
     <article className="space-y-12 pb-16">
-      <div>
+      <div className="flex items-center justify-between gap-3">
         <Link
           href="/skills"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-azure-blue underline-offset-4 hover:underline"
@@ -44,6 +45,10 @@ export default async function SkillDetailPage({
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Back to skills
         </Link>
+        <EditInOneDrive
+          relativePath={`skills/${fm.slug}.md`}
+          displayName={fm.title}
+        />
       </div>
 
       <header className="rounded-3xl bg-light-sky/50 p-6 md:p-10 space-y-6">

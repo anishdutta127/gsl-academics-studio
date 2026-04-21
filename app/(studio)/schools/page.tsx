@@ -1,4 +1,5 @@
 import { SchoolsView } from "@/components/school/schools-view";
+import { HeroIllustration } from "@/components/imagery/hero-svg";
 import { getSchools } from "@/lib/content/loader";
 
 /**
@@ -15,7 +16,8 @@ export default async function SchoolsPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <header className="space-y-3">
+      <header className="relative rounded-3xl bg-light-sky/40 p-6 md:p-10 md:pr-64 lg:pr-72 overflow-hidden space-y-3">
+        <HeroIllustration variant="schools" />
         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
           Partners across India
         </p>
