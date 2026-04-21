@@ -64,7 +64,7 @@ export function ProposeNewStandard({
   }
 
   return (
-    <aside className="rounded-2xl border border-border bg-white p-5 space-y-3">
+    <aside className="rounded-2xl border border-border bg-white p-6 space-y-3">
       <div className="flex items-center gap-2">
         <Lightbulb
           className="h-4 w-4 text-orange-peel"

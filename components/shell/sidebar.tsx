@@ -72,18 +72,18 @@ export function Sidebar() {
               className={cn(
                 "group flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors relative",
                 active
-                  ? "bg-turquoise-sea/15 text-azure-blue font-medium"
+                  ? "bg-turquoise-sea text-white font-medium pr-7"
                   : "text-muted-foreground hover:bg-light-sky/40 hover:text-azure-blue"
               )}
             >
               <Icon
                 className={cn(
                   "h-4 w-4 shrink-0",
-                  active ? "text-azure-blue" : "text-muted-foreground"
+                  active ? "text-white" : "text-muted-foreground"
                 )}
               />
               <span>{label}</span>
-              {comingSoon ? (
+              {comingSoon && !active ? (
                 <span className="ml-auto text-[10px] uppercase tracking-wider text-muted-foreground/70">
                   {comingSoon}
                 </span>
@@ -91,7 +91,7 @@ export function Sidebar() {
               {active ? (
                 <span
                   aria-hidden="true"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-fashion-fuchsia"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-fashion-fuchsia shadow-[0_0_0_2px_rgba(255,255,255,0.25)]"
                 />
               ) : null}
             </Link>

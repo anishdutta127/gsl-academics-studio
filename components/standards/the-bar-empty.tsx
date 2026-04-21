@@ -11,7 +11,7 @@ export function TheBarEmpty({ playbookSlug, playbookTitle }: TheBarEmptyProps) {
   return (
     <section
       aria-labelledby={`bar-${playbookSlug}-empty-heading`}
-      className="rounded-2xl border border-dashed border-border bg-white p-6 md:p-8 space-y-3"
+      className="rounded-2xl border border-dashed border-azure-blue/20 bg-light-sky/30 p-6 md:p-8 space-y-4"
     >
       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
         <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
