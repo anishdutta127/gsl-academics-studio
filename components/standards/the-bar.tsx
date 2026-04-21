@@ -21,12 +21,20 @@ interface TheBarProps {
   playbookSlug: string;
   playbookTitle: string;
   standard: LoadedCurrentStandard;
+  /** Pre-computed impact numbers for the current bar, passed from the
+   *  server. Optional; when all zero the impact line does not render. */
+  impact?: {
+    outputs: number;
+    schools: number;
+    students: number;
+  };
 }
 
-export function TheBar({ playbookSlug, playbookTitle, standard }: TheBarProps) {
+export function TheBar({ playbookSlug, playbookTitle, standard, impact }: TheBarProps) {
   const [rationaleOpen, setRationaleOpen] = useState(false);
   const qualities = extractKeyQualities(standard.bodyMarkdown);
   const setOnLabel = relativeTimeFromIsoDate(standard.rationale.set_on);
+  const showImpact = !!impact && impact.outputs > 0;
 
   return (
     <section
@@ -79,6 +87,18 @@ export function TheBar({ playbookSlug, playbookTitle, standard }: TheBarProps) {
             </li>
           ))}
         </ul>
+      ) : null}
+
+      {showImpact ? (
+        <p className="text-xs text-muted-foreground">
+          <span className="font-medium text-azure-blue">
+            This standard helped {impact!.outputs} output
+            {impact!.outputs === 1 ? "" : "s"}
+          </span>
+          {impact!.schools > 0
+            ? `, reaching ${impact!.schools} school${impact!.schools === 1 ? "" : "s"} and ${impact!.students.toLocaleString("en-IN")} students.`
+            : "."}
+        </p>
       ) : null}
 
       <div className="flex flex-col sm:flex-row gap-3 pt-1">

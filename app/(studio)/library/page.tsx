@@ -1,5 +1,5 @@
-import { LibraryView, type LibraryOutput } from "@/components/library/library-view";
-import { getAllPlaybooks, getOutputsForPlaybook } from "@/lib/content/loader";
+import { LibraryView, type LibraryOutput, type SchoolLookup } from "@/components/library/library-view";
+import { getAllPlaybooks, getOutputsForPlaybook, getSchools } from "@/lib/content/loader";
 
 /**
  * /library, the content library.
@@ -51,6 +51,18 @@ export default async function LibraryPage() {
     icon: p.frontmatter.icon ?? null
   }));
 
+  // Pre-resolve school slug -> (name, students) so library cards can render
+  // "Used by 3 schools, 340 students" without additional client-side work.
+  const schools = await getSchools();
+  const schoolsBySlug: Record<string, SchoolLookup> = {};
+  for (const s of schools) {
+    schoolsBySlug[s.slug] = {
+      slug: s.slug,
+      name: s.name,
+      students: s.students
+    };
+  }
+
   return (
     <div className="space-y-10 pb-16">
       <header className="space-y-3">
@@ -65,7 +77,11 @@ export default async function LibraryPage() {
         </p>
       </header>
 
-      <LibraryView outputs={outputs} playbookOptions={playbookOptions} />
+      <LibraryView
+        outputs={outputs}
+        playbookOptions={playbookOptions}
+        schoolsBySlug={schoolsBySlug}
+      />
     </div>
   );
 }

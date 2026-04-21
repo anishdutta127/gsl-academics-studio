@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, Users } from "lucide-react";
-import { getSchools } from "@/lib/content/loader";
+import { ArrowLeft, ExternalLink, FileText, MapPin, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { getAllOutputs, getSchools } from "@/lib/content/loader";
 import type { School } from "@/lib/content/types";
 
 export async function generateStaticParams() {
@@ -31,16 +32,33 @@ function relativeYears(startDate: string | null | undefined): string | null {
   return `${years} year${years === 1 ? "" : "s"}`;
 }
 
+function formatTopic(raw: string): string {
+  const spaced = raw.replace(/-/g, " ");
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1);
+}
+
+function formatGrade(raw: string): string {
+  const m = /^class-(\d+)$/.exec(raw);
+  if (m) return `Class ${Number(m[1])}`;
+  return raw.replace(/-/g, " ");
+}
+
 export default async function SchoolDetailPage({
   params
 }: {
   params: { slug: string };
 }) {
-  const schools = await getSchools();
+  const [schools, allOutputs] = await Promise.all([
+    getSchools(),
+    getAllOutputs()
+  ]);
   const school: School | undefined = schools.find((s) => s.slug === params.slug);
   if (!school) notFound();
 
   const withUs = relativeYears(school.earliest_start_date ?? null);
+
+  // Outputs tagged to this school via meta/output-links.json.
+  const taggedOutputs = allOutputs.filter((o) => o.schools.includes(school.slug));
 
   return (
     <article className="space-y-10 pb-16">
@@ -117,7 +135,7 @@ export default async function SchoolDetailPage({
 
       <section
         aria-labelledby="school-content-heading"
-        className="rounded-2xl border border-border bg-white p-6 md:p-8 space-y-3"
+        className="rounded-2xl border border-border bg-white p-6 md:p-8 space-y-5"
       >
         <div className="space-y-2">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-orange-peel">
@@ -127,15 +145,64 @@ export default async function SchoolDetailPage({
             id="school-content-heading"
             className="font-display text-xl text-azure-blue"
           >
-            Nothing tagged to this school yet.
+            {taggedOutputs.length === 0
+              ? "Nothing tagged to this school yet."
+              : `${taggedOutputs.length} output${taggedOutputs.length === 1 ? "" : "s"} tagged to this school.`}
           </h2>
-          <p className="text-sm text-muted-foreground max-w-prose">
-            When an output passes its audit and a writer tags it to this
-            school in <code className="font-mono">meta/output-links.json</code>,
-            it will appear here with the playbook badge and date. The tagging
-            UI ships alongside the library in a later commit.
-          </p>
+          {taggedOutputs.length === 0 ? (
+            <p className="text-sm text-muted-foreground max-w-prose">
+              When an output passes its audit and a writer tags it to this
+              school in <code className="font-mono">meta/output-links.json</code>,
+              it will appear here with the playbook badge and date.
+            </p>
+          ) : null}
         </div>
+
+        {taggedOutputs.length > 0 ? (
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            {taggedOutputs.map((o) => {
+              const topic = o.parsed?.topic ? formatTopic(o.parsed.topic) : o.filename;
+              const grade = o.parsed?.grade ? formatGrade(o.parsed.grade) : null;
+              return (
+                <li
+                  key={o.relativePath}
+                  className="rounded-xl border border-border bg-white p-4 space-y-2"
+                >
+                  <div className="flex items-start gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+                    <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span>{o.parsed?.ext?.toUpperCase() ?? "FILE"}</span>
+                  </div>
+                  <p className="font-display text-sm text-azure-blue line-clamp-2">
+                    {topic}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {grade ? <Badge variant="light">{grade}</Badge> : null}
+                    {o.parsed?.date ? (
+                      <span className="text-xs text-muted-foreground">
+                        {o.parsed.date}
+                      </span>
+                    ) : null}
+                  </div>
+                  {o.shareUrl ? (
+                    <a
+                      href={o.shareUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-azure-blue hover:underline underline-offset-4"
+                    >
+                      Open
+                      <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <p className="text-xs text-muted-foreground">
+                      Share link not recorded
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
       </section>
 
       <section

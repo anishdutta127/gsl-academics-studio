@@ -10,7 +10,7 @@ import { ProposeNewStandard } from "@/components/standards/propose-new-standard"
 import { TheBar } from "@/components/standards/the-bar";
 import { TheBarEmpty } from "@/components/standards/the-bar-empty";
 import { Badge } from "@/components/ui/badge";
-import { getAllPlaybooks, getPlaybook } from "@/lib/content/loader";
+import { getAllPlaybooks, getOutputsForPlaybook, getPlaybook, getSchools } from "@/lib/content/loader";
 import { getCurrentStandard } from "@/lib/content/standards";
 import { PLAYBOOK_SLUGS, type Difficulty, type PlaybookSlug } from "@/lib/content/types";
 import { cn } from "@/lib/utils";
@@ -51,6 +51,33 @@ export default async function PlaybookReaderPage({
   const currentStandard = isStandardsPlaybook
     ? await getCurrentStandard(fm.slug as PlaybookSlug)
     : null;
+
+  // Standards impact: count outputs produced against this playbook's current
+  // bar (proxy: all outputs tagged to any school for this playbook slug,
+  // since Phase 1 does not track "produced-against-which-bar" explicitly).
+  // Renders on TheBar only when at least one output exists.
+  let barImpact: { outputs: number; schools: number; students: number } | undefined;
+  if (currentStandard) {
+    const [outputs, schools] = await Promise.all([
+      getOutputsForPlaybook(fm.slug),
+      getSchools()
+    ]);
+    const studentsBySlug = new Map(schools.map((s) => [s.slug, s.students]));
+    const outputsWithSchools = outputs.filter((o) => o.schools.length > 0);
+    const uniqueSchools = new Set<string>();
+    for (const o of outputsWithSchools) {
+      for (const s of o.schools) uniqueSchools.add(s);
+    }
+    let students = 0;
+    for (const slug of uniqueSchools) {
+      students += studentsBySlug.get(slug) ?? 0;
+    }
+    barImpact = {
+      outputs: outputsWithSchools.length,
+      schools: uniqueSchools.size,
+      students
+    };
+  }
 
   return (
     <article className="space-y-12 pb-16">
@@ -109,6 +136,7 @@ export default async function PlaybookReaderPage({
             playbookSlug={fm.slug}
             playbookTitle={fm.title}
             standard={currentStandard}
+            impact={barImpact}
           />
         ) : (
           <TheBarEmpty playbookSlug={fm.slug} playbookTitle={fm.title} />

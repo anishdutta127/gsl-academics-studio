@@ -158,11 +158,45 @@ export const TeamMemberSchema = z.object({
 export type TeamMember = z.infer<typeof TeamMemberSchema>;
 export const TeamSchema = z.array(TeamMemberSchema);
 
-// Output links: map of "outputs/<playbook>/<filename>" to OneDrive share URL.
-// Decision 011 A: if an output filename is not in the map, the Studio shows
-// a disabled "Ask Anish for the share link" state on that card.
-export const OutputLinksSchema = z.record(z.string(), z.string());
+/**
+ * Output links: map of "outputs/<playbook>/<filename>" (or the same under
+ * "standards/<playbook>/current/...") to one of:
+ *
+ *   "https://...onedrive..."                                   (legacy, URL only)
+ *   { shareUrl?: string, schools?: string[] }                   (v2, enriched)
+ *
+ * The loader normalises both to the object form before surfacing upstream.
+ * Decision 011 A: if an output path is not in the map, the UI shows a
+ * disabled "Ask Anish for the share link" state on that card.
+ */
+export const OutputLinkEntrySchema = z.union([
+  z.string(),
+  z.object({
+    shareUrl: z.string().optional(),
+    schools: z.array(z.string()).default([])
+  })
+]);
+export type OutputLinkEntry = z.infer<typeof OutputLinkEntrySchema>;
+
+export const OutputLinksSchema = z.record(z.string(), OutputLinkEntrySchema);
 export type OutputLinks = z.infer<typeof OutputLinksSchema>;
+
+/** Normalised entry the loader returns to the UI. */
+export interface NormalisedOutputLink {
+  shareUrl: string | null;
+  schools: string[];
+}
+
+export function normaliseOutputLink(
+  entry: OutputLinkEntry | undefined
+): NormalisedOutputLink {
+  if (!entry) return { shareUrl: null, schools: [] };
+  if (typeof entry === "string") return { shareUrl: entry, schools: [] };
+  return {
+    shareUrl: entry.shareUrl ?? null,
+    schools: entry.schools ?? []
+  };
+}
 
 // A discovered output file, surfaced to UI with optional parsed filename chips.
 export interface DiscoveredOutput {
@@ -170,6 +204,8 @@ export interface DiscoveredOutput {
   relativePath: string; // e.g. "outputs/lesson-plan/class-08_solving-your-citys-water-crisis_lesson-plan_2026-04-10.docx"
   parsed: import("./parse-filename").ParsedOutputFilename | null;
   shareUrl: string | null;
+  /** School slugs this output is tagged against, from meta/output-links.json. */
+  schools: string[];
 }
 
 // Standards System (decision 012) ----------------------------------------

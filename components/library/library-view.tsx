@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ExternalLink, FileText, Search } from "lucide-react";
+import { ExternalLink, FileText, Search, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { DiscoveredOutput } from "@/lib/content/types";
@@ -13,16 +13,26 @@ export interface LibraryOutput extends DiscoveredOutput {
   playbookIcon: string | null;
 }
 
+export interface SchoolLookup {
+  slug: string;
+  name: string;
+  students: number;
+}
+
 interface LibraryViewProps {
   outputs: LibraryOutput[];
   /** Every published playbook, even if it has zero outputs today. Used for
    *  the filter-chip row so the reader can see all seven buckets. */
   playbookOptions: { slug: string; title: string; icon: string | null }[];
+  /** Minimal school shape for resolving slug → name + student count on
+   *  library cards. Keyed by school slug. Optional; when absent, cards
+   *  render a neutral "N schools" without student totals. */
+  schoolsBySlug?: Record<string, SchoolLookup>;
 }
 
 const ALL = "__all__";
 
-export function LibraryView({ outputs, playbookOptions }: LibraryViewProps) {
+export function LibraryView({ outputs, playbookOptions, schoolsBySlug }: LibraryViewProps) {
   const [playbookFilter, setPlaybookFilter] = useState<string>(ALL);
   const [gradeFilter, setGradeFilter] = useState<string>(ALL);
   const [query, setQuery] = useState<string>("");
@@ -156,7 +166,11 @@ export function LibraryView({ outputs, playbookOptions }: LibraryViewProps) {
       ) : (
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((o) => (
-            <OutputCard key={`${o.playbookSlug}-${o.filename}`} output={o} />
+            <OutputCard
+              key={`${o.playbookSlug}-${o.filename}`}
+              output={o}
+              schoolsBySlug={schoolsBySlug}
+            />
           ))}
         </ul>
       )}
@@ -190,10 +204,23 @@ function FilterChip({
   );
 }
 
-function OutputCard({ output }: { output: LibraryOutput }) {
-  const { filename, parsed, shareUrl, playbookSlug, playbookTitle, playbookIcon } = output;
+function OutputCard({
+  output,
+  schoolsBySlug
+}: {
+  output: LibraryOutput;
+  schoolsBySlug: Record<string, SchoolLookup> | undefined;
+}) {
+  const { filename, parsed, shareUrl, playbookSlug, playbookTitle, playbookIcon, schools } = output;
   const topic = parsed?.topic ? formatTopic(parsed.topic) : filename;
   const grade = parsed?.grade ? formatGrade(parsed.grade) : null;
+  const taggedSchools = schools
+    .map((slug) => schoolsBySlug?.[slug])
+    .filter((s): s is SchoolLookup => s !== undefined);
+  const totalStudentsReached = taggedSchools.reduce(
+    (sum, s) => sum + s.students,
+    0
+  );
 
   const content = (
     <>
@@ -214,6 +241,17 @@ function OutputCard({ output }: { output: LibraryOutput }) {
         {playbookIcon ? <span aria-hidden="true">{playbookIcon}</span> : null}
         From {playbookTitle}
       </p>
+      {schools.length > 0 ? (
+        <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-azure-blue">
+          <Users className="h-3.5 w-3.5 text-orange-peel" aria-hidden="true" />
+          <span>
+            Used by {schools.length} school{schools.length === 1 ? "" : "s"}
+            {totalStudentsReached > 0
+              ? `, ${totalStudentsReached.toLocaleString("en-IN")} students`
+              : ""}
+          </span>
+        </p>
+      ) : null}
       {!parsed ? (
         <p className="mt-2 text-[11px] text-muted-foreground italic">
           Naming convention not followed: {filename}

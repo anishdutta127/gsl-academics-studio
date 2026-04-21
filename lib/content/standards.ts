@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { getOutputLinks } from "./loader";
 import {
   StandardRationaleSchema,
+  normaliseOutputLink,
   type LoadedArchivedStandard,
   type LoadedCurrentStandard,
   type LoadedStandardProposal
@@ -114,7 +115,7 @@ export const getCurrentStandard = cache(
 
     const referencePath = `standards/${playbookSlug}/current/${parsed.rationale.reference_filename}`;
     const links = await getOutputLinks();
-    const shareUrl = links[referencePath] ?? null;
+    const { shareUrl } = normaliseOutputLink(links[referencePath]);
     return {
       rationale: parsed.rationale,
       bodyMarkdown: parsed.bodyMarkdown,
@@ -158,7 +159,7 @@ export const getStandardProposals = cache(
         rationale: parsed.rationale,
         bodyMarkdown: parsed.bodyMarkdown,
         referencePath,
-        shareUrl: links[referencePath] ?? null
+        shareUrl: normaliseOutputLink(links[referencePath]).shareUrl
       });
     }
     // Newest proposals first by set_on, falling back to folder name.
@@ -208,7 +209,7 @@ export const getArchivedStandards = cache(
         rationale: parsed.rationale,
         bodyMarkdown: parsed.bodyMarkdown,
         referencePath,
-        shareUrl: links[referencePath] ?? null
+        shareUrl: normaliseOutputLink(links[referencePath]).shareUrl
       });
     }
     out.sort((a, b) => {

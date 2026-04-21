@@ -10,6 +10,7 @@ import {
   SchoolsSchema,
   SkillSchema,
   TeamSchema,
+  normaliseOutputLink,
   type Assignments,
   type DiscoveredOutput,
   type OutputLinks,
@@ -257,6 +258,31 @@ async function listOutputFilenames(
   }
 }
 
+/**
+ * Cross-playbook aggregation: returns every DiscoveredOutput across every
+ * published playbook, already sorted by parsed-date-desc (unparseable at
+ * the end). Used by the school detail page and the /impact dashboard.
+ */
+export const getAllOutputs = cache(async (): Promise<DiscoveredOutput[]> => {
+  const playbooks = await getAllPlaybooks();
+  const published = playbooks.filter(
+    (p) => p.frontmatter.status === "published"
+  );
+  const perPlaybook = await Promise.all(
+    published.map((p) => getOutputsForPlaybook(p.frontmatter.slug))
+  );
+  const all = perPlaybook.flat();
+  all.sort((a, b) => {
+    if (a.parsed?.date && b.parsed?.date) {
+      return b.parsed.date.localeCompare(a.parsed.date);
+    }
+    if (a.parsed && !b.parsed) return -1;
+    if (!a.parsed && b.parsed) return 1;
+    return a.filename.localeCompare(b.filename);
+  });
+  return all;
+});
+
 export const getOutputsForPlaybook = cache(
   async (playbookSlug: string): Promise<DiscoveredOutput[]> => {
     const root = await resolveContentRoot();
@@ -266,8 +292,8 @@ export const getOutputsForPlaybook = cache(
     const results: DiscoveredOutput[] = filenames.map((filename) => {
       const parsed = parseOutputFilename(filename);
       const relativePath = `outputs/${playbookSlug}/${filename}`;
-      const shareUrl = links[relativePath] ?? null;
-      return { filename, relativePath, parsed, shareUrl };
+      const { shareUrl, schools } = normaliseOutputLink(links[relativePath]);
+      return { filename, relativePath, parsed, shareUrl, schools };
     });
 
     // Parseable outputs sort by date desc; unparseable fall to the end.
