@@ -170,7 +170,8 @@ export default async function PlaybookReaderPage({
         <AuditStage
           playbookSlug={fm.slug}
           playbookTitle={fm.title}
-          auditPrompt={fm.audit_prompt_template}
+          auditTemplate={fm.audit_prompt_template}
+          currentStandard={currentStandard}
         />
       ) : null}
 

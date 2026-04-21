@@ -4,12 +4,45 @@ import { useState } from "react";
 import { Check, Sparkles, X } from "lucide-react";
 import { PromptBlock } from "@/components/playbook/prompt-block";
 import { Button } from "@/components/ui/button";
+import { extractKeyQualities } from "@/lib/content/standards-helpers";
+import type {
+  AuditPromptTemplate,
+  LoadedCurrentStandard
+} from "@/lib/content/types";
 import { cn } from "@/lib/utils";
 
 interface AuditStageProps {
   playbookSlug: string;
   playbookTitle: string;
-  auditPrompt: string;
+  /** Two-shape template: prefix (used after the standard preamble) +
+   *  fallback (full standalone prompt when no standard is set). */
+  auditTemplate: AuditPromptTemplate;
+  /** Current bar for this playbook, injected into the prompt when set. */
+  currentStandard: LoadedCurrentStandard | null;
+}
+
+function composeAuditPrompt(
+  playbookTitle: string,
+  template: AuditPromptTemplate,
+  currentStandard: LoadedCurrentStandard | null
+): string {
+  if (!currentStandard) {
+    return template.fallback;
+  }
+  const qualities = extractKeyQualities(currentStandard.bodyMarkdown);
+  const qualitiesBlock =
+    qualities.length > 0
+      ? `\n\nThe key qualities of our current bar are:\n${qualities
+          .map((q) => `- ${q}`)
+          .join("\n")}`
+      : "";
+  const referenceLine = currentStandard.shareUrl
+    ? `\n\nThe full reference: ${currentStandard.shareUrl}`
+    : "\n\n(The reference file is in OneDrive; ask Anish if the link is not yet shared.)";
+
+  const preamble = `Audit this output against GSL's current bar for ${playbookTitle}, set by ${currentStandard.rationale.set_by} on ${currentStandard.rationale.set_on}.${qualitiesBlock}${referenceLine}\n\nYour output should match or exceed these qualities. Identify specifically where it falls short and suggest fixes. Then apply the audit body below.`;
+
+  return `${preamble}\n\n${template.prefix}`;
 }
 
 type Decision = "pending" | "pass" | "fail";
@@ -19,10 +52,16 @@ const FILENAME_TEMPLATE = "<grade>_<topic-slug>_<playbook>_<YYYY-MM-DD>.<ext>";
 export function AuditStage({
   playbookSlug,
   playbookTitle,
-  auditPrompt
+  auditTemplate,
+  currentStandard
 }: AuditStageProps) {
   const [decision, setDecision] = useState<Decision>("pending");
   const [filenameCopied, setFilenameCopied] = useState(false);
+  const auditPrompt = composeAuditPrompt(
+    playbookTitle,
+    auditTemplate,
+    currentStandard
+  );
 
   // Per-playbook example so the suggested filename feels native to the
   // output the writer just made. GSL future-skills topics, varied so no

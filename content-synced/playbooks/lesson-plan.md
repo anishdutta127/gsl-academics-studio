@@ -158,29 +158,41 @@ steps:
       A complete lesson plan document, ready to copy into Word, named something like "Solving your city's water crisis, Class 8, 45-minute lesson.docx" once you save it.
     next_action: |
       Paste into Word. Apply the GSL document template (headings, GSL colours). Save under the naming convention in the Audit Stage below. Proceed to audit.
-audit_prompt_template: |
-  Audit the attached GSL lesson plan against these criteria. For each, return pass or fail, the specific line or section where it passes or fails, and a one-line suggested fix.
+audit_prompt_template:
+  prefix: |
+    The standard above defines the bar. Now run a quick surface check on this lesson plan as well:
 
-  Criteria that reference the Pedagogy Foundations skill (slug: pedagogy-foundations, which you should have as context; if you do not, say so and stop):
+    A. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
+    B. No em-dash character anywhere in the document.
+    C. Materials list is specific (named handouts, named tools), not generic like "worksheet" alone.
+    D. Title block at the top includes Topic, Grade, Duration, and Date.
+    E. Three likely student questions are listed with answers.
+    F. Emergency backup activity is included.
 
-  1. All nine of Gagné's events are present and timed.
-  2. Minutes in the event table sum to the stated session duration.
-  3. Direct instruction (events 4 and 5 combined) is 15 minutes or fewer.
-  4. Students are active (not just listening) in at least four events.
-  5. Differentiation covers both advanced learners and struggling learners.
-  6. Age-appropriate language per the Pedagogy Foundations Age Guidelines for the stated grade.
-  7. At least two events use an Indian-context example (Indian name, place, scenario).
+    Return a table with columns: Criterion, Pass or Fail, Evidence (the specific line or section), Fix. Include both the bar-comparison findings and the surface checks. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
+  fallback: |
+    Audit the attached GSL lesson plan against these criteria. For each, return pass or fail, the specific line or section where it passes or fails, and a one-line suggested fix.
 
-  Surface conventions (inlined here until the Brand Voice and PPT Patterns skills have full bodies in week 3):
+    Criteria that reference the Pedagogy Foundations skill (slug: pedagogy-foundations, which you should have as context; if you do not, say so and stop):
 
-  8. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
-  9. No em-dash character anywhere in the document.
-  10. Materials list is specific (named handouts, named tools), not generic like "worksheet" alone.
-  11. Title block at the top includes Topic, Grade, Duration, and Date.
-  12. Three likely student questions are listed with answers.
-  13. Emergency backup activity is included.
+    1. All nine of Gagné's events are present and timed.
+    2. Minutes in the event table sum to the stated session duration.
+    3. Direct instruction (events 4 and 5 combined) is 15 minutes or fewer.
+    4. Students are active (not just listening) in at least four events.
+    5. Differentiation covers both advanced learners and struggling learners.
+    6. Age-appropriate language per the Pedagogy Foundations Age Guidelines for the stated grade.
+    7. At least two events use an Indian-context example (Indian name, place, scenario).
 
-  Return a table with columns: Criterion, Pass or Fail, Evidence, Fix. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
+    Surface conventions (inlined here until the Brand Voice and PPT Patterns skills have full bodies in week 3):
+
+    8. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
+    9. No em-dash character anywhere in the document.
+    10. Materials list is specific (named handouts, named tools), not generic like "worksheet" alone.
+    11. Title block at the top includes Topic, Grade, Duration, and Date.
+    12. Three likely student questions are listed with answers.
+    13. Emergency backup activity is included.
+
+    Return a table with columns: Criterion, Pass or Fail, Evidence, Fix. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
 common_pitfalls: |
   - **Lecture-heavy lessons.** If a 40-minute lesson plan has the teacher talking for 40 minutes, it is wrong. Maximum 15 minutes of direct instruction. The rest is activity, discussion, practice.
   - **Vague materials.** "Handout" and "worksheet" are not materials. "A4 sheet with four word problems about sharing mangoes at a family function" is a material.

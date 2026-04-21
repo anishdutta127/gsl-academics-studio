@@ -27,6 +27,27 @@ export type Step = z.infer<typeof StepSchema>;
 
 // Playbook frontmatter. Metadata + steps + audit prompt all live here.
 // Markdown body is reserved for the overview prose (use-when, before-you-start, common pitfalls).
+/**
+ * Audit prompt template (decision 012).
+ *
+ * Two-shape composition so the AuditStage component can blend a
+ * current-bar context (when set) with the playbook's own audit body, and
+ * fall back to a complete standalone prompt when no bar exists.
+ *
+ * - prefix:   short tail that runs after the standard preamble when a
+ *             current standard is set. Typically just the return-format
+ *             directive ("Return a table with columns... End with an
+ *             overall verdict.").
+ * - fallback: full standalone audit prompt used when no current standard
+ *             exists. Inlines the surface conventions and criteria list
+ *             the standard would otherwise replace.
+ */
+export const AuditPromptTemplateSchema = z.object({
+  prefix: z.string().min(1),
+  fallback: z.string().min(1)
+});
+export type AuditPromptTemplate = z.infer<typeof AuditPromptTemplateSchema>;
+
 export const PlaybookFrontmatterSchema = z.object({
   slug: SlugSchema,
   title: z.string().min(1),
@@ -46,7 +67,7 @@ export const PlaybookFrontmatterSchema = z.object({
   /** Prose copy (markdown) rendered after the Audit Stage. Optional. */
   common_pitfalls: z.string().optional(),
   steps: z.array(StepSchema).min(1),
-  audit_prompt_template: z.string().optional()
+  audit_prompt_template: AuditPromptTemplateSchema.optional()
 });
 export type PlaybookFrontmatter = z.infer<typeof PlaybookFrontmatterSchema>;
 

@@ -174,34 +174,46 @@ steps:
       A complete assessment document, ready to paste into Word or Excel (for question banks) or Word (for rubrics).
     next_action: |
       Paste into the right tool. Save under the naming convention in the Audit Stage. Proceed to audit.
-audit_prompt_template: |
-  Audit the attached GSL assessment against these criteria. For each, return pass or fail, the specific question or section where it passes or fails, and a one-line suggested fix.
+audit_prompt_template:
+  prefix: |
+    The standard above defines the bar. Now run a quick surface check on this assessment as well:
 
-  Criteria referencing the Pedagogy Foundations skill (slug: pedagogy-foundations):
+    A. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
+    B. No em-dash character anywhere in the document.
+    C. Cover page includes Subject, Unit, Grade, Time, Total marks, and Date.
+    D. Answer key is on its own section for question-bank assessments.
+    E. No double-barrelled questions (asking two things at once).
+    F. No "all of the above" or "none of the above" MCQ options except where justified.
 
-  1. Bloom's distribution is within ±10% of the grade-calibrated recommendation for Grade [GRADE].
-  2. All six Bloom's levels are represented (for assessments of 20 or more questions).
-  3. Age-appropriate language per Pedagogy Foundations Age Guidelines.
-  4. Every MCQ distractor is plausible, tied to a common misconception, and similar in length to the correct option.
-  5. No "all of the above" or "none of the above" options except where justified.
-  6. No double-barrelled questions (asking two things at once).
-  7. Indian names, places, and scenarios appear in the majority of scenario-based questions.
+    Return a table with columns: Criterion, Pass or Fail, Evidence (the specific question or section), Fix. Include both the bar-comparison findings and the surface checks. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
+  fallback: |
+    Audit the attached GSL assessment against these criteria. For each, return pass or fail, the specific question or section where it passes or fails, and a one-line suggested fix.
 
-  Rubric-specific criteria (if the artefact includes a rubric):
+    Criteria referencing the Pedagogy Foundations skill (slug: pedagogy-foundations):
 
-  8. 4 to 6 criteria, each with a clear weight.
-  9. Criterion weights sum to 100.
-  10. Exemplary, Proficient, Developing, and Beginning descriptors are specific and observable, not "good / average / poor".
-  11. Inter-rater reliability guidance is included.
+    1. Bloom's distribution is within ±10% of the grade-calibrated recommendation for Grade [GRADE].
+    2. All six Bloom's levels are represented (for assessments of 20 or more questions).
+    3. Age-appropriate language per Pedagogy Foundations Age Guidelines.
+    4. Every MCQ distractor is plausible, tied to a common misconception, and similar in length to the correct option.
+    5. No "all of the above" or "none of the above" options except where justified.
+    6. No double-barrelled questions (asking two things at once).
+    7. Indian names, places, and scenarios appear in the majority of scenario-based questions.
 
-  Surface conventions (inlined here until the Brand Voice and PPT Patterns skills have full bodies in week 3):
+    Rubric-specific criteria (if the artefact includes a rubric):
 
-  12. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
-  13. No em-dash character anywhere in the document.
-  14. Cover page includes Subject, Unit, Grade, Time, Total marks, and Date.
-  15. Answer key is on its own section for question-bank assessments.
+    8. 4 to 6 criteria, each with a clear weight.
+    9. Criterion weights sum to 100.
+    10. Exemplary, Proficient, Developing, and Beginning descriptors are specific and observable, not "good / average / poor".
+    11. Inter-rater reliability guidance is included.
 
-  Return a table with columns: Criterion, Pass or Fail, Evidence, Fix. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
+    Surface conventions (inlined here until the Brand Voice and PPT Patterns skills have full bodies in week 3):
+
+    12. British English throughout. Flag any occurrence of "organize", "color", "realize", "behavior", "analyze", "center", "favorite".
+    13. No em-dash character anywhere in the document.
+    14. Cover page includes Subject, Unit, Grade, Time, Total marks, and Date.
+    15. Answer key is on its own section for question-bank assessments.
+
+    Return a table with columns: Criterion, Pass or Fail, Evidence, Fix. End with an overall pass or fail verdict. If the overall verdict is fail, list the top three fixes in priority order.
 common_pitfalls: |
   - **Distractors that are obviously wrong.** A distractor a student would never pick is a wasted option. Every distractor must come from a real misconception at the grade.
   - **All-Remember question banks.** Even a Class 3 bank should have some Understand and Apply. A Class 10 bank with 80% Remember fails NEP 2020.
