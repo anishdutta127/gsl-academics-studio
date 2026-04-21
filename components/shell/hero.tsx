@@ -11,16 +11,16 @@ function timeOfDayGreeting(name: string): string {
     return `Good morning, ${name}. What are we making today?`;
   }
   if (hour < 17) {
-    return `Good afternoon, ${name}. What's on the easel?`;
+    return `Good afternoon, ${name}. What are we working on?`;
   }
-  return `Back again, ${name}. One more before you close the day?`;
+  return `Welcome back, ${name}. Let's pick up where we left off.`;
 }
 
 function fallbackGreeting(): string {
   const hour = new Date().getHours();
   if (hour < 12) return "Good morning. What are we making today?";
-  if (hour < 17) return "Good afternoon. What's on the easel?";
-  return "Back again. One more before you close the day?";
+  if (hour < 17) return "Good afternoon. What are we working on?";
+  return "Welcome back. Let's pick up where we left off.";
 }
 
 export function HomeHero() {

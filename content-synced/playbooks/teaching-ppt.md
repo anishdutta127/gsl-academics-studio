@@ -3,7 +3,7 @@ slug: teaching-ppt
 title: Teaching Material PPT Builder
 icon: "🎨"
 category: Presentations
-what_youll_make: A GSL-branded teaching deck, roughly 12 to 18 slides, that a teacher can open in class and deliver with confidence. Built around Gagné's 9 Events of Instruction, with a Bloom's cognitive-level chip visible on every content slide, a non-example shown beside every core concept, constructive learning prompts every 3 to 4 slides, one genuinely fun activity per session, and teacher notes that tell the teacher what to say, what to ask, and what to watch for.
+what_youll_make: A GSL-branded teaching deck, roughly 12 to 18 slides, that a teacher can open in class and deliver with confidence. Each deck uses Gagné's 9 Events as its shape. Every content slide shows a Bloom's level so students can see how they are learning. Every core concept shows a worked example next to a "not this" non-example. Students turn to a neighbour every 3 to 4 slides. Each session has one fun activity students actually do. And every slide has teacher notes: what to say, what to ask, and what to watch for.
 time_needed: 60 to 90 minutes
 difficulty: standard
 skills_referenced:

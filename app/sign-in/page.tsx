@@ -74,7 +74,7 @@ function SignInForm() {
         disabled={pending}
         className="w-full font-display tracking-wide"
       >
-        {pending ? "Taking a look…" : "Enter"}
+        {pending ? "Signing you in…" : "Sign in"}
       </Button>
     </form>
   );
@@ -87,7 +87,7 @@ export default function SignInPage() {
         <div className="space-y-3">
           <h1 className="font-display text-azure-blue">Welcome to the Studio.</h1>
           <p className="text-muted-foreground">
-            Where we make the best things we make.
+            The easy way to make great teaching materials. Welcome in.
           </p>
         </div>
         <Suspense fallback={null}>
