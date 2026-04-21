@@ -1,1 +1,1614 @@
-[]
+[
+  {
+    "slug": "alma-mater-school",
+    "name": "Alma Mater School",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 14,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "apple-global-school",
+    "name": "Apple Global School",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 42,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "ayesha-ali-academy",
+    "name": "Ayesha Ali Academy",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 5,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "b-i-t-global-school",
+    "name": "B I T Global School",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 120,
+    "active_mous_count": 2,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "b-d-memorial-jr-school",
+    "name": "B.D Memorial Jr. School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "bapuji-educational-association-pssemr-school-caie",
+    "name": "BAPUJI EDUCATIONAL ASSOCIATION _PSSEMR School - CAIE",
+    "city": "Davangere",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 44,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "bapuji-educational-association-pssemr-school-cbse",
+    "name": "BAPUJI EDUCATIONAL ASSOCIATION _PSSEMR School - CBSE",
+    "city": "Davangere",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 95,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "berhampore-city-public-school",
+    "name": "Berhampore City Public School",
+    "city": "Berhampore",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 183,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "bgs-school",
+    "name": "BGS School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 670,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "bharati-vidyapeeth-rabindranath-tagore-school-of-excellence",
+    "name": "Bharati Vidyapeeth Rabindranath Tagore School of Excellence",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 24,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "billabong-high-international-school-light-house-mh",
+    "name": "Billabong High International School / light house _MH",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 33,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "blue-angels-global-school",
+    "name": "Blue Angels Global School",
+    "city": "Faridabad",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "bolton-school",
+    "name": "Bolton School",
+    "city": "Secunderabad",
+    "state": "Telangana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 90,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "bright-future-high-school",
+    "name": "Bright Future High School",
+    "city": "Navi Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 232,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "carmel-convent-high-school-durgapur",
+    "name": "Carmel Convent High School, Durgapur",
+    "city": "Durgapur, West bengal",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 2048,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "carmel-school-durgapur",
+    "name": "Carmel School, Durgapur",
+    "city": "Durgapur, West bengal",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 1860,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "chirec-international-academy",
+    "name": "CHIREC International Academy",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 51,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "christ-mission-school",
+    "name": "Christ Mission School",
+    "city": "Patna",
+    "state": "Bihar",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "clever-minds-school",
+    "name": "Clever Minds School",
+    "city": "Secuderabad",
+    "state": "Telangana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 68,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "contai-public-school",
+    "name": "Contai Public School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 450,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "darshan-academy-devlali",
+    "name": "Darshan Academy, Devlali",
+    "city": "Nashik",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 207,
+    "active_mous_count": 2,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "darshan-academy-pune",
+    "name": "Darshan Academy, Pune",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 48,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "delhi-world-public-school-barasat",
+    "name": "Delhi World Public School, Barasat",
+    "city": "Parganas",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "discoveri-okas-school",
+    "name": "Discoveri Okas School",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 244,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "don-bonsco-krishnanagar",
+    "name": "Don Bonsco Krishnanagar",
+    "city": "Krishnanagar",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "don-bosco-bandel",
+    "name": "Don Bosco Bandel",
+    "city": "Bandel, West Bengal",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 531,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "don-bosco-matric-higher-secondary-school",
+    "name": "Don Bosco Matric Higher Secondary School",
+    "city": "",
+    "state": "",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 25,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "doon-scholars-school",
+    "name": "Doon Scholars School",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 342,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "dps-bangalore-east-cambridge-section-k-k-educational-and-charitable-trust",
+    "name": "DPS Bangalore East (Cambridge Section) /K.K. EDUCATIONAL AND CHARITABLE TRUST",
+    "city": "Banglore",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 80,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-05-26",
+    "status": "Active"
+  },
+  {
+    "slug": "dps-bangalore-north-cambridge-section",
+    "name": "DPS Bangalore North (Cambridge Section)",
+    "city": "Banglore",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 74,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-15",
+    "status": "Active"
+  },
+  {
+    "slug": "ebenezer-jaganath-matriculation",
+    "name": "Ebenezer Jaganath Matriculation",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 33,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "ebenezer-modern-matriculation",
+    "name": "Ebenezer Modern Matriculation",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 30,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "embee-rosebud-hr-sec-school",
+    "name": "Embee Rosebud Hr. Sec. School",
+    "city": "Tura",
+    "state": "Meghalaya",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 125,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "foundation-world-school",
+    "name": "Foundation World School",
+    "city": "Budgam",
+    "state": "Jammu & Kashmir",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 9,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "frank-public-school",
+    "name": "Frank Public School",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 83,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "gd-international-school",
+    "name": "GD International School",
+    "city": "Gurgaon",
+    "state": "Haryana",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 7,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "global-city-international-school-cambridge-board",
+    "name": "Global City International School (Cambridge Board)",
+    "city": "Banglore",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 156,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "global-city-international-school-cbse",
+    "name": "Global City International School (CBSE)",
+    "city": "Banglore",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 169,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "gnims-business-school",
+    "name": "GNIMS Business School",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-03-05",
+    "status": "Active"
+  },
+  {
+    "slug": "gr-international-school",
+    "name": "GR International School",
+    "city": "Mhendragadh",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 110,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "guru-nanak-institute-of-management-studies",
+    "name": "Guru Nanak Institute of Management Studies",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-02-18",
+    "status": "Active"
+  },
+  {
+    "slug": "hariyana-international-academy-class-2-7",
+    "name": "Hariyana International Academy - Class 2 - 7",
+    "city": "Kalaberia",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "hariyana-international-academy-class-3-4",
+    "name": "Hariyana International Academy - Class 3 & 4",
+    "city": "Kalaberia",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 10,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "hindustan-international-cbse",
+    "name": "Hindustan International CBSE",
+    "city": "",
+    "state": "",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 0,
+    "active_mous_count": 2,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "hindustan-international-cie",
+    "name": "Hindustan International CIE",
+    "city": "",
+    "state": "",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "holy-child-english-academy-malda",
+    "name": "Holy Child English Academy, Malda",
+    "city": "Malda",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 523,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "hvb-global-academy",
+    "name": "HVB Global Academy",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 4,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "itiki-school",
+    "name": "ITIKI School",
+    "city": "Nagaland",
+    "state": "Nagaland",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 20,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "jaffaria-academy-of-modern-education-kargil",
+    "name": "Jaffaria Academy of Modern Education - Kargil",
+    "city": "Kargil",
+    "state": "Kashmir",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 757,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "jnana-bharathi-english-school",
+    "name": "Jnana Bharathi English School",
+    "city": "Bengaluru",
+    "state": "Karanataka",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 0,
+    "earliest_start_date": "2026-04-01",
+    "status": "Pending"
+  },
+  {
+    "slug": "julien-educational-trust-eglin-road",
+    "name": "Julien Educational Trust, Eglin Road",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 540,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "julien-educational-trust-ganganagar",
+    "name": "Julien Educational Trust, Ganganagar",
+    "city": "Ganganagar",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 1178,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "julien-educational-trust-howrah",
+    "name": "Julien Educational Trust, Howrah",
+    "city": "Howrah",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 478,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "julien-educational-trust-kalyani",
+    "name": "Julien Educational Trust, Kalyani",
+    "city": "Kalyani",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 948,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "k-e-carmel-school-amtala",
+    "name": "K.E Carmel School - Amtala",
+    "city": "Amtala",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-03-01",
+    "status": "Active"
+  },
+  {
+    "slug": "k-e-carmel-school-suri",
+    "name": "K.E Carmel School - Suri",
+    "city": "Suri",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "kalyani-school",
+    "name": "Kalyani School",
+    "city": "",
+    "state": "",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 4,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "kavyapta-global-school",
+    "name": "Kavyapta Global School",
+    "city": "Jamshedpur",
+    "state": "Jharkhand",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "kaziman-rai-memorial-trust",
+    "name": "KAZIMAN RAI MEMORIAL TRUST",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "kirti-book-agency-empros-international-school-chinchwad-pune",
+    "name": "Kirti Book Agency (Empros International School _Chinchwad, Pune)",
+    "city": "Chinchwad",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 166,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-06-01",
+    "status": "Active"
+  },
+  {
+    "slug": "kirti-book-agency-empros-international-school-talegaon",
+    "name": "Kirti Book Agency (Empros International School _Talegaon)",
+    "city": "Talegaon",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 178,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-06-01",
+    "status": "Active"
+  },
+  {
+    "slug": "kulachi-hansraj-model-school",
+    "name": "Kulachi Hansraj Model School",
+    "city": "Ashok Vihar",
+    "state": "Delhi",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 7,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "laxmi-global-school",
+    "name": "Laxmi Global School",
+    "city": "Valsad",
+    "state": "Gujarat",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 9,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "laxmipat-singhania-academy",
+    "name": "Laxmipat Singhania Academy",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 420,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "lions-calcutta-greater-vidya-mandir",
+    "name": "Lions Calcutta Greater Vidya Mandir",
+    "city": "Sonarpur",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 796,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "loreto-day-school-bb",
+    "name": "Loreto Day School BB",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 1118,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "loreto-day-school-kolkata",
+    "name": "Loreto Day School Kolkata",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 608,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "loreto-house-kolkata",
+    "name": "Loreto House - Kolkata",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 608,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "mahrishi-dayanand-school",
+    "name": "Mahrishi Dayanand School",
+    "city": "Haryana",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 0,
+    "earliest_start_date": "2026-04-01",
+    "status": "Pending"
+  },
+  {
+    "slug": "modern-high-school-international",
+    "name": "Modern High School International",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 81,
+    "active_mous_count": 2,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "mustafa-matric-school",
+    "name": "Mustafa Matric School",
+    "city": "Chidambaram",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 373,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "mutahhary-public-school-baroo",
+    "name": "Mutahhary Public School Baroo",
+    "city": "Kargil",
+    "state": "Union Territory of Ladakh",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "nabi-crescent-school",
+    "name": "Nabi Crescent School",
+    "city": "Avadi",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 150,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "narayana-school",
+    "name": "NARAYANA SCHOOL",
+    "city": "9 Different Locations",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 819,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "national-gems-higher-secondary-school",
+    "name": "National Gems Higher Secondary School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 49,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "pgis-chennai",
+    "name": "PGIS Chennai",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 218,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "podar-international-school-howrah",
+    "name": "Podar International School Howrah",
+    "city": "Howrah",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 22,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "ramanarayana-education-trust",
+    "name": "Ramanarayana Education Trust",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "rbsm-public-school",
+    "name": "RBSM PUBLIC SCHOOL",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 732,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "rishi-aurobindo-memorial-academy",
+    "name": "Rishi Aurobindo Memorial Academy",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 16,
+    "active_mous_count": 3,
+    "earliest_start_date": "2025-08-01",
+    "status": "Active"
+  },
+  {
+    "slug": "rn-shah-international-school",
+    "name": "RN Shah International School",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 46,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "rootland-sec-school",
+    "name": "Rootland Sec. School",
+    "city": "Tura",
+    "state": "Meghalaya",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 263,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-01-27",
+    "status": "Active"
+  },
+  {
+    "slug": "sagaya-matha-matriculation-higher-secondary-school",
+    "name": "Sagaya Matha Matriculation Higher Secondary School",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 427,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "sanjay-ghodawat-international-school",
+    "name": "Sanjay Ghodawat International School",
+    "city": "Kolhapur",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 153,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "sd-senior-secondary-school",
+    "name": "SD Senior Secondary School",
+    "city": "Mahendragarh",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "secunderabad-public-school-st-ann-s-grammar-school",
+    "name": "Secunderabad Public School/St.Ann's Grammar School",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 50,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "shaw-public-school",
+    "name": "Shaw Public School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 41,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "shemrock-school",
+    "name": "Shemrock School",
+    "city": "Nagaland",
+    "state": "Nagaland",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 39,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "shivam-eduactional-academy-bhatagaon",
+    "name": "Shivam Eduactional Academy_Bhatagaon",
+    "city": "Raipur",
+    "state": "Chhatisgarh",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 48,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "shivam-eduactional-academy-indraprastha",
+    "name": "Shivam Eduactional Academy_Indraprastha",
+    "city": "Raipur",
+    "state": "Chhatisgarh",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 90,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "shree-pralhadrao-kashid-foundation-matoshree-national-school",
+    "name": "Shree Pralhadrao Kashid Foundation (Matoshree National School)",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 30,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "sri-r-n-singh-memorial-high-school",
+    "name": "Sri R. N. Singh Memorial High School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 0,
+    "earliest_start_date": "2026-04-01",
+    "status": "Pending"
+  },
+  {
+    "slug": "sri-r-n-singh-memorial-high-school-mtpl13-15",
+    "name": "Sri R. N. Singh Memorial High School - MTPL13/15",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 67,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "sri-r-n-singh-memorial-high-school-for-class-8",
+    "name": "Sri R. N. Singh Memorial High School (For Class 8)",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 0,
+    "earliest_start_date": "2026-04-01",
+    "status": "Pending"
+  },
+  {
+    "slug": "sri-r-n-singh-memorial-high-school-for-class-8-mtpl-14-rd",
+    "name": "Sri R. N. Singh Memorial High School (For Class 8) - MTPL 14 RD",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 11,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "sri-rajasree-educational-society-laurel-high",
+    "name": "Sri Rajasree Educational Society (laurel High)",
+    "city": "Rajahmundry",
+    "state": "Andhra Pradesh",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 40,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "sri-ram-narayan-singh-memorial-high-school",
+    "name": "Sri Ram Narayan Singh Memorial High School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 21,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "sri-vaishnavi-school",
+    "name": "Sri Vaishnavi School",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 280,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "sri-vidhya-nikethan-matriculation-school",
+    "name": "Sri Vidhya Nikethan Matriculation School",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 255,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "ssnp-school",
+    "name": "SSNP School",
+    "city": "Devangere",
+    "state": "Karnataka",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 46,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "st-john-s-school",
+    "name": "St. John’s School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 191,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "st-johns-high-school",
+    "name": "St. Johns High School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 0,
+    "earliest_start_date": "2026-04-01",
+    "status": "Pending"
+  },
+  {
+    "slug": "st-mary-convent-school",
+    "name": "St. Mary Convent School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "st-montfort-s-sr-secondary-school-baruipur",
+    "name": "St. Montfort's Sr. Secondary School, Baruipur",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 938,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "st-paul-boarding-and-day-school",
+    "name": "St. Paul Boarding and Day School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 343,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "st-paul-s-boarding-and-day-school",
+    "name": "St. Paul's Boarding And Day School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 860,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "st-paul-s-mission-school",
+    "name": "St. Paul’s Mission School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 820,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "st-xavier-s-sr-sec-school",
+    "name": "St. Xavier's Sr. Sec. School",
+    "city": "",
+    "state": "",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 38,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "stepping-stone-model-school",
+    "name": "Stepping Stone Model School",
+    "city": "Alipurduar",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 60,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-08-01",
+    "status": "Active"
+  },
+  {
+    "slug": "sumana-dutta-memorial-vivekananda-international-school",
+    "name": "Sumana Dutta Memorial Vivekananda International School",
+    "city": "Singhbhum",
+    "state": "Jharkhand",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 31,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "swarnim-international-school",
+    "name": "Swarnim International School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 363,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "tathastu-innovations-lab-meerut",
+    "name": "Tathastu Innovations (LAB ) Meerut",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "techno-india-group-public-school-asansol",
+    "name": "Techno India Group Public School Asansol",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "techno-india-group-public-school-kalyani",
+    "name": "Techno India Group Public School Kalyani",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "techno-india-group-public-school-panagarh",
+    "name": "Techno India Group Public School Panagarh",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 0,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "the-cambria-international-school-jr-college",
+    "name": "The Cambria International School & Jr College",
+    "city": "Kalyan",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 15,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "the-learning-sanctuary",
+    "name": "The Learning Sanctuary",
+    "city": "Tura",
+    "state": "Meghalaya",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 170,
+    "active_mous_count": 1,
+    "earliest_start_date": "2026-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "the-scottish-church-collegiate-school",
+    "name": "The Scottish Church Collegiate School",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 174,
+    "active_mous_count": 2,
+    "earliest_start_date": "2025-08-01",
+    "status": "Active"
+  },
+  {
+    "slug": "the-shree-ji-school",
+    "name": "The Shree ji school",
+    "city": "Faridabad",
+    "state": "Haryana",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 270,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  },
+  {
+    "slug": "tinkrsphere-academy",
+    "name": "TINKRSPHERE ACADEMY,",
+    "city": "Howrah",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 1,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "tip-top-convent-school",
+    "name": "Tip Top Convent School",
+    "city": "Nagpur",
+    "state": "Maharashtra",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 285,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-07-01",
+    "status": "Active"
+  },
+  {
+    "slug": "vaels-international-school",
+    "name": "Vaels International School",
+    "city": "Chennai",
+    "state": "Tamilnadu",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 150,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-03-24",
+    "status": "Active"
+  },
+  {
+    "slug": "wisdom-high-international-school-nashik",
+    "name": "Wisdom High International School, Nashik",
+    "city": "Nashik",
+    "state": "Maharashtra",
+    "programmes": [
+      "Young Pioneers"
+    ],
+    "students": 34,
+    "active_mous_count": 1,
+    "earliest_start_date": null,
+    "status": "Active"
+  },
+  {
+    "slug": "young-horizons-school",
+    "name": "Young Horizons School",
+    "city": "Medinpur",
+    "state": "West Bengal",
+    "programmes": [
+      "STEAM"
+    ],
+    "students": 175,
+    "active_mous_count": 1,
+    "earliest_start_date": "2025-04-01",
+    "status": "Active"
+  }
+]

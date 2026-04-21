@@ -105,16 +105,32 @@ export const SkillSchema = z.object({
 });
 export type Skill = z.infer<typeof SkillSchema>;
 
-// Schools: simple directory, edited in meta/schools.json.
+// Schools: imported from gsl-mou-system via scripts/import-schools-from-mou-system.mjs.
+// Money / billing / PII fields are intentionally dropped upstream so the Studio
+// only sees the impact-forward subset.
 export const SchoolSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9][a-z0-9-]*[a-z0-9]?$/, {
+    message: "slug must be kebab-case"
+  }),
   name: z.string().min(1),
-  city: z.string().min(1),
+  // City and state are optional because some upstream MOU-system rows have
+  // blank values; UI renders "City unknown" rather than rejecting the row.
+  city: z.string().nullable().optional(),
+  state: z.string().nullable().optional(),
   programmes: z.array(z.string()).default([]),
-  status: z.string().optional(),
-  last_touch_date: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/)
-    .optional()
+  /** Students counted across Active MOUs for this school. The "impact" number. */
+  students: z.number().int().nonnegative().default(0),
+  /** Count of Active MOUs. Useful for a secondary chip on the card. */
+  active_mous_count: z.number().int().nonnegative().default(0),
+  /** Earliest MOU start date for the school, used to compute "with us for N years". */
+  earliest_start_date: z
+    .preprocess((v) => {
+      if (v instanceof Date) return v.toISOString().slice(0, 10);
+      return v;
+    }, z.string().regex(/^\d{4}-\d{2}-\d{2}$/))
+    .nullable()
+    .optional(),
+  status: z.string().optional()
 });
 export type School = z.infer<typeof SchoolSchema>;
 export const SchoolsSchema = z.array(SchoolSchema);

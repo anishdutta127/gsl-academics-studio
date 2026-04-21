@@ -26,7 +26,7 @@ const NAV: NavItem[] = [
   { href: "/skills", label: "Skills", Icon: Layers },
   { href: "/standards", label: "Standards", Icon: Sparkles },
   { href: "/library", label: "Library", Icon: Library },
-  { href: "/schools", label: "Schools", Icon: School, comingSoon: "week 3" },
+  { href: "/schools", label: "Schools", Icon: School },
   {
     href: "/assignments",
     label: "Assignments",
