@@ -11,7 +11,7 @@ import {
   SkillSchema,
   TeamSchema,
   normaliseOutputLink,
-  type Assignments,
+  type AssignmentWeek,
   type DiscoveredOutput,
   type OutputLinks,
   type Playbook,
@@ -195,13 +195,23 @@ export const getSchools = cache(
     readJsonFile("meta/schools.json", (v) => SchoolsSchema.parse(v), [])
 );
 
+/**
+ * Assignments loader. Returns an array of weeks, sorted week_of desc (newest
+ * first). Handles both the single-week legacy shape and the new multi-week
+ * array shape, normalising to array.
+ */
 export const getAssignments = cache(
-  async (): Promise<Assignments | null> =>
-    readJsonFile(
+  async (): Promise<AssignmentWeek[]> => {
+    const parsed = await readJsonFile(
       "meta/assignments.json",
       (v) => AssignmentsSchema.parse(v),
-      null as Assignments | null
-    )
+      null as ReturnType<typeof AssignmentsSchema.parse> | null
+    );
+    if (!parsed) return [];
+    const weeks = Array.isArray(parsed) ? parsed : [parsed];
+    weeks.sort((a, b) => b.week_of.localeCompare(a.week_of));
+    return weeks;
+  }
 );
 
 export const getTeam = cache(

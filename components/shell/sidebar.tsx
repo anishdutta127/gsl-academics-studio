@@ -27,12 +27,7 @@ const NAV: NavItem[] = [
   { href: "/standards", label: "Standards", Icon: Sparkles },
   { href: "/library", label: "Library", Icon: Library },
   { href: "/schools", label: "Schools", Icon: School },
-  {
-    href: "/assignments",
-    label: "Assignments",
-    Icon: Users,
-    comingSoon: "week 3"
-  }
+  { href: "/assignments", label: "Assignments", Icon: Users }
 ];
 
 function isActive(pathname: string, href: string) {

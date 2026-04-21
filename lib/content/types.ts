@@ -135,18 +135,53 @@ export const SchoolSchema = z.object({
 export type School = z.infer<typeof SchoolSchema>;
 export const SchoolsSchema = z.array(SchoolSchema);
 
-// Weekly assignments: one JSON object covers the current week.
+// Weekly assignments: one JSON object covers the current week, OR an array
+// of week objects so multiple weeks can live in one file (session 3 task 6).
+export const AssignmentStatusSchema = z.enum([
+  "todo",
+  "in-progress",
+  "in-review",
+  "done"
+]);
+export type AssignmentStatus = z.infer<typeof AssignmentStatusSchema>;
+
+export const AssignmentSubRoleSchema = z.enum([
+  "writer",
+  "designer",
+  "reviewer"
+]);
+export type AssignmentSubRole = z.infer<typeof AssignmentSubRoleSchema>;
+
 export const AssignmentItemSchema = z.object({
-  name: z.string().min(1),
-  playbook: SlugSchema,
-  topic: z.string().min(1)
+  id: z.string().min(1),
+  assignee_name: z.string().min(1),
+  assignee_role: z.string().optional(),
+  playbook_slug: SlugSchema,
+  topic: z.string().min(1),
+  school_slug: z.string().optional(),
+  status: AssignmentStatusSchema.default("todo"),
+  sub_role: AssignmentSubRoleSchema.optional()
 });
 export type AssignmentItem = z.infer<typeof AssignmentItemSchema>;
 
-export const AssignmentsSchema = z.object({
-  week_of: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+export const AssignmentWeekSchema = z.object({
+  week_of: z.preprocess((v) => {
+    if (v instanceof Date) return v.toISOString().slice(0, 10);
+    return v;
+  }, z.string().regex(/^\d{4}-\d{2}-\d{2}$/)),
   assignments: z.array(AssignmentItemSchema).default([])
 });
+export type AssignmentWeek = z.infer<typeof AssignmentWeekSchema>;
+
+/**
+ * Backward-compatible schema: accepts either a single-week object (legacy,
+ * week 2 shape) or an array of week objects (session 3 shape). The loader
+ * normalises to `AssignmentWeek[]`.
+ */
+export const AssignmentsSchema = z.union([
+  AssignmentWeekSchema,
+  z.array(AssignmentWeekSchema)
+]);
 export type Assignments = z.infer<typeof AssignmentsSchema>;
 
 // Team: used for attribution on assignment cards and the team page.

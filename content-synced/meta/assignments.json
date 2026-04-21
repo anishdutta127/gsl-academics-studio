@@ -1,4 +1,64 @@
-{
-  "week_of": "2026-04-21",
-  "assignments": []
-}
+[
+  {
+    "week_of": "2026-04-20",
+    "assignments": [
+      {
+        "id": "ASG-2026-04-20-01",
+        "assignee_name": "Priya",
+        "assignee_role": "Content Writer",
+        "playbook_slug": "teaching-ppt",
+        "topic": "Building your first chatbot",
+        "school_slug": "alma-mater-school",
+        "status": "in-progress",
+        "sub_role": "writer"
+      },
+      {
+        "id": "ASG-2026-04-20-02",
+        "assignee_name": "Arjun",
+        "assignee_role": "Content Writer",
+        "playbook_slug": "lesson-plan",
+        "topic": "Solving your city's water crisis",
+        "school_slug": "apple-global-school",
+        "status": "in-review",
+        "sub_role": "writer"
+      },
+      {
+        "id": "ASG-2026-04-20-03",
+        "assignee_name": "Fatima",
+        "assignee_role": "Curriculum Lead",
+        "playbook_slug": "assessment",
+        "topic": "Pitching a startup idea, Class 9",
+        "status": "todo",
+        "sub_role": "reviewer"
+      },
+      {
+        "id": "ASG-2026-04-20-04",
+        "assignee_name": "Harpreet",
+        "assignee_role": "Designer",
+        "playbook_slug": "teaching-ppt",
+        "topic": "Storyboarding a 30-second video",
+        "status": "in-progress",
+        "sub_role": "designer"
+      },
+      {
+        "id": "ASG-2026-04-20-05",
+        "assignee_name": "Ravi",
+        "assignee_role": "Content Writer",
+        "playbook_slug": "carousel",
+        "topic": "Young Pioneers Launchpad announcement",
+        "status": "done",
+        "sub_role": "writer"
+      },
+      {
+        "id": "ASG-2026-04-20-06",
+        "assignee_name": "Ananya",
+        "assignee_role": "Content Writer",
+        "playbook_slug": "delivery-script",
+        "topic": "Session 3, Building a simple chatbot",
+        "school_slug": "ayesha-ali-academy",
+        "status": "todo",
+        "sub_role": "writer"
+      }
+    ]
+  }
+]
